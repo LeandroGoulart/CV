@@ -42,3 +42,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Inicializa o carrossel
   updateCarousel();
+});
