@@ -168,6 +168,7 @@ section {
   max-width: 900px;
   margin: 32px auto;
   padding: 40px 32px;
+  scroll-margin-top: 108px; /* ajuste do menu */
 }
 
 section h2 {
