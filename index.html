@@ -1,54 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Meu CV Online</title>
-    <link rel="stylesheet" href="src/style/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leandro Goulart | Desenvolvedor Full Stack & Cybersecurity</title>
+  <meta name="description" content="Portfólio profissional de Leandro Goulart, desenvolvedor full stack com foco em backend e segurança da informação.">
+  <link rel="stylesheet" href="src/style/main.css">
+  <!-- Ícones (FontAwesome CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Leandro Goulart</h1>
-        <p>Desenvolvedor de Software | Segurança da Informação</p>
-        <nav>
-            <ul>
-                <!-- seções da página -->
-                <li><a href="#sobre">Sobre mim</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Menu fixo no topo -->
+  <header class="header-fixed">
+    <div class="container">
+      <h1 class="logo">Leandro Goulart</h1>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Conteúdo principal -->
-    <main>
-        <!-- Seção sobre você -->
-        <section id="sobre">
-            <h2>Sobre mim</h2>
-            <p>Aqui vai um resumo da sua carreira, habilidades e interesses.</p>
-        </section>
+  <!-- Hero Section com Parallax -->
+  <section class="hero-parallax">
+    <div class="overlay">
+      <img src="src/images/avatar.jpg" alt="Foto de Leandro Goulart" class="avatar">
+      <h2>Olá, sou <span>Leandro Goulart</span></h2>
+      <p>
+        Desenvolvedor Full Stack com foco em backend e Cybersecurity.<br>
+        Autodidata, apaixonado por tecnologia e por criar soluções eficientes.<br>
+        Busco sempre inovar, aprender e contribuir em projetos desafiadores.
+      </p>
+      <a href="#contato" class="btn">Fale comigo</a>
+      <div class="social-links">
+        <a href="https://github.com/LeandroGoulart" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/leandrovgoulart" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/5531992460786" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Seção com seus projetos -->
-        <section id="projetos">
-            <h2>Projetos</h2>
-            <p>Lista de projetos desenvolvidos, com links para GitHub/GitLab.</p>
-        </section>
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Sobre mim -->
+    <section id="sobre">
+      <h2>Sobre mim</h2>
+      <p>
+        Sou formado em Análise e Desenvolvimento de Sistemas, pós-graduado em Cybersecurity e apaixonado por tecnologia. 
+        Tenho experiência em projetos web, integração de APIs, bancos de dados e metodologias ágeis. 
+        Meu diferencial é a busca constante por aprendizado, criatividade na resolução de problemas e foco em resultados.
+      </p>
+    </section>
 
-        <!-- Seção de contato -->
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Email: seuemail@exemplo.com</p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/seuusuario" target="_blank">linkedin.com/in/seuusuario</a></p>
-        </section>
-    </main>
+    <!-- Formação -->
+    <section id="formacao">
+      <h2>Formação</h2>
+      <ul>
+        <li><strong>Pós-Graduação em Cybersecurity</strong> – Faculdade Iguaçu (2024)</li>
+        <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> – Faculdade Católica Paulista (2023)</li>
+        <li><strong>Especialização: Desenvolvedor Back-end JR</strong> – Oracle/Alura (2024)</li>
+        <li><strong>Scholarship: Fintechs</strong> – University of Chicago (2023)</li>
+      </ul>
+    </section>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 - Criado por Leandro Goulart</p>
-    </footer>
+    <!-- Habilidades -->
+    <section id="habilidades">
+      <h2>Habilidades Técnicas</h2>
+      <ul class="skills-list">
+        <li>HTML, CSS, JavaScript, Python, Java</li>
+        <li>SQL (Postgres, MySQL)</li>
+        <li>Spring Boot, Git/GitHub, API REST</li>
+        <li>Metodologias Ágeis, Clean Code, AWS/OCI</li>
+        <li>Em aprendizado: Typescript, MongoDB, Angular, Vue, Docker</li>
+      </ul>
+    </section>
 
-    <script src="src/js/main.js"></script>
+    <!-- Projetos -->
+    <section id="projetos">
+      <h2>Projetos em Destaque</h2>
+      <div class="projetos-grid">
+        <article class="projeto-card">
+          <h3>Decodificador de Mensagens</h3>
+          <p>Página interativa para criptografar e decodificar mensagens. <br><strong>Stack:</strong> JS, HTML, CSS</p>
+          <a href="https://challenge-decoder.vercel.app/" target="_blank">Ver projeto</a>
+        </article>
+        <article class="projeto-card">
+          <h3>Página Web com Efeitos Sonoros</h3>
+          <p>Instrumento virtual para treinar sons de percussão MIDI. <br><strong>Stack:</strong> JS, HTML, CSS</p>
+          <a href="https://leandrogoulart.github.io/PercussionProject/" target="_blank">Ver projeto</a>
+        </article>
+        <!-- Adicione mais projetos conforme desejar -->
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <h2>Contato</h2>
+      <form id="form-contato" autocomplete="off">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Leandro Goulart</p>
+  </footer>
+
+  <script src="src/js/main.js"></script>
 </body>
 </html>
