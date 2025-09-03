@@ -83,7 +83,7 @@ header nav ul li a:focus {
 /* ===== Hero com Parallax ===== */
 .hero-parallax {
   min-height: 100vh;
-  background: url('../images/bg.jpg') center/cover fixed;
+  background: url('../images/bg.webp') center/cover fixed;
   display: flex;
   align-items: center;
   justify-content: center;
