@@ -1,87 +1,103 @@
-# CV_ONLINE — Portfólio de Leandro Goulart
+# Career OS — Leandro Goulart
 
-Portfólio pessoal estático com foco em apresentação profissional, projetos e formulário de contato integrado (Formspree). Projeto pensado para ser leve, responsivo e fácil de manter.
+Site único que reúne currículo, portfólio e identidade profissional.
 
-![Screenshot do site](src/images/capa_do_site.png)
+Publicado em https://leandrogoulart.github.io/CV/
 
-## Funcionalidades principais
-- Hero com foto e descrição curta.
-- Menu fixo com âncoras para seção (Sobre, Formação, Habilidades, Projetos, Contato).
-- Seção de habilidades com badges Devicon.
-- Carrossel responsivo de projetos.
-- Formulário de contato integrado ao Formspree.
-- Variáveis CSS para paleta de cores (fácil manutenção).
+> Este repositório é, ele próprio, parte do portfólio: a forma como o projeto é
+> estruturado, decidido e documentado é a evidência de organização que o site
+> afirma ter. Por isso as decisões ficam registradas, não apenas o resultado.
 
-## Estrutura do projeto
-- `index.html` — página principal.
-- `src/style/main.css` — estilos gerais e variáveis de cores.
-- `src/style/carousel.css` — estilos do carrossel (separado para manutenção).
-- `src/style/badges.css` — estilos das badges (separado).
-- `src/js/main.js` — lógica do carrossel e scripts.
-- `src/images/` — imagens e logo.
-- `readme.md` — este arquivo.
+## Arquitetura de informação
 
-## Como executar 
+Quatro abas, nesta ordem, seguindo a leitura natural de um recrutador —
+*quem é* → *o que sabe fazer* → *prove* → *quem é por dentro*:
 
-Não é necessário baixar o projeto.
+| # | Aba | O que prova |
+|---|---|---|
+| 1 | **Identidade e trajetória** | De onde veio e como a transição faz sentido |
+| 2 | **Competências técnicas** | O que sabe fazer, e em que nível de maturidade |
+| 3 | **Portfólio** | A prova prática, com participação real declarada |
+| 4 | **Comportamental** | Como pensa, decide e trabalha |
 
-Basta acessar : https://leandrogoulart.github.io/CV/
+O perfil comportamental fica por último de propósito: DISC e tipologias têm
+validade psicométrica contestada e funcionam melhor como aprofundamento de
+quem já se interessou do que como cartão de visita.
 
-## Formulário de contato (Formspree)
-Interaja com o formulário, está 100% funcional e recebo diretamente no email de contato.
+## Estrutura de pastas
 
-## Como editar cores e tema
-Todas as cores estão em `:root` dentro de `src/style/main.css`. Para alterar a paleta, modifique as variáveis:
-```css
-:root {
-  --cor-preto: #181818;
-  --cor-verde: #00ff88;
-  --cor-verde-hover: #00995e;
-  --cor-branco: #fff;
-  --cor-cinza-escuro: #232323;
-  --cor-cinza-texto: #e0ffe7;
-}
+```
+.
+├── index.html            Documento único; cada aba é um <section role="tabpanel">
+├── assets/
+│   ├── img/              Imagens do site (webp)
+│   └── icons/            Favicon em SVG
+├── css/
+│   ├── tokens.css        Design tokens — única fonte de valores
+│   ├── base.css          Reset, tipografia e acessibilidade
+│   └── layout.css        Cabeçalho, abas, painéis, hero e rodapé
+└── js/
+    └── tabs.js           Navegação por abas (padrão ARIA + rota por hash)
 ```
 
-## Como editar badges e tecnologias
-Badges usam Devicon via CDN. Para adicionar/remover, edite a seção `#habilidades` em `index.html`:
-```html
-<div class="badge">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" height="32"/>
-  <span>HTML5</span>
-</div>
+### Convenções
+
+- **Nenhum valor de cor, espaçamento ou tipografia fora de `tokens.css`.**
+  Se precisou de um valor novo, ele vira token antes de ser usado.
+- Classes em **BEM** simplificado: `.bloco__elemento`, `.bloco--variante`.
+- JavaScript **defensivo**: se a marcação esperada não existir, o script sai
+  em silêncio em vez de derrubar a página.
+- Toda aba é endereçável por URL: `#identidade`, `#competencias`,
+  `#portfolio`, `#comportamental`.
+
+### Acessibilidade
+
+- Padrão ARIA Tabs completo, com navegação por setas, Home e End
+- Link para pular a navegação
+- Foco visível apenas para navegação por teclado (`:focus-visible`)
+- `prefers-reduced-motion` respeitado
+- Imagens com texto alternativo descritivo
+
+## Identidade visual
+
+A paleta vem da versão anterior do site e foi preservada, apenas formalizada:
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--c-bg` | `#181818` | Fundo |
+| `--c-surface` | `#232323` | Cartões e cabeçalho |
+| `--c-accent` | `#00ff88` | Marca, links, destaque |
+| `--c-text-muted` | `#e0ffe7` | Texto corrido |
+
+## Fases do projeto
+
+| Fase | Entrega | Estado |
+|---|---|---|
+| 1 | Estrutura de pastas, tokens, navegação por abas e aba de Identidade | **Concluída** |
+| 2 | Linha do tempo interativa e experiências na aba 1 | A fazer |
+| 3 | Aba de Competências | A fazer |
+| 4 | Aba de Portfólio, com carrossel e filtros | A fazer |
+| 5 | Aba Comportamental | A fazer |
+| 6 | Otimização de assets, Open Graph e troca dos PDFs | A fazer |
+| 7 | Virada: Pages aponta para `career-os`, que vira `main` | A fazer |
+
+## Branches
+
+| Branch | Papel |
+|---|---|
+| `main` | Versão antiga, desatualizada. Será substituída na fase 7 |
+| `carrossel` | O que o GitHub Pages publica hoje. Mantida até a virada |
+| `career-os` | Desenvolvimento |
+
+## Rodando localmente
+
+Não há build. Qualquer servidor estático serve:
+
+```bash
+python -m http.server 8000
 ```
-Use a classe `.badge-learning` para destacar tecnologias em aprendizado.
 
-## Carrossel de projetos
-- Layout do carrossel: `src/style/carousel.css`
-- Comportamento: `src/js/main.js` — verifique a função que calcula deslocamento baseado na largura do card.
-- Se ocorrerem problemas (vários cards visíveis ao mesmo tempo), verifique se:
-  - `.carousel-container` tem `overflow: hidden;`
-  - `.carousel-track` está `display: flex;` e os `.projeto-card` têm `flex: 0 0 <largura>;`
+Depois abra `http://localhost:8000`.
 
-## Boas práticas e dicas
-- Use variáveis CSS para cores e tamanhos repetidos.
-- Separe responsabilidades (CSS do carrossel / badges em arquivos próprios).
-- Teste a navegação com header fixo; `section { scroll-margin-top: 110px; }` evita títulos encobertos.
-- Acessibilidade: adicione `aria-label` em botões do carrossel e textos alternativos nas imagens.
-
-## Contribuição
-Pull requests são bem-vindos. Para correções rápidas:
-1. Fork do repositório
-2. Crie branch: `git checkout -b fix-minha-coisa`
-3. Commit e push
-4. Abra Pull Request
-
-## Autor
-Leandro Goulart — desenvolvedor Full Stack & Cybersecurity  
-GitHub: https://github.com/LeandroGoulart
-
-## Licença
-Arquivo sem licença explícita. Recomenda-se adicionar uma (MIT, Apache-2.0 etc.) se for compartilhar publicamente.
-
----
-Pequenas melhorias sugeridas para próximas versões:
-- Adicionar feedback visual pós-envio do formulário (mensagem de sucesso/erro).
-- Suporte a múltiplos idiomas.
-- Otimizações de performance e SEO (meta tags, sitemap).
+Abrir o `index.html` direto pelo sistema de arquivos também funciona, mas
+servir por HTTP evita diferenças de comportamento em caminhos relativos.

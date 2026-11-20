@@ -2,289 +2,195 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leandro Goulart | Desenvolvedor Full Stack & Cybersecurity</title>
-  <meta name="description" content="Portfólio profissional de Leandro Goulart.">
 
-  <link rel="stylesheet" href="src/style/main.css">
-  <link rel="stylesheet" href="src/style/carousel.css">
-  <link rel="stylesheet" href="src/style/badges.css">
+  <title>Leandro Goulart — Analista de Sistemas | IAM, Governança de TI e Cloud Security</title>
+  <meta name="description" content="Analista de Sistemas com atuação em gestão de identidades e acessos (IAM), governança de TI, implantação e sustentação de sistemas corporativos, em especialização em segurança defensiva e Cloud Security. Currículo, competências e portfólio técnico.">
+  <meta name="author" content="Leandro Vieira Goulart">
+  <link rel="canonical" href="https://leandrogoulart.github.io/CV/">
 
-  <!-- Ícones (FontAwesome CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Open Graph / redes sociais.
+       TODO (fase de assets): gerar assets/img/og-cover.png em 1200x630
+       e declarar og:image. Sem imagem é melhor que imagem quebrada. -->
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://leandrogoulart.github.io/CV/">
+  <meta property="og:title" content="Leandro Goulart — Analista de Sistemas | IAM e Cloud Security">
+  <meta property="og:description" content="Currículo, competências e portfólio técnico. Da operação crítica à segurança defensiva.">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
-  <!-- Menu fixo no topo -->
-  <header class="header-fixed">
-    <div class="container">
-      <h1 class="logo">
-        <img src="src/images/logo.png" alt="Logo Leandro Goulart" class="logo-img" height="36" />
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="brand" href="#identidade">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="14" fill="#181818"/>
+          <path d="M41.5 26.5a11 11 0 1 0 1.3 10.2H33v-6h16v4.6a17 17 0 1 1-2.8-12.4z" fill="#00ff88"/>
+        </svg>
         Leandro Goulart
-    </h1>
-      <nav>
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#formacao">Formação</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+      </a>
+
+      <nav aria-label="Seções do perfil">
+        <div class="tabs" role="tablist" data-tablist>
+          <button class="tab" role="tab" id="tab-identidade"
+                  aria-controls="painel-identidade" aria-selected="true"
+                  data-hash="identidade" type="button">Identidade</button>
+
+          <button class="tab" role="tab" id="tab-competencias"
+                  aria-controls="painel-competencias" aria-selected="false"
+                  data-hash="competencias" tabindex="-1" type="button">Competências</button>
+
+          <button class="tab" role="tab" id="tab-portfolio"
+                  aria-controls="painel-portfolio" aria-selected="false"
+                  data-hash="portfolio" tabindex="-1" type="button">Portfólio</button>
+
+          <button class="tab" role="tab" id="tab-comportamental"
+                  aria-controls="painel-comportamental" aria-selected="false"
+                  data-hash="comportamental" tabindex="-1" type="button">Comportamental</button>
+        </div>
       </nav>
+
     </div>
   </header>
 
-  <!-- Hero Section com Parallax -->
-  <section class="hero-parallax">
-    <div class="overlay">
-      <img src="src/images/perfil_optimized.webp" alt="Foto de Leandro Goulart" class="avatar">
-      <h2>Olá, sou <span>Leandro Goulart</span></h2>
-      <p>
-        Desenvolvedor Full Stack com foco em backend e Cibersegurança.<br>
-        Autodidata, apaixonado por tecnologia e por criar soluções eficientes.<br>
-        Busco sempre inovar, aprender e contribuir em projetos desafiadores.
-      </p>
-      <p>
-        Disponível para trabalhar home office ou presencialmente em Belo Horizonte. <br>
-        Tenho disponibilidade para mudança para outras cidades ou países.
-      </p>
-      <a href="#contato" class="btn">Fale comigo</a>
-      <div class="social-links">
-        <a href="https://github.com/LeandroGoulart" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/leandrovgoulart" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/5531992460786" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-  </section>
+  <main id="conteudo">
 
-  <!-- Conteúdo principal -->
-  <main>
-    <!-- Sobre mim -->
-    <section id="sobre">
-      <h2>Sobre mim</h2>
-      <p>
-        Sou formado em Análise e Desenvolvimento de Sistemas, pós-graduado em Cybersecurity. 
-        Tenho experiência em projetos web, integração de APIs, persistência de dados e 
-        metodologias ágeis, adquirida por meio do programa de formação trainee Oracle ONE. <br><br>
-      </p>
-      <p>
-        Trata-se de um bootcamp, no qual desenvolvi projetos práticos e adquiri habilidades técnicas essenciais para o mercado 
-        de trabalho em cursos na Alura, além de soft skills como comunicação, gerenciamento de projetos, trabalho em equipe 
-        e resolução de problemas.<br><br>
-      </p>
-      <p>
-        Meu diferencial é a busca constante por aprendizado, criatividade e foco tanto na experiência do cliente quanto em 
-        resultados. Sigo o conceito de "long life learner" e aprendizado em T, sendo generalista, mas com foco em uma stack específica.
-      </p>
+    <!-- ============================================================
+         ABA 1 — IDENTIDADE E TRAJETÓRIA
+         ============================================================ -->
+    <section class="panel" id="painel-identidade" role="tabpanel"
+             aria-labelledby="tab-identidade" tabindex="0">
+
+      <div class="hero">
+        <div class="hero__content container">
+          <img class="hero__avatar"
+               src="assets/img/perfil.webp"
+               alt="Retrato de Leandro Goulart"
+               width="160" height="160" fetchpriority="high">
+
+          <span class="hero__role">Analista de Sistemas · IAM · Governança de TI · Cloud Security</span>
+
+          <h1 class="hero__name">Leandro Goulart</h1>
+
+          <p class="hero__pitch">
+            Oito anos entre operação crítica e tecnologia da informação.
+            Hoje em implantação, sustentação e governança de sistemas,
+            com especialização em segurança defensiva e Cloud Security.
+          </p>
+
+          <div class="contact-links">
+            <a class="contact-link" href="https://www.linkedin.com/in/leandrovgoulart"
+               target="_blank" rel="noopener">LinkedIn</a>
+            <a class="contact-link" href="https://github.com/LeandroGoulart"
+               target="_blank" rel="noopener">GitHub</a>
+            <a class="contact-link" href="https://www.credly.com/users/leandro-v-goulart"
+               target="_blank" rel="noopener">Credly</a>
+            <a class="contact-link" href="mailto:leandrovgoulart@gmail.com">E-mail</a>
+            <a class="contact-link" href="https://wa.me/5531992460786"
+               target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Sobre</p>
+          <h2 class="section__title">Quem sou e como cheguei até aqui</h2>
+
+          <div class="prose">
+            <p>
+              Comecei em manutenção metroferroviária. Foram sete anos num ambiente onde
+              falha tem consequência física e a intervenção acontece dentro de uma janela
+              de tempo fixa, entre uma parada e outra do sistema. Foi ali que aprendi a
+              sequência que continuo usando: <strong>falha, impacto, diagnóstico,
+              prioridade, intervenção, restabelecimento</strong>.
+            </p>
+            <p>
+              Migrei para TI em 2025, por suporte técnico e gestão de identidades e
+              acessos. Trabalhei com Active Directory, Microsoft 365 e Google Workspace,
+              e em seguida com implantação, sustentação e governança de sistemas
+              corporativos de saúde — termos de referência, ordens de serviço, critérios
+              de aceite, SLA e evidência documentada. Ambiente onde um incidente não é
+              um problema de software: é atendimento interrompido.
+            </p>
+            <p>
+              Hoje atuo como analista de suporte de campo e me especializo em segurança
+              defensiva e Cloud Security. O que trago não é profundidade isolada numa
+              única tecnologia — é a combinação de operação, infraestrutura, identidade,
+              sistemas, negócio e segurança. E o hábito de <strong>registrar a decisão,
+              não apenas o resultado</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </section>
 
-    <!-- Formação -->
-    <section id="formacao">
-      <h2>Formação</h2>
-      <ul>
-        <li><strong>Pós-Graduação em Cybersecurity/Defesa cibernética</strong> – Faculdade Iguaçu (2024)</li>
-        <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> – Faculdade Católica Paulista (2023)</li>
-        <li><strong>Especialização: Desenvolvedor Back-end JR</strong> – Oracle/Alura (2024)</li>
-        <br><br>
-        <li><strong>Cybersecurity - Segurança de endpoint</strong> – CISCO (2024)</li>
-        <li><strong>Curso básico de formação Hackers do bem</strong> – Softex, SENAI. RNP (2023)</li>
-        <li><strong>Scholarship: Fintechs</strong> – University of Chicago (2023)</li>
-      </ul>
-    </section>
-
-    <!-- Habilidades -->
-    <section id="habilidades">
-      <h2>Habilidades Técnicas</h2>
-      <div class="skills-badges">
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" height="32"/>
-          <span>HTML5</span>
+    <!-- ============================================================
+         ABA 2 — COMPETÊNCIAS TÉCNICAS  (fase 3)
+         ============================================================ -->
+    <section class="panel" id="painel-competencias" role="tabpanel"
+             aria-labelledby="tab-competencias" tabindex="0" hidden>
+      <div class="container">
+        <div class="section">
+          <div class="placeholder">
+            <p class="placeholder__note">Fase 3</p>
+            <p class="placeholder__title">Competências técnicas</p>
+            <p>Domínios, nível de maturidade por competência e certificações com evidência.</p>
+          </div>
         </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" height="32"/>
-          <span>CSS3</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" height="32"/>
-          <span>JavaScript</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" height="32"/>
-          <span>Python</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" height="32"/>
-          <span>Git</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" height="32"/>
-          <span>Java</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" height="32"/>
-          <span>PostgreSQL</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" height="32"/>
-          <span>MySQL</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" height="32"/>
-          <span>Spring Boot</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" height="32"/>
-          <span>GitHub</span>
-        </div>
-        <div class="badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" height="32"/>
-          <span>Docker</span>
-        </div>
-        
-        <!-- Adicionar mais -->
-      </div>
-
-      <h3 style="margin-top:2em;">Em aprendizado:</h3>
-      <div class="skills-badges">
-        <div class="badge badge-learning">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="Typescript" height="32"/>
-          <span>Typescript</span>
-        </div>
-        <div class="badge badge-learning">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" height="32"/>
-          <span>Angular</span>
-        </div>
-        <div class="badge badge-learning">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" height="32"/>
-          <span>Vue.js</span>
-        </div>
-        <div class="badge badge-learning">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" height="32"/>
-          <span>MongoDB</span>
-        </div>
-        <!-- Adicionar mais -->
-      </div>
-      <div> 
-        <h3 style="margin-top:2em;">Outras tecnologias:</h3> 
-        Lei Geral de Proteção de Dados (LGPD), Fintechs, Spring Boot, Metodologias Ágeis, 
-        Código Limpo, Postman, APIs REST, Inteligência Artificial (Chatbot), Computação em Nuvem com AWS/OCI (acadêmico).
       </div>
     </section>
 
-    <!-- Projetos -->
-    <section id="projetos">
-      <h2>Projetos em Destaque</h2>
-      <!-- Carrossel de projetos -->
-      <div class="carousel-container">
-        <button class="carousel-btn prev" aria-label="Projeto anterior"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-track">
-          <!-- Projeto 1 -->
-          <article class="projeto-card">
-            <img src="src/images/decoder.png" alt="Decodificador de Mensagens" class="projeto-img">
-            <div class="projeto-info">
-              <h3>Decodificador de Mensagens</h3>
-              <p>Página interativa para criptografar e decodificar mensagens.</p>
-              <p class="projeto-stack"><strong>Stack:</strong> JavaScript, HTML, CSS, Criptografia</p>
-              <a href="https://challenge-decoder.vercel.app/" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          </article>
-          <!-- Projeto 2 -->
-          <article class="projeto-card">
-            <img src="src/images/midi.png" alt="Página web com Efeitos Sonoros" class="projeto-img">
-            <div class="projeto-info">
-              <h3>Projeto MIDI</h3>
-              <p>Instrumento virtual para treinar sons de percussão MIDI.</p>
-              <p class="projeto-stack"><strong>Stack:</strong> JavaScript, HTML, CSS</p><br>
-              <a href="https://leandrogoulart.github.io/PercussionProject/" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          </article>
-            <!-- Projeto 3 -->
-          <article class="projeto-card">
-            <img src="src/images/barbearia.png" alt="Página web da barbearia" class="projeto-img">
-            <div class="projeto-info">
-              <h3>Barbearia do Bigode</h3>
-              <p>Página web para cliente que solicitou site de barbearia.</p>
-              <p class="projeto-stack"><strong>Stack:</strong> JavaScript, HTML, CSS</p> <br>
-              <a href="https://leandrogoulart.github.io/ProjetoBarbearia_Site/" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          </article>
-            <!-- Projeto 4 -->
-          <article class="projeto-card">
-            <img src="src/images/vollmed.png" alt="Github com projeto VollMed" class="projeto-img">
-            <div class="projeto-info">
-              <h3>VollMed APP</h3>
-              <p>Sistema de marcação de consulta (backend).</p>
-              <p class="projeto-stack"><strong>Stack:</strong> Java, SpringBoot, Maven, Hibernate</p>
-              <a href="http://github.com/LeandroGoulart/VollMed_APP" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          </article>
-            <!-- Projeto 5 -->
-          <article class="projeto-card">
-            <img src="src/images/xmen.png" alt="Página de personagens do X-Men" class="projeto-img">
-            <div class="projeto-info">
-              <h3>Site X-Men</h3>
-              <p>Página web que simula tela de escolha de personagem.</p>
-              <p class="projeto-stack"><strong>Stack:</strong> JavaScript, HTML, CSS</p> <br>
-              <a href="https://leandrogoulart.github.io/site_X-men/" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          </article>
-           <!-- Projeto 6 -->
-          <article class="projeto-card">
-            <img src="src/images/literalura.png" alt="Backend do app LiterAlura" class="projeto-img">
-            <div class="projeto-info">
-              <h3>LiterAlura</h3>
-              <p>Backend de uma aplicação web que permite aos usuários navegar e filtrar uma coleção de livros.</p>
-              <p class="projeto-stack"><strong>Stack:</strong> Java, SpringBoot, MVC, Postgres</p>
-              <a href="https://github.com/LeandroGoulart/leandro-LiterAlura" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          </article>
-           <!-- Projeto 7 -->
-          <article class="projeto-card">
-            <img src="src/images/screenmatch.png" alt="Capa do app screenmatch" class="projeto-img">
-            <div class="projeto-info">
-              <h3>Screen Match</h3>
-              <p>Backend de app desenvolvido para fornecer informações sobre filmes e gerar citações de personagens.</p>
-              <p class="projeto-stack"><strong>Stack:</strong> JavaScript, HTML, CSS</p>
-              <a href="https://github.com/LeandroGoulart/Screen-Match" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          </article>
-              <!-- Projeto 8 -->
-            <article class="projeto-card">
-            <img src="src/images/one_piece.jpg" alt="Capa do site one piece" class="projeto-img">
-            <div class="projeto-info">
-              <h3>One Piece</h3>
-              <p>Página desenvolvida para o anime One Piece.</p> 
-              <p class="projeto-stack"><strong>Stack:</strong> JavaScript, HTML, CSS</p> <br>
-              <a href=" https://leandrogoulart.github.io/site_One_Piece/" target="_blank" class="btn">Ver projeto</a>
-            </div>
-          <!-- Adicionar mais -->
+    <!-- ============================================================
+         ABA 3 — PORTFÓLIO  (fase 4)
+         ============================================================ -->
+    <section class="panel" id="painel-portfolio" role="tabpanel"
+             aria-labelledby="tab-portfolio" tabindex="0" hidden>
+      <div class="container">
+        <div class="section">
+          <div class="placeholder">
+            <p class="placeholder__note">Fase 4</p>
+            <p class="placeholder__title">Portfólio</p>
+            <p>Carrossel de estudos de caso, com filtros por domínio e página de detalhe.</p>
+          </div>
         </div>
-        <button class="carousel-btn next" aria-label="Próximo projeto"><i class="fas fa-chevron-right"></i></button>
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato">
-  <h2>Entre em Contato</h2>
-  <form id="form-contato" action="https://formspree.io/f/mkgvqndz" method="POST">
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" name="nome" required>
+    <!-- ============================================================
+         ABA 4 — COMPORTAMENTAL  (fase 5)
+         ============================================================ -->
+    <section class="panel" id="painel-comportamental" role="tabpanel"
+             aria-labelledby="tab-comportamental" tabindex="0" hidden>
+      <div class="container">
+        <div class="section">
+          <div class="placeholder">
+            <p class="placeholder__note">Fase 5</p>
+            <p class="placeholder__title">Perfil comportamental</p>
+            <p>DISC, tipologia com suas limitações e traços ancorados em exemplos de trabalho.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <label for="email">E-mail</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="mensagem">Mensagem</label>
-    <textarea id="mensagem" name="message" rows="5" required></textarea>
-
-    <button type="submit" class="btn">Enviar</button>
-  </form>
-</section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 - Leandro Goulart</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Leandro Vieira Goulart · Belo Horizonte, MG</p>
+    </div>
   </footer>
 
-  <script src="src/js/main.js"></script>
+  <script src="js/tabs.js" defer></script>
 </body>
 </html>

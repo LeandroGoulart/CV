@@ -1,0 +1,268 @@
+/* =============================================================
+   Layout — cabeçalho, navegação por abas, painéis e rodapé
+   ============================================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+/* ---------- Cabeçalho ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--c-surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--c-accent);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.brand:hover { color: var(--c-accent); }
+
+.brand__mark {
+  width: 28px;
+  height: 28px;
+  flex: none;
+}
+
+/* ---------- Navegação por abas ---------- */
+.tabs {
+  display: flex;
+  gap: var(--sp-1);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex: none;
+  padding: var(--sp-2) var(--sp-4);
+  font-family: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-dim);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--t-fast), background var(--t-fast);
+}
+
+.tab:hover { color: var(--c-text-muted); }
+
+.tab[aria-selected='true'] {
+  color: var(--c-bg);
+  background: var(--c-accent);
+  font-weight: 600;
+}
+
+/* ---------- Painéis ---------- */
+.panel {
+  animation: panel-in var(--t-base) both;
+}
+
+.panel[hidden] { display: none; }
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - var(--header-h));
+  padding-block: var(--sp-16);
+  text-align: center;
+  background: var(--c-bg) url('../assets/img/bg.webp') center / cover no-repeat fixed;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 24, 0.82) 0%,
+    rgba(24, 24, 24, 0.94) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  max-width: 62ch;
+}
+
+.hero__avatar {
+  width: 160px;
+  height: 160px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+  border-radius: 50%;
+  border: 2px solid var(--c-accent);
+  object-fit: cover;
+  box-shadow: var(--shadow-accent);
+}
+
+.hero__name {
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--sp-3);
+}
+
+.hero__role {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: var(--sp-4);
+  max-width: 46ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+.hero__pitch {
+  font-size: var(--fs-md);
+  color: var(--c-text-muted);
+  margin-bottom: var(--sp-8);
+}
+
+/* ---------- Links de contato ---------- */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  text-decoration: none;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-pill);
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+
+.contact-link:hover {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+  background: var(--c-accent-soft);
+}
+
+/* ---------- Seções de conteúdo ---------- */
+.section {
+  padding-block: var(--sp-16);
+  border-top: 1px solid var(--c-border);
+}
+
+.section__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: var(--sp-3);
+}
+
+.section__title {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-6);
+}
+
+.prose {
+  max-width: 68ch;
+  color: var(--c-text-muted);
+  font-size: var(--fs-md);
+}
+
+.prose p + p { margin-top: var(--sp-4); }
+
+.prose strong { color: var(--c-text); font-weight: 600; }
+
+/* ---------- Placeholder das abas ainda vazias ---------- */
+.placeholder {
+  display: grid;
+  place-items: center;
+  gap: var(--sp-3);
+  min-height: 50vh;
+  padding: var(--sp-12) var(--sp-6);
+  text-align: center;
+  color: var(--c-text-dim);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+}
+
+.placeholder__title {
+  font-size: var(--fs-lg);
+  color: var(--c-text-muted);
+}
+
+.placeholder__note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+/* ---------- Rodapé ---------- */
+.site-footer {
+  padding-block: var(--sp-8);
+  border-top: 1px solid var(--c-border);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--c-text-dim);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-3);
+    padding-block: var(--sp-3);
+  }
+  .tabs { justify-content: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .container { padding-inline: var(--sp-4); }
+  .hero { background-attachment: scroll; }
+  .hero__avatar { width: 112px; height: 112px; }
+  .hero__name { font-size: var(--fs-2xl); }
+  .section { padding-block: var(--sp-12); }
+}

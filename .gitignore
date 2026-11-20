@@ -1,0 +1,20 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependências e build (se houver ferramenta no futuro)
+node_modules/
+dist/
+.cache/
+
+# Segredos — regra por extensão, não por nome de arquivo
+*.key
+*.pem
+.env
+.env.*
