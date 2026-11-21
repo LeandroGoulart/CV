@@ -35,9 +35,11 @@ quem já se interessou do que como cartão de visita.
 ├── css/
 │   ├── tokens.css        Design tokens — única fonte de valores
 │   ├── base.css          Reset, tipografia e acessibilidade
-│   └── layout.css        Cabeçalho, abas, painéis, hero e rodapé
+│   ├── layout.css        Cabeçalho, abas, painéis, hero e rodapé
+│   └── components.css    Linha do tempo, cards de experiência e chips
 └── js/
-    └── tabs.js           Navegação por abas (padrão ARIA + rota por hash)
+    ├── tabs.js           Navegação por abas (padrão ARIA + rota por hash)
+    └── timeline.js       Filtro da linha do tempo por categoria
 ```
 
 ### Convenções
@@ -50,6 +52,15 @@ quem já se interessou do que como cartão de visita.
 - Toda aba é endereçável por URL: `#identidade`, `#competencias`,
   `#portfolio`, `#comportamental`.
 
+### Linha do tempo
+
+Os marcos ficam em ordem **crescente** — a trajetória se lê como percurso.
+As experiências detalhadas ficam em ordem **decrescente**, como manda a
+convenção de currículo. A diferença é intencional.
+
+As contagens dos filtros são calculadas a partir do próprio HTML em tempo de
+execução. Não existe número escrito à mão que possa divergir do conteúdo.
+
 ### Acessibilidade
 
 - Padrão ARIA Tabs completo, com navegação por setas, Home e End
@@ -57,6 +68,7 @@ quem já se interessou do que como cartão de visita.
 - Foco visível apenas para navegação por teclado (`:focus-visible`)
 - `prefers-reduced-motion` respeitado
 - Imagens com texto alternativo descritivo
+- Filtros como `aria-pressed`, com o total de itens visíveis anunciado via `aria-label`
 
 ## Identidade visual
 
@@ -74,7 +86,7 @@ A paleta vem da versão anterior do site e foi preservada, apenas formalizada:
 | Fase | Entrega | Estado |
 |---|---|---|
 | 1 | Estrutura de pastas, tokens, navegação por abas e aba de Identidade | **Concluída** |
-| 2 | Linha do tempo interativa e experiências na aba 1 | A fazer |
+| 2 | Linha do tempo interativa e experiências na aba 1 | **Concluída** |
 | 3 | Aba de Competências | A fazer |
 | 4 | Aba de Portfólio, com carrossel e filtros | A fazer |
 | 5 | Aba Comportamental | A fazer |
@@ -85,9 +97,47 @@ A paleta vem da versão anterior do site e foi preservada, apenas formalizada:
 
 | Branch | Papel |
 |---|---|
-| `main` | Versão antiga, desatualizada. Será substituída na fase 7 |
-| `carrossel` | O que o GitHub Pages publica hoje. Mantida até a virada |
-| `career-os` | Desenvolvimento |
+| `main` | Versão publicada e estável |
+| `career-os` | Desenvolvimento ativo |
+| `feature/<nome>` | Nova funcionalidade ou aba |
+| `fix/<nome>` | Correção de bug |
+| `docs/<nome>` | Documentação |
+| `refactor/<nome>` | Organização sem mudança de comportamento |
+
+Branches temporárias devem ser curtas, em inglês e com hífen, por exemplo
+`feature/competency-tab`, `fix/mobile-navigation` ou `docs/git-conventions`.
+
+## Commits
+
+Os commits seguem o padrão **Conventional Commits**, escrito em inglês:
+
+```text
+<tipo>: <descrição curta no imperativo>
+```
+
+| Tipo | Uso |
+|---|---|
+| `feat` | Nova funcionalidade |
+| `fix` | Correção de bug |
+| `docs` | Documentação |
+| `style` | Formatação ou ajustes visuais sem alterar lógica |
+| `refactor` | Reestruturação sem mudança de comportamento |
+| `perf` | Melhoria de desempenho |
+| `test` | Testes |
+| `build` | Dependências, scripts ou processo de build |
+| `ci` | Integração contínua |
+| `chore` | Manutenção e tarefas auxiliares |
+| `revert` | Reversão de um commit anterior |
+
+Exemplos:
+
+```text
+feat: add competency filters
+fix: preserve hash after page reload
+docs: document commit and branch conventions
+refactor: centralize tab navigation
+chore: remove obsolete assets
+```
 
 ## Rodando localmente
 

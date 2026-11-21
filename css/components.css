@@ -1,0 +1,246 @@
+/* =============================================================
+   Componentes — linha do tempo e experiências
+   ============================================================= */
+
+/* ---------- Filtros ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-8);
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  font-family: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-dim);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+}
+
+.filter:hover {
+  color: var(--c-text-muted);
+  border-color: var(--c-accent);
+}
+
+.filter[aria-pressed='true'] {
+  color: var(--c-bg);
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  font-weight: 600;
+}
+
+.filter__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  opacity: 0.7;
+}
+
+/* ---------- Linha do tempo ---------- */
+.timeline {
+  position: relative;
+  padding-left: var(--sp-8);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: var(--sp-2);
+  bottom: var(--sp-2);
+  left: 7px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--c-border) 8%,
+    var(--c-border) 92%,
+    transparent
+  );
+}
+
+.tl-item {
+  position: relative;
+  padding-bottom: var(--sp-6);
+}
+
+.tl-item[hidden] { display: none; }
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: calc(var(--sp-8) * -1 + 2px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--c-bg);
+  border: 2px solid var(--c-border);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.tl-item--trabalho::before {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 4px var(--c-accent-soft);
+}
+
+.tl-item--formacao::before  { border-color: #6fb3ff; }
+.tl-item--certificacao::before { border-color: #ffd166; }
+
+.tl-item__year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--c-text-dim);
+  margin-bottom: var(--sp-1);
+}
+
+.tl-item__title {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--c-text);
+  margin-bottom: var(--sp-1);
+}
+
+.tl-item__org {
+  color: var(--c-accent);
+  font-weight: 500;
+}
+
+.tl-item--formacao .tl-item__org    { color: #6fb3ff; }
+.tl-item--certificacao .tl-item__org { color: #ffd166; }
+
+.tl-item__desc {
+  font-size: var(--fs-sm);
+  color: var(--c-text-dim);
+  max-width: 64ch;
+}
+
+/* ---------- Experiências ---------- */
+.xp-list {
+  display: grid;
+  gap: var(--sp-6);
+}
+
+.xp {
+  padding: var(--sp-6);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--t-base), box-shadow var(--t-base);
+}
+
+.xp:hover {
+  border-color: var(--c-accent);
+  box-shadow: var(--shadow-accent);
+}
+
+.xp--current { border-left: 3px solid var(--c-accent); }
+
+.xp__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-4);
+  margin-bottom: var(--sp-2);
+}
+
+.xp__role {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.xp__period {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.5px;
+  color: var(--c-text-dim);
+  white-space: nowrap;
+}
+
+.xp__org {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--c-accent);
+  font-weight: 500;
+  margin-bottom: var(--sp-4);
+}
+
+.xp__org span {
+  color: var(--c-text-dim);
+  font-weight: 400;
+}
+
+.xp__deliveries {
+  display: grid;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+.xp__deliveries li {
+  position: relative;
+  padding-left: var(--sp-6);
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+}
+
+.xp__deliveries li::before {
+  content: '';
+  position: absolute;
+  top: 0.6em;
+  left: var(--sp-2);
+  width: 6px;
+  height: 2px;
+  background: var(--c-accent);
+}
+
+.xp__clients {
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+  margin-bottom: var(--sp-4);
+}
+
+/* ---------- Chips de tecnologia ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.chip {
+  padding: var(--sp-1) var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.3px;
+  color: var(--c-text-muted);
+  background: var(--c-surface-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Nota de rodapé de seção ---------- */
+.section__note {
+  margin-top: var(--sp-6);
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+  max-width: 64ch;
+}
+
+@media (max-width: 600px) {
+  .timeline { padding-left: var(--sp-6); }
+  .tl-item::before { left: calc(var(--sp-6) * -1 + 2px); }
+  .xp { padding: var(--sp-4); }
+  .xp__head { flex-direction: column; gap: var(--sp-1); }
+}

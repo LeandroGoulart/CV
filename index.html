@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
@@ -133,6 +134,276 @@
         </div>
       </div>
 
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Trajetória</p>
+          <h2 class="section__title">Linha do tempo</h2>
+
+          <div class="filters" role="group" aria-label="Filtrar marcos da trajetória" data-timeline-filters>
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">
+              Tudo <span class="filter__count" data-count></span>
+            </button>
+            <button class="filter" type="button" data-filter="trabalho" aria-pressed="false">
+              Trabalho <span class="filter__count" data-count></span>
+            </button>
+            <button class="filter" type="button" data-filter="formacao" aria-pressed="false">
+              Formação <span class="filter__count" data-count></span>
+            </button>
+            <button class="filter" type="button" data-filter="certificacao" aria-pressed="false">
+              Certificação <span class="filter__count" data-count></span>
+            </button>
+          </div>
+
+          <ol class="timeline" data-timeline>
+          <li class="tl-item tl-item--trabalho" data-type="trabalho">
+            <span class="tl-item__year">2017</span>
+            <p class="tl-item__title"><span class="tl-item__org">Deskdoctor Informática</span></p>
+            <p class="tl-item__desc">Suporte técnico autônomo: montagem, diagnóstico e manutenção de computadores.</p>
+          </li>
+          <li class="tl-item tl-item--trabalho" data-type="trabalho">
+            <span class="tl-item__year">2018</span>
+            <p class="tl-item__title"><span class="tl-item__org">CBTU</span></p>
+            <p class="tl-item__desc">Ingresso por concurso público em manutenção metroferroviária.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2021</span>
+            <p class="tl-item__title"><span class="tl-item__org">Faculdade Católica Paulista</span></p>
+            <p class="tl-item__desc">Início do tecnólogo em Análise e Desenvolvimento de Sistemas, cursado em paralelo à operação.</p>
+          </li>
+          <li class="tl-item tl-item--trabalho" data-type="trabalho">
+            <span class="tl-item__year">2023</span>
+            <p class="tl-item__title"><span class="tl-item__org">Bamaq Consórcio</span></p>
+            <p class="tl-item__desc">Estágio em inovação e operações ágeis — primeiro contato com tecnologia pela ótica de produto.</p>
+          </li>
+          <li class="tl-item tl-item--trabalho" data-type="trabalho">
+            <span class="tl-item__year">2023</span>
+            <p class="tl-item__title"><span class="tl-item__org">CBTU</span></p>
+            <p class="tl-item__desc">Promoção a Pleno em manutenção de via permanente, dentro da trilha operacional.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2023</span>
+            <p class="tl-item__title"><span class="tl-item__org">Faculdade Católica Paulista</span></p>
+            <p class="tl-item__desc">Conclusão do tecnólogo em ADS, com média 83,1.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2023</span>
+            <p class="tl-item__title"><span class="tl-item__org">University of Chicago</span></p>
+            <p class="tl-item__desc">Extensão em empreendedorismo, fintechs e moeda digital, via Bolsa Santander.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2023</span>
+            <p class="tl-item__title"><span class="tl-item__org">Oracle Next Education / Alura</span></p>
+            <p class="tl-item__desc">Início da formação back-end em Java e Spring Boot.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2024</span>
+            <p class="tl-item__title"><span class="tl-item__org">Faculdade Iguaçu</span></p>
+            <p class="tl-item__desc">Pós-graduação em Defesa Cibernética — 700 h/a, com resposta a incidentes e gestão de riscos.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2024</span>
+            <p class="tl-item__title"><span class="tl-item__org">Faculdade Iguaçu</span></p>
+            <p class="tl-item__desc">Pós-graduação em Cybersecurity: Detecção de Ameaças — 720 h/a, com perícia digital e investigação.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2024</span>
+            <p class="tl-item__title"><span class="tl-item__org">Softex, SENAI e RNP</span></p>
+            <p class="tl-item__desc">Programa Hackers do Bem — nivelamento e fundamentos de cibersegurança.</p>
+          </li>
+          <li class="tl-item tl-item--certificacao" data-type="certificacao">
+            <span class="tl-item__year">2024</span>
+            <p class="tl-item__title"><span class="tl-item__org">Cisco</span></p>
+            <p class="tl-item__desc">Introduction to Cybersecurity e Endpoint Security.</p>
+          </li>
+          <li class="tl-item tl-item--trabalho" data-type="trabalho">
+            <span class="tl-item__year">2025</span>
+            <p class="tl-item__title"><span class="tl-item__org">Metrô BH</span></p>
+            <p class="tl-item__desc">Entrada em TI corporativa: suporte N1/N2 e gestão de identidades e acessos.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2025</span>
+            <p class="tl-item__title"><span class="tl-item__org">Escola da Nuvem</span></p>
+            <p class="tl-item__desc">Início do AWS re/Start — infraestrutura, redes e segurança em nuvem.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2025</span>
+            <p class="tl-item__title"><span class="tl-item__org">Faculdade Iguaçu</span></p>
+            <p class="tl-item__desc">Pós-graduação em Governança e Gestão da Tecnologia da Informação — 700 h/a.</p>
+          </li>
+          <li class="tl-item tl-item--certificacao" data-type="certificacao">
+            <span class="tl-item__year">2026</span>
+            <p class="tl-item__title"><span class="tl-item__org">AWS</span></p>
+            <p class="tl-item__desc">AWS Certified Cloud Practitioner, válida até 2029.</p>
+          </li>
+          <li class="tl-item tl-item--formacao" data-type="formacao">
+            <span class="tl-item__year">2026</span>
+            <p class="tl-item__title"><span class="tl-item__org">Escola da Nuvem</span></p>
+            <p class="tl-item__desc">Conclusão do AWS re/Start, 270 horas.</p>
+          </li>
+          <li class="tl-item tl-item--trabalho" data-type="trabalho">
+            <span class="tl-item__year">2026</span>
+            <p class="tl-item__title"><span class="tl-item__org">INTS</span></p>
+            <p class="tl-item__desc">Analista de TI Pleno: implantação, sustentação e governança de sistemas de saúde.</p>
+          </li>
+          <li class="tl-item tl-item--trabalho" data-type="trabalho">
+            <span class="tl-item__year">2026</span>
+            <p class="tl-item__title"><span class="tl-item__org">Goulart InfoSolutions</span></p>
+            <p class="tl-item__desc">Suporte de campo e escalonamento técnico em ambientes corporativos.</p>
+          </li>
+          </ol>
+
+          <p class="section__note">
+            Filtre por <strong>Formação</strong> para ver o que aconteceu em paralelo ao
+            trabalho: a graduação e as três pós-graduações foram cursadas enquanto a
+            operação seguia. A transição para TI não começou em 2025 — foi quando ficou visível.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Experiência</p>
+          <h2 class="section__title">Onde atuei e o que entreguei</h2>
+
+          <div class="xp-list">
+        <article class="xp xp--current">
+          <header class="xp__head">
+            <h3 class="xp__role">Analista de Suporte de Campo / Field Service</h3>
+            <p class="xp__period">out/2026 — atual</p>
+          </header>
+          <p class="xp__org">Goulart InfoSolutions <span>· Autônomo · PJ · Minas Gerais</span></p>
+          <ul class="xp__deliveries">
+            <li>Acionado como técnico de escalonamento em chamados complexos que as equipes técnicas dos próprios clientes não conseguiram resolver.</li>
+            <li>Configuração e troubleshooting de ambientes Windows e Linux.</li>
+            <li>Manutenção de rotinas de backup e continuidade.</li>
+            <li>Montagem, upgrade e manutenção de microcomputadores e estações de trabalho.</li>
+            <li>Gestão do próprio negócio: atendimento direto, diagnóstico e controle operacional.</li>
+          </ul>
+          <p class="xp__clients">Clientes atendidos: Profarma, Positivo, Stefanini, Global Links e Camil.</p>
+          <div class="chips">
+            <span class="chip">Windows</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Backup</span>
+            <span class="chip">Hardware</span>
+            <span class="chip">Troubleshooting</span>
+            <span class="chip">Atendimento N3</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Analista de TI Pleno</h3>
+            <p class="xp__period">jul/2026 — set/2026</p>
+          </header>
+          <p class="xp__org">INTS — Instituto Nacional de Tecnologia e Saúde <span>· Tempo integral · Belo Horizonte e Região</span></p>
+          <ul class="xp__deliveries">
+            <li>Implantação e sustentação de sistemas corporativos de saúde em contratos multimunicipais.</li>
+            <li>Revisão de Termos de Referência, acompanhamento de Ordens de Serviço e verificação de critérios de aceite e SLA.</li>
+            <li>Camada de escalonamento N3 entre fornecedores de tecnologia e operação assistencial.</li>
+            <li>Documentação estruturada de evidências: relatório executivo, de visita técnica e consolidado para gestão.</li>
+            <li>Continuidade operacional mantida durante reestruturação da coordenação de TI local.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Governança de TI</span>
+            <span class="chip">Gestão de fornecedores</span>
+            <span class="chip">SLA</span>
+            <span class="chip">HIS</span>
+            <span class="chip">PEP</span>
+            <span class="chip">LIS</span>
+            <span class="chip">RIS/PACS</span>
+            <span class="chip">LGPD</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Assistente de Suporte Técnico Júnior · IAM · Suporte N1/N2</h3>
+            <p class="xp__period">jun/2025 — mai/2026</p>
+          </header>
+          <p class="xp__org">Metrô BH <span>· Tempo integral · Belo Horizonte e Região</span></p>
+          <ul class="xp__deliveries">
+            <li>Gestão de identidades e acessos em Active Directory, Microsoft 365 e Google Workspace: ciclo de vida de contas, permissões e licenciamento.</li>
+            <li>Tratamento inicial de incidentes de autenticação e acesso em ambiente operacional crítico.</li>
+            <li>Suporte N1/N2 com diagnóstico de incidentes de hardware, software e rede.</li>
+            <li>Gestão de chamados via GLPI em alta volumetria, com redução aproximada de 10% no SLA médio.</li>
+            <li>Gestão de ativos de TI e controle de inventário.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Active Directory</span>
+            <span class="chip">Microsoft 365</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">IAM</span>
+            <span class="chip">GLPI</span>
+            <span class="chip">Windows</span>
+            <span class="chip">Redes</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Técnico de Manutenção Metroferroviária</h3>
+            <p class="xp__period">mar/2018 — mai/2025</p>
+          </header>
+          <p class="xp__org">CBTU — Companhia Brasileira de Trens Urbanos <span>· Tempo integral · Belo Horizonte, MG</span></p>
+          <ul class="xp__deliveries">
+            <li>Manutenção preditiva, preventiva e corretiva em rede aérea, via permanente e infraestrutura metroferroviária.</li>
+            <li>Intervenções dentro de janelas operacionais rígidas, entre paradas do sistema, com diagnóstico e decisão sob pressão de tempo.</li>
+            <li>Execução conforme ordens de manutenção, sob critérios de prioridade, segurança e eficiência.</li>
+            <li>Cumprimento de NR10, NR35, APR e DDS em equipe multidisciplinar.</li>
+            <li>Ingresso por concurso público em 2018; promovido a nível Pleno em via permanente em 2023.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Operação crítica</span>
+            <span class="chip">NR10</span>
+            <span class="chip">NR35</span>
+            <span class="chip">APR</span>
+            <span class="chip">DDS</span>
+            <span class="chip">Gestão de janela</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Estagiário de Inovação e Operações Ágeis</h3>
+            <p class="xp__period">jan/2023 — abr/2023</p>
+          </header>
+          <p class="xp__org">Bamaq Consórcio <span>· Meio período · Contagem, MG</span></p>
+          <ul class="xp__deliveries">
+            <li>Apoio a operações ágeis, organização de backlog e acompanhamento de demandas com Scrum Master e Product Owner.</li>
+            <li>Consultas em MySQL para apoio à resolução de problemas e à tomada de decisão.</li>
+            <li>Acompanhamento de experiência do cliente e feedbacks em Google Play e Apple Store.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Scrum</span>
+            <span class="chip">Kanban</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">Backlog</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Técnico de Suporte e Manutenção</h3>
+            <p class="xp__period">nov/2017 — fev/2019</p>
+          </header>
+          <p class="xp__org">Deskdoctor Informática <span>· Autônomo · Belo Horizonte, MG</span></p>
+          <ul class="xp__deliveries">
+            <li>Montagem, upgrade, substituição de componentes e reparo de hardware.</li>
+            <li>Instalação e configuração de sistemas operacionais.</li>
+            <li>Diagnóstico e resolução de problemas em desktops e infraestrutura básica para clientes diversos.</li>
+            <li>Organização operacional dos atendimentos e relacionamento direto com clientes.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Hardware</span>
+            <span class="chip">Windows</span>
+            <span class="chip">Redes</span>
+            <span class="chip">Atendimento ao cliente</span>
+          </div>
+        </article>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- ============================================================
@@ -192,5 +463,6 @@
   </footer>
 
   <script src="js/tabs.js" defer></script>
+  <script src="js/timeline.js" defer></script>
 </body>
 </html>
