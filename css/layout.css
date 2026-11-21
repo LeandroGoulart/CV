@@ -40,10 +40,16 @@
 
 .brand:hover { color: var(--c-accent); }
 
+/* Marca da Goulart InfoSolutions.
+   Aplicada como máscara para herdar a cor do token — se a paleta mudar,
+   o logotipo acompanha sem precisar reexportar arquivo. */
 .brand__mark {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 30px;
   flex: none;
+  background-color: currentColor;
+  -webkit-mask: url('../assets/icons/logo-gi.svg') center / contain no-repeat;
+  mask: url('../assets/icons/logo-gi.svg') center / contain no-repeat;
 }
 
 /* ---------- Navegação por abas ---------- */

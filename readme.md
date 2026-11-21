@@ -31,7 +31,7 @@ quem já se interessou do que como cartão de visita.
 ├── index.html            Documento único; cada aba é um <section role="tabpanel">
 ├── assets/
 │   ├── img/              Imagens do site (webp real, não renomeado)
-│   └── icons/            Favicon em SVG
+│   └── icons/            Marca e favicon em SVG
 ├── css/
 │   ├── tokens.css        Design tokens — única fonte de valores
 │   ├── base.css          Reset, tipografia e acessibilidade
@@ -39,6 +39,7 @@ quem já se interessou do que como cartão de visita.
 │   └── components.css    Espinha de peixe, cards de experiência e chips
 └── js/
     ├── tabs.js           Navegação por abas (padrão ARIA + rota por hash)
+    ├── skills.js          Filtro de competências por nível de maturidade
     └── timeline.js       Filtro, alternância e rolagem da linha do tempo
 ```
 
@@ -77,6 +78,43 @@ seletor, e um filtro poderia jogar todos os cartões para o mesmo lado.
 As contagens dos filtros são calculadas a partir do próprio HTML em tempo de
 execução. Não existe número escrito à mão que possa divergir do conteúdo.
 
+### Competências: dimensão, não lista de tecnologias
+
+Oito dimensões colapsáveis, fechadas por padrão. O estado inicial é uma tabela
+de conteúdo de oito linhas, não um muro de cinquenta itens — cada cabeçalho traz
+o nome, um descritivo de uma linha e a contagem, então a versão fechada já é
+informativa.
+
+Uma versão anterior usava um selo de 144&nbsp;px por competência. Ficou poluída:
+densidade não é rigor. O nível virou um ponto de 9&nbsp;px com legenda no topo.
+
+| Nível | Marcador | Significado |
+|---|---|---|
+| **Profissional** | ponto preenchido, ciano | Ambiente real, com responsabilidade sobre o resultado |
+| **Prática** | ponto vazado, azul | Projeto ou laboratório executado |
+| **Fundamentos** | ponto vazado menor, cinza | Conhecimento teórico, sem aplicação demonstrável |
+
+O marcador distingue por **cor e preenchimento**, e Fundamentos também por
+**tamanho** — cor sozinha não separaria dele de Prática, e violaria a WCAG 1.4.1.
+Cada item ainda carrega o nível em texto para leitor de tela.
+
+A evidência deixou de ser um expansor por competência e virou **uma linha por
+dimensão**: onde foi exercida, com link quando há repositório. Oito linhas em vez
+de cinquenta expansores.
+
+### Filtro por stack
+
+Um eixo só: Segurança, IAM, Cloud, Infraestrutura, Governança, Desenvolvimento.
+Uma competência pertence a mais de uma stack — Active Directory é IAM e
+Infraestrutura; Python é Desenvolvimento e Segurança.
+
+Ao filtrar, as dimensões com itens relevantes **abrem sozinhas** e as vazias são
+ocultadas. O recrutador não abre oito blocos para achar o que interessa.
+Limpar o filtro devolve tudo ao estado fechado.
+
+**Ressalva mantida:** o nível diz *onde* a competência foi exercida, não *quão
+fundo*.
+
 ### Acessibilidade
 
 - Padrão ARIA Tabs completo, com navegação por setas, Home e End
@@ -101,6 +139,26 @@ própria arte, não escolhidos por aproximação.
 | `--c-alert` | `#ff4d5e` | Neon secundário: atenção |
 | `--c-info` | `#8ab4ff` | Apoio: formação |
 | `--c-text` | `#eaf4ff` | Texto |
+
+### Marca
+
+O símbolo é o da **Goulart InfoSolutions** — hexágono com monograma GI. O
+arquivo original era raster; foi vetorizado a partir da arte fornecida e
+normalizado para um `viewBox` de 869×1000.
+
+`assets/icons/logo-gi.svg` usa `fill="currentColor"` e é aplicado no cabeçalho
+como `mask-image` sobre `background-color: currentColor`. Assim o símbolo
+herda o token de cor: se a paleta mudar, o logotipo acompanha sem reexportar
+arquivo.
+
+O azul original da marca é `#00a0ec`. No site ele é renderizado no ciano do
+sistema (`--c-accent` `#35c8e8`) para não conviverem dois azuis próximos na
+mesma tela — a diferença entre os dois seria lida como erro, não como
+intenção. Para materiais impressos ou fora do site, vale usar o `#00a0ec`.
+
+> Esta vetorização é uma reconstrução a partir de imagem. Se existir o arquivo
+> vetorial original (SVG, AI ou PDF), ele deve substituir este — traçado
+> derivado de raster nunca é idêntico ao original.
 
 ### Semântica da cor
 
@@ -161,7 +219,7 @@ detecta o formato pelo conteúdo, mas o peso continua o do PNG.
 |---|---|---|
 | 1 | Estrutura de pastas, tokens, navegação por abas e aba de Identidade | **Concluída** |
 | 2 | Linha do tempo interativa e experiências na aba 1 | **Concluída** |
-| 3 | Aba de Competências | A fazer |
+| 3 | Aba de Competências | **Concluída** |
 | 4 | Aba de Portfólio, com carrossel e filtros | A fazer |
 | 5 | Aba Comportamental | A fazer |
 | 6 | Otimização de assets, Open Graph e troca dos PDFs | A fazer |

@@ -362,3 +362,213 @@
   .xp { padding: var(--sp-4); }
   .xp__head { flex-direction: column; gap: var(--sp-1); }
 }
+
+/* =============================================================
+   Competências — dimensões colapsáveis
+   ============================================================= */
+
+/* ---------- Legenda de nível ---------- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4) var(--sp-6);
+  margin-bottom: var(--sp-6);
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+}
+
+.legend__item { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.legend__item em { font-style: normal; color: var(--c-text-dim); font-size: var(--fs-xs); }
+
+/* Nível como ponto: cor + preenchimento, nunca cor sozinha */
+.dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
+
+.dot--pro     { color: var(--c-accent); background: currentColor; }
+.dot--pratica { color: var(--c-info);   background: transparent; }
+/* Menor além de mais apagado: cor sozinha não distingue de Prática */
+.dot--fund    { color: var(--c-text-dim); background: transparent; width: 6px; height: 6px; }
+
+/* ---------- Filtros por stack ---------- */
+.filters--stack { margin-bottom: var(--sp-6); }
+
+/* ---------- Dimensão ---------- */
+.dims { display: grid; gap: var(--sp-2); }
+
+.dim {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--t-fast);
+}
+
+.dim[hidden] { display: none; }
+.dim[open]   { border-color: var(--c-accent); }
+.dim:hover   { border-color: var(--c-accent); }
+
+.dim__head {
+  display: grid;
+  grid-template-columns: 15rem 1fr auto;
+  align-items: baseline;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-6);
+  cursor: pointer;
+  list-style: none;
+}
+
+.dim__head::-webkit-details-marker { display: none; }
+
+.dim__name {
+  position: relative;
+  padding-left: var(--sp-6);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+/* Seta de abrir, à esquerda do nome */
+.dim__name::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 0.42em;
+  height: 0.42em;
+  border-right: 2px solid var(--c-accent);
+  border-bottom: 2px solid var(--c-accent);
+  transform: rotate(-45deg);
+  transition: transform var(--t-fast);
+}
+
+.dim[open] .dim__name::before { transform: rotate(45deg); }
+
+.dim__desc {
+  font-size: var(--fs-sm);
+  color: var(--c-text-dim);
+}
+
+.dim__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+  white-space: nowrap;
+}
+
+/* ---------- Lista de competências ---------- */
+.dim__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: var(--sp-1) var(--sp-8);
+  padding: 0 var(--sp-6) var(--sp-4) calc(var(--sp-6) + var(--sp-6));
+}
+
+.cmp {
+  position: relative;
+  padding: var(--sp-1) 0 var(--sp-1) var(--sp-6);
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+}
+
+.cmp[hidden] { display: none; }
+
+.cmp::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
+
+.cmp--pro::before     { color: var(--c-accent); background: currentColor; }
+.cmp--pratica::before { color: var(--c-info); }
+.cmp--fund::before    { color: var(--c-text-dim); width: 6px; height: 6px; top: 0.85em; left: 1.5px; }
+
+/* ---------- Evidência da dimensão ---------- */
+.dim__ev {
+  padding: var(--sp-3) var(--sp-6) var(--sp-4) calc(var(--sp-6) + var(--sp-6));
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+}
+
+.dim__ev span {
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  margin-right: var(--sp-2);
+}
+
+.dim__ev a { color: var(--c-accent); text-decoration: none; }
+.dim__ev a:hover { text-decoration: underline; }
+
+/* ---------- Aviso de resultado vazio ---------- */
+.empty-note {
+  padding: var(--sp-6);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--c-text-dim);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-md);
+}
+
+.empty-note[hidden] { display: none; }
+
+/* ---------- Certificações ---------- */
+.certs { display: grid; gap: var(--sp-2); }
+
+.cert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-4);
+  padding: var(--sp-4) var(--sp-6);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--t-fast);
+}
+
+.cert:hover { border-color: var(--c-accent); }
+
+.cert__name { font-size: var(--fs-sm); font-weight: 600; color: var(--c-text); }
+.cert__issuer { font-size: var(--fs-xs); color: var(--c-text-dim); }
+
+.cert__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+}
+
+.cert__link {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-decoration: none;
+  color: var(--c-accent);
+  white-space: nowrap;
+}
+
+.cert__link:hover { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .dim__head { grid-template-columns: 1fr auto; }
+  .dim__desc { grid-column: 1 / -1; padding-left: var(--sp-6); }
+}
+
+@media (max-width: 600px) {
+  .dim__head { padding: var(--sp-3) var(--sp-4); }
+  .dim__list { grid-template-columns: 1fr; padding-inline: var(--sp-4) var(--sp-4); padding-left: var(--sp-8); }
+  .dim__ev { padding-inline: var(--sp-4); padding-left: var(--sp-8); }
+  .cert { padding: var(--sp-4); }
+}

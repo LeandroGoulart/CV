@@ -19,6 +19,7 @@
   <meta property="og:description" content="Currículo, competências e portfólio técnico. Da operação crítica à segurança defensiva.">
 
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
   <meta name="theme-color" content="#070e18">
 
   <link rel="stylesheet" href="css/tokens.css">
@@ -34,10 +35,7 @@
     <div class="container site-header__inner">
 
       <a class="brand" href="#identidade">
-        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <rect width="64" height="64" rx="14" fill="#0f1a28"/>
-          <path d="M41.5 26.5a11 11 0 1 0 1.3 10.2H33v-6h16v4.6a17 17 0 1 1-2.8-12.4z" fill="#35c8e8"/>
-        </svg>
+        <span class="brand__mark" aria-hidden="true"></span>
         Leandro Goulart
       </a>
 
@@ -480,11 +478,285 @@
              aria-labelledby="tab-competencias" tabindex="0" hidden>
       <div class="container">
         <div class="section">
-          <div class="placeholder">
-            <p class="placeholder__note">Fase 3</p>
-            <p class="placeholder__title">Competências técnicas</p>
-            <p>Domínios, nível de maturidade por competência e certificações com evidência.</p>
+          <p class="section__label">Competências</p>
+          <h2 class="section__title">Organizadas por dimensão, não por lista de tecnologias</h2>
+
+          <p class="legend">
+            <span class="legend__item"><i class="dot dot--pro"></i> Profissional <em>ambiente real</em></span>
+            <span class="legend__item"><i class="dot dot--pratica"></i> Prática <em>projeto ou laboratório</em></span>
+            <span class="legend__item"><i class="dot dot--fund"></i> Fundamentos <em>conhecimento teórico</em></span>
+          </p>
+
+          <div class="filters filters--stack" role="group" aria-label="Filtrar por stack" data-stack-filters>
+            <button class="filter" type="button" data-stack="all" aria-pressed="true">Todas</button>
+            <button class="filter" type="button" data-stack="seg" aria-pressed="false">Segurança</button>
+            <button class="filter" type="button" data-stack="iam" aria-pressed="false">IAM</button>
+            <button class="filter" type="button" data-stack="cloud" aria-pressed="false">Cloud</button>
+            <button class="filter" type="button" data-stack="infra" aria-pressed="false">Infraestrutura</button>
+            <button class="filter" type="button" data-stack="gov" aria-pressed="false">Governança</button>
+            <button class="filter" type="button" data-stack="dev" aria-pressed="false">Desenvolvimento</button>
           </div>
+
+          <div class="dims" data-dims>
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Sistemas</span>
+            <span class="dim__desc">Implantação, sustentação e integração de sistemas corporativos</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Implantação de sistemas corporativos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>Sustentação e continuidade operacional</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Análise de problemas e dependências</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra dev"><span class="sr-only">Profissional: </span>Integração entre sistemas</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Acompanhamento de fornecedores</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Entendimento de fluxos operacionais e assistenciais</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> Metrô BH · INTS</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Infraestrutura</span>
+            <span class="dim__desc">Suporte, ambientes Microsoft, redes e continuidade</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Suporte N1, N2 e escalonamento N3</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Ambientes Windows e Windows Server</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Linux</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Redes TCP/IP, DNS e VPN</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>Rotinas de backup e continuidade</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>GLPI, gestão de chamados e SLA</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Hardware e estações de trabalho</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> Goulart InfoSolutions · Metrô BH</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">IAM</span>
+            <span class="dim__desc">Identidades, acessos e controle de permissões</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam seg"><span class="sr-only">Profissional: </span>Gestão de identidades e acessos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam infra"><span class="sr-only">Profissional: </span>Active Directory</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam infra"><span class="sr-only">Profissional: </span>Microsoft 365 e Google Workspace</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam"><span class="sr-only">Profissional: </span>Ciclo de vida de contas e permissões</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam seg gov"><span class="sr-only">Profissional: </span>Princípio do menor privilégio</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam seg"><span class="sr-only">Profissional: </span>Incidentes de autenticação e acesso</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="iam cloud seg"><span class="sr-only">Prática: </span>AWS IAM</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="iam cloud"><span class="sr-only">Fundamentos: </span>Microsoft Entra ID</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="iam gov"><span class="sr-only">Fundamentos: </span>Identity Governance</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> Metrô BH · Hack2Hire</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Governança</span>
+            <span class="dim__desc">Contratos, critérios de aceite, evidência e risco</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Análise de escopo e Termos de Referência</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Acompanhamento de Ordens de Serviço</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Critérios de aceite e SLA</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Evidências e documentação técnica</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Gestão de fornecedores e contratos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov seg"><span class="sr-only">Profissional: </span>LGPD em ambiente com dado sensível</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Análise de risco e impacto operacional</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov infra"><span class="sr-only">Profissional: </span>Procedimento e conformidade operacional</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="gov seg"><span class="sr-only">Fundamentos: </span>ISO/IEC 27001</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="gov seg"><span class="sr-only">Fundamentos: </span>NIST CSF e CIS Controls</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> INTS · CBTU</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Segurança defensiva</span>
+            <span class="dim__desc">Detecção, investigação e resposta</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>Análise de eventos de autenticação Windows</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>Engenharia de detecção e calibração de regras</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>Triagem e investigação de alertas</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg gov"><span class="sr-only">Prática: </span>Rastreabilidade de evidência</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>MITRE ATT&amp;CK</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="seg"><span class="sr-only">Fundamentos: </span>Resposta a incidentes</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="seg"><span class="sr-only">Fundamentos: </span>SIEM e EDR</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="seg infra"><span class="sr-only">Fundamentos: </span>Segurança de endpoints</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> <a href="https://github.com/LeandroGoulart/security-log-analysis-lab" target="_blank" rel="noopener">Security Log Analysis Lab</a> · <a href="https://github.com/LeandroGoulart/tcc-Sistema_Detecao_de_Intrusao" target="_blank" rel="noopener">TCC — Detecção de Intrusão</a></p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Cloud</span>
+            <span class="dim__desc">AWS: infraestrutura, observabilidade e serverless</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud infra"><span class="sr-only">Prática: </span>EC2, S3, VPC e RDS</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud seg"><span class="sr-only">Prática: </span>CloudWatch e observabilidade</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud dev"><span class="sr-only">Prática: </span>CloudFormation</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud dev"><span class="sr-only">Prática: </span>Lambda, API Gateway e DynamoDB</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud"><span class="sr-only">Prática: </span>Textract e Bedrock</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud dev"><span class="sr-only">Prática: </span>AWS CLI e Bash</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> <a href="https://github.com/LeandroGoulart/sistema_de_monitoramento_AWS" target="_blank" rel="noopener">Monitoramento AWS</a> · <a href="https://github.com/LeandroGoulart/Hack2Hire" target="_blank" rel="noopener">Hack2Hire</a> · AWS re/Start</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Desenvolvimento e automação</span>
+            <span class="dim__desc">Código, versionamento e integração contínua</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="dev"><span class="sr-only">Profissional: </span>Git e GitHub</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="dev"><span class="sr-only">Profissional: </span>SQL e MySQL</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="dev seg"><span class="sr-only">Prática: </span>Python</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="dev"><span class="sr-only">Prática: </span>Testes automatizados</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="dev cloud"><span class="sr-only">Prática: </span>CI/CD com GitHub Actions</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="dev"><span class="sr-only">Fundamentos: </span>Java e Spring Boot</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> <a href="https://github.com/LeandroGoulart/security-log-analysis-lab" target="_blank" rel="noopener">Security Log Analysis Lab</a> · <a href="https://github.com/LeandroGoulart/" target="_blank" rel="noopener">GitHub</a></p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Análise e resolução de problemas</span>
+            <span class="dim__desc">O critério de trabalho, antes da ferramenta</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra seg"><span class="sr-only">Profissional: </span>Investigação de causa raiz</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>Identificação de dependências e impacto</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Distinção entre problema técnico, operacional e contratual</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Questionamento de premissas</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov seg"><span class="sr-only">Profissional: </span>Identificação de riscos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra dev"><span class="sr-only">Profissional: </span>Preferência pela solução simples antes da complexa</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Documentação das decisões tomadas</li>
+          </ul>
+        </details>
+          </div>
+
+          <p class="empty-note" data-dims-empty hidden>Nenhuma competência nesta stack.</p>
+
+          <p class="section__note">
+            O nível indica <strong>onde</strong> a competência foi exercida, não
+            <strong>quão fundo</strong>. Contagem alta em Profissional não é sinônimo de
+            domínio equivalente em todos os itens.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Domínio de negócio</p>
+          <h2 class="section__title">Sistemas de saúde</h2>
+
+          <div class="prose">
+            <p>
+              Conhecimento de domínio não aparece em certificado e costuma pesar mais
+              que uma ferramenta a mais na lista. O ambiente eram contratos
+              multimunicipais de saúde, na cadeia
+              <strong>Municípios &rarr; consórcio &rarr; gestora &rarr; fornecedores</strong>.
+            </p>
+            <p>
+              Categorias de sistema: <strong>HIS</strong> (gestão hospitalar),
+              <strong>PEP</strong> (prontuário eletrônico), <strong>LIS</strong>
+              (laboratório) e <strong>RIS/PACS</strong> (diagnóstico por imagem). Em volta
+              deles, UBS, pronto-atendimento, hospitais, unidades móveis, cadastro de
+              pacientes e profissionais, e as integrações entre tudo isso.
+            </p>
+            <p>
+              O que isso muda na prática: <strong>um incidente ali não é um problema de
+              software, é atendimento interrompido</strong>. Isso altera a definição de
+              severidade, a ordem de prioridade e o que conta como evidência de
+              resolução. E coloca dado de paciente — dado sensível sob a LGPD — dentro
+              do escopo de qualquer decisão técnica.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Certificações</p>
+          <h2 class="section__title">Credenciais verificáveis</h2>
+
+          <ul class="certs">
+          <li class="cert">
+            <div>
+              <p class="cert__name">AWS Certified Cloud Practitioner</p>
+              <p class="cert__issuer">Amazon Web Services</p>
+            </div>
+            <div class="cert__meta">
+              <span>Válida até fev/2029</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">AWS re/Start Graduate</p>
+              <p class="cert__issuer">Escola da Nuvem · AWS</p>
+            </div>
+            <div class="cert__meta">
+              <span>jan/2026</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Endpoint Security</p>
+              <p class="cert__issuer">Cisco</p>
+            </div>
+            <div class="cert__meta">
+              <span>2024</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Introduction to Cybersecurity</p>
+              <p class="cert__issuer">Cisco</p>
+            </div>
+            <div class="cert__meta">
+              <span>2024</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Scrum Fundamentals Certified</p>
+              <p class="cert__issuer">SCRUMstudy</p>
+            </div>
+            <div class="cert__meta">
+              <span>out/2025</span>
+              
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Oracle Next Education — Back-end</p>
+              <p class="cert__issuer">Oracle · Alura</p>
+            </div>
+            <div class="cert__meta">
+              <span>2024</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          </ul>
+
+          <p class="section__note">
+            As formações acadêmicas — três pós-graduações e o tecnólogo — estão na
+            <strong>linha do tempo</strong>, na aba Identidade.
+          </p>
         </div>
       </div>
     </section>
@@ -531,5 +803,6 @@
 
   <script src="js/tabs.js" defer></script>
   <script src="js/timeline.js" defer></script>
+  <script src="js/skills.js" defer></script>
 </body>
 </html>
