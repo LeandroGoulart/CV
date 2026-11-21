@@ -14,7 +14,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--c-surface) 92%, transparent);
+  background: color-mix(in srgb, var(--c-surface) 88%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--c-border);
 }
@@ -99,22 +99,51 @@
   min-height: calc(100vh - var(--header-h));
   padding-block: var(--sp-16);
   text-align: center;
-  background: var(--c-bg) url('../assets/img/bg.webp') center / cover no-repeat fixed;
+  overflow: hidden;
+  background:
+    radial-gradient(60rem 40rem at 18% 12%, rgba(53, 200, 232, 0.16), transparent 60%),
+    radial-gradient(48rem 34rem at 88% 86%, rgba(255, 77, 94, 0.12), transparent 62%),
+    radial-gradient(38rem 28rem at 50% 50%, rgba(30, 159, 189, 0.10), transparent 70%),
+    var(--c-bg);
 }
 
+/* Malha técnica discreta, restrita ao topo para não concorrer
+   com os traçados de circuito da arte do rodapé. */
 .hero::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(24, 24, 24, 0.82) 0%,
-    rgba(24, 24, 24, 0.94) 100%
-  );
+  inset: -1px;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(53, 200, 232, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 200, 232, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(64% 46% at 50% 24%, #000 18%, transparent 76%);
+  mask-image: radial-gradient(64% 46% at 50% 24%, #000 18%, transparent 76%);
+  pointer-events: none;
+}
+
+/* Arte da identidade como linha de horizonte.
+   A imagem é um banner de 3,8:1 — usada em tela cheia seria quase toda
+   cortada. Como faixa inferior, a skyline e a silhueta funcionam como
+   chão, e o escudo fica atrás do conteúdo. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 0;
+  height: clamp(200px, 40vh, 430px);
+  background: url('../assets/img/bg.webp') center bottom / cover no-repeat;
+  opacity: 0.62;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 58%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 58%);
+  pointer-events: none;
 }
 
 .hero__content {
   position: relative;
+  z-index: 2;
   max-width: 62ch;
 }
 
@@ -126,7 +155,31 @@
   border-radius: 50%;
   border: 2px solid var(--c-accent);
   object-fit: cover;
-  box-shadow: var(--shadow-accent);
+  box-shadow: var(--glow-accent);
+}
+
+/* Halo duplo: ciano e vermelho, assinatura da identidade */
+.hero__avatar-wrap {
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.hero__avatar-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 210deg,
+    rgba(53, 200, 232, 0.45),
+    transparent 28%,
+    transparent 62%,
+    rgba(255, 77, 94, 0.40)
+  );
+  filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero__name {
@@ -259,9 +312,13 @@
   .tabs { justify-content: flex-start; }
 }
 
+@media (max-width: 860px) {
+  .hero::after { background-image: url('../assets/img/bg-sm.webp'); }
+}
+
 @media (max-width: 600px) {
   .container { padding-inline: var(--sp-4); }
-  .hero { background-attachment: scroll; }
+  .hero::after { height: clamp(160px, 32vh, 260px); opacity: 0.5; }
   .hero__avatar { width: 112px; height: 112px; }
   .hero__name { font-size: var(--fs-2xl); }
   .section { padding-block: var(--sp-12); }

@@ -1,25 +1,43 @@
 /* =============================================================
    Design tokens — Career OS
-   Paleta herdada da identidade visual anterior e formalizada.
+   Paleta derivada da identidade visual pessoal (GitHub/LinkedIn):
+   neon ciano e vermelho sobre azul-noite profundo.
+
+   Semântica herdada da própria arte:
+     ciano    = verificação, defesa, o que está validado
+     vermelho = atenção, ameaça, o que exige olhar
+   Vermelho é caro de propósito. Se usar em tudo, não significa nada.
+
    Nenhum valor cru deve aparecer fora deste arquivo.
    ============================================================= */
 
 :root {
-  /* ---- Cor: superfícies ---- */
-  --c-bg:            #181818;
-  --c-surface:       #232323;
-  --c-surface-alt:   #1d1d1d;
-  --c-border:        #2e2e2e;
+  /* ---- Superfícies ---- */
+  --c-bg:          #070e18;
+  --c-surface:     #0f1a28;
+  --c-surface-alt: #0b1420;
+  --c-border:      #1c2b3d;
+  --c-border-soft: #142232;
 
-  /* ---- Cor: marca ---- */
-  --c-accent:        #00ff88;
-  --c-accent-strong: #00995e;
-  --c-accent-soft:   rgba(0, 255, 136, 0.12);
+  /* ---- Neon primário: ciano (defesa / verificado) ---- */
+  --c-accent:        #35c8e8;
+  --c-accent-bright: #80e8f8;
+  --c-accent-strong: #1e9fbd;
+  --c-accent-soft:   rgba(53, 200, 232, 0.14);
 
-  /* ---- Cor: texto ---- */
-  --c-text:          #ffffff;
-  --c-text-muted:    #e0ffe7;
-  --c-text-dim:      #9aa39d;
+  /* ---- Neon secundário: vermelho (atenção) ---- */
+  --c-alert:      #ff4d5e;
+  --c-alert-deep: #c81820;
+  --c-alert-soft: rgba(255, 77, 94, 0.14);
+
+  /* ---- Apoio: azul-periwinkle (formação) ---- */
+  --c-info:      #8ab4ff;
+  --c-info-soft: rgba(138, 180, 255, 0.14);
+
+  /* ---- Texto ---- */
+  --c-text:       #eaf4ff;
+  --c-text-muted: #b9d4e8;
+  --c-text-dim:   #7d93a8;
 
   /* ---- Tipografia ---- */
   --font-sans: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
@@ -54,10 +72,11 @@
   --radius-lg: 16px;
   --radius-pill: 999px;
 
-  /* ---- Elevação ---- */
-  --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md:     0 4px 16px rgba(0, 0, 0, 0.35);
-  --shadow-accent: 0 2px 16px rgba(0, 255, 136, 0.15);
+  /* ---- Elevação e brilho ---- */
+  --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-md:     0 4px 20px rgba(0, 0, 0, 0.5);
+  --glow-accent:   0 0 0 1px rgba(53, 200, 232, 0.25), 0 4px 24px rgba(53, 200, 232, 0.18);
+  --glow-alert:    0 0 0 1px rgba(255, 77, 94, 0.25), 0 4px 24px rgba(255, 77, 94, 0.16);
 
   /* ---- Movimento ---- */
   --t-fast: 150ms ease;
