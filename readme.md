@@ -36,10 +36,10 @@ quem já se interessou do que como cartão de visita.
 │   ├── tokens.css        Design tokens — única fonte de valores
 │   ├── base.css          Reset, tipografia e acessibilidade
 │   ├── layout.css        Cabeçalho, abas, painéis, hero e rodapé
-│   └── components.css    Linha do tempo, cards de experiência e chips
+│   └── components.css    Espinha de peixe, cards de experiência e chips
 └── js/
     ├── tabs.js           Navegação por abas (padrão ARIA + rota por hash)
-    └── timeline.js       Filtro da linha do tempo por categoria
+    └── timeline.js       Filtro, alternância e rolagem da linha do tempo
 ```
 
 ### Convenções
@@ -52,11 +52,27 @@ quem já se interessou do que como cartão de visita.
 - Toda aba é endereçável por URL: `#identidade`, `#competencias`,
   `#portfolio`, `#comportamental`.
 
-### Linha do tempo
+### Ordem da aba Identidade
+
+`Hero` → `Sobre` → `Experiência` → `Linha do tempo`.
+
+A linha do tempo vem **depois** das experiências de propósito: ela é contexto
+de apoio, não a entrada. Quem chega quer o cargo atual e as entregas primeiro.
+
+### Linha do tempo em espinha de peixe
+
+Formato horizontal, com os marcos alternando acima e abaixo de uma espinha
+central. A versão vertical anterior ocupava cerca de 1.800&nbsp;px de altura
+para 19 marcos — um muro que o leitor abandona antes do fim. A espinha de peixe
+resolve os mesmos 19 marcos em ~400&nbsp;px, com rolagem horizontal.
 
 Os marcos ficam em ordem **crescente** — a trajetória se lê como percurso.
 As experiências detalhadas ficam em ordem **decrescente**, como manda a
 convenção de currículo. A diferença é intencional.
+
+A alternância acima/abaixo é recalculada pelo JavaScript a cada filtro. Fazer
+isso com `nth-child` em CSS quebraria: itens ocultos continuam contando para o
+seletor, e um filtro poderia jogar todos os cartões para o mesmo lado.
 
 As contagens dos filtros são calculadas a partir do próprio HTML em tempo de
 execução. Não existe número escrito à mão que possa divergir do conteúdo.
@@ -69,6 +85,7 @@ execução. Não existe número escrito à mão que possa divergir do conteúdo.
 - `prefers-reduced-motion` respeitado
 - Imagens com texto alternativo descritivo
 - Filtros como `aria-pressed`, com o total de itens visíveis anunciado via `aria-label`
+- Linha do tempo é uma `region` focável, navegável por teclado e por botões
 
 ## Identidade visual
 
@@ -97,47 +114,9 @@ A paleta vem da versão anterior do site e foi preservada, apenas formalizada:
 
 | Branch | Papel |
 |---|---|
-| `main` | Versão publicada e estável |
-| `career-os` | Desenvolvimento ativo |
-| `feature/<nome>` | Nova funcionalidade ou aba |
-| `fix/<nome>` | Correção de bug |
-| `docs/<nome>` | Documentação |
-| `refactor/<nome>` | Organização sem mudança de comportamento |
-
-Branches temporárias devem ser curtas, em inglês e com hífen, por exemplo
-`feature/competency-tab`, `fix/mobile-navigation` ou `docs/git-conventions`.
-
-## Commits
-
-Os commits seguem o padrão **Conventional Commits**, escrito em inglês:
-
-```text
-<tipo>: <descrição curta no imperativo>
-```
-
-| Tipo | Uso |
-|---|---|
-| `feat` | Nova funcionalidade |
-| `fix` | Correção de bug |
-| `docs` | Documentação |
-| `style` | Formatação ou ajustes visuais sem alterar lógica |
-| `refactor` | Reestruturação sem mudança de comportamento |
-| `perf` | Melhoria de desempenho |
-| `test` | Testes |
-| `build` | Dependências, scripts ou processo de build |
-| `ci` | Integração contínua |
-| `chore` | Manutenção e tarefas auxiliares |
-| `revert` | Reversão de um commit anterior |
-
-Exemplos:
-
-```text
-feat: add competency filters
-fix: preserve hash after page reload
-docs: document commit and branch conventions
-refactor: centralize tab navigation
-chore: remove obsolete assets
-```
+| `main` | Versão antiga, desatualizada. Será substituída na fase 7 |
+| `carrossel` | O que o GitHub Pages publica hoje. Mantida até a virada |
+| `career-os` | Desenvolvimento |
 
 ## Rodando localmente
 
