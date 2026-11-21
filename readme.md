@@ -2,7 +2,7 @@
 
 Site único que reúne currículo, portfólio e identidade profissional.
 
-Publicado em https://leandrogoulart.github.io/CV/
+Publicado em <https://leandrogoulart.github.io/CV/>
 
 > Este repositório é, ele próprio, parte do portfólio: a forma como o projeto é
 > estruturado, decidido e documentado é a evidência de organização que o site
@@ -14,7 +14,7 @@ Quatro abas, nesta ordem, seguindo a leitura natural de um recrutador —
 *quem é* → *o que sabe fazer* → *prove* → *quem é por dentro*:
 
 | # | Aba | O que prova |
-|---|---|---|
+| --- | --- | --- |
 | 1 | **Identidade e trajetória** | De onde veio e como a transição faz sentido |
 | 2 | **Competências técnicas** | O que sabe fazer, e em que nível de maturidade |
 | 3 | **Portfólio** | A prova prática, com participação real declarada |
@@ -26,7 +26,7 @@ quem já se interessou do que como cartão de visita.
 
 ## Estrutura de pastas
 
-```
+```estrutura
 .
 ├── index.html            Documento único; cada aba é um <section role="tabpanel">
 ├── assets/
@@ -89,7 +89,7 @@ Uma versão anterior usava um selo de 144&nbsp;px por competência. Ficou poluí
 densidade não é rigor. O nível virou um ponto de 9&nbsp;px com legenda no topo.
 
 | Nível | Marcador | Significado |
-|---|---|---|
+| --- | --- | --- |
 | **Profissional** | ponto preenchido, ciano | Ambiente real, com responsabilidade sobre o resultado |
 | **Prática** | ponto vazado, azul | Projeto ou laboratório executado |
 | **Fundamentos** | ponto vazado menor, cinza | Conhecimento teórico, sem aplicação demonstrável |
@@ -132,7 +132,7 @@ neon ciano e vermelho sobre azul-noite profundo. Os valores foram extraídos da
 própria arte, não escolhidos por aproximação.
 
 | Token | Valor | Uso |
-|---|---|---|
+| --- | --- | --- |
 | `--c-bg` | `#070e18` | Fundo |
 | `--c-surface` | `#0f1a28` | Cartões e cabeçalho |
 | `--c-accent` | `#35c8e8` | Neon primário: marca, links, estado ativo |
@@ -176,7 +176,7 @@ do favicon. **Se usar em tudo, deixa de significar algo.**
 Todos os tokens de texto e de interface foram verificados contra `--c-surface`:
 
 | Cor | Razão de contraste | WCAG |
-|---|---|---|
+| --- | --- | --- |
 | `--c-accent` `#35c8e8` | 8,8:1 | AAA |
 | `--c-alert` `#ff4d5e` | 5,4:1 | AA |
 | `--c-info` `#8ab4ff` | 8,4:1 | AAA |
@@ -201,7 +201,7 @@ desenhada para ter.
 ### Peso das imagens
 
 | Arquivo | Uso | Peso |
-|---|---|---|
+| --- | --- | --- |
 | `bg.webp` | 1920&nbsp;px, desktop | 95&nbsp;KB |
 | `bg-sm.webp` | 1280&nbsp;px, até 860&nbsp;px de viewport | 49&nbsp;KB |
 | `perfil.webp` | Avatar | 99&nbsp;KB |
@@ -216,7 +216,7 @@ detecta o formato pelo conteúdo, mas o peso continua o do PNG.
 ## Fases do projeto
 
 | Fase | Entrega | Estado |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Estrutura de pastas, tokens, navegação por abas e aba de Identidade | **Concluída** |
 | 2 | Linha do tempo interativa e experiências na aba 1 | **Concluída** |
 | 3 | Aba de Competências | **Concluída** |
@@ -228,7 +228,7 @@ detecta o formato pelo conteúdo, mas o peso continua o do PNG.
 ## Branches
 
 | Branch | Papel |
-|---|---|
+| --- | --- |
 | `main` | Versão antiga, desatualizada. Será substituída na fase 7 |
 | `carrossel` | O que o GitHub Pages publica hoje. Mantida até a virada |
 | `career-os` | Desenvolvimento |

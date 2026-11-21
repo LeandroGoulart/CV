@@ -762,34 +762,953 @@
     </section>
 
     <!-- ============================================================
-         ABA 3 — PORTFÓLIO  (fase 4)
+         ABA 3 — PORTFÓLIO
+         Carrossel Cover Flow + estudos de caso.
+         Progressivo: sem JS vira faixa rolável e todos os casos abertos.
          ============================================================ -->
     <section class="panel" id="painel-portfolio" role="tabpanel"
              aria-labelledby="tab-portfolio" tabindex="0" hidden>
       <div class="container">
         <div class="section">
-          <div class="placeholder">
-            <p class="placeholder__note">Fase 4</p>
-            <p class="placeholder__title">Portfólio</p>
-            <p>Carrossel de estudos de caso, com filtros por domínio e página de detalhe.</p>
+          <p class="section__label">Portfólio</p>
+          <h2 class="section__title">Projetos, e o que cada um comprova</h2>
+
+          <div class="filters filters--stack" role="group"
+               aria-label="Filtrar projetos por domínio" data-pf-filters>
+            <button class="filter" type="button" data-pf-dom="destaque" aria-pressed="true">Destaques</button>
+            <button class="filter" type="button" data-pf-dom="seg"      aria-pressed="false">Segurança</button>
+            <button class="filter" type="button" data-pf-dom="cloud"    aria-pressed="false">Cloud</button>
+            <button class="filter" type="button" data-pf-dom="auto"     aria-pressed="false">Automação</button>
+            <button class="filter" type="button" data-pf-dom="dev"      aria-pressed="false">Desenvolvimento</button>
+            <button class="filter" type="button" data-pf-dom="antigo"   aria-pressed="false">Anteriores</button>
           </div>
+
+          <div class="pf" data-pf-root>
+
+            <!-- ---------- Palco ---------- -->
+            <div class="cf" data-cf>
+              <div class="cf__glow" data-cf-glow aria-hidden="true"></div>
+
+              <div class="cf__row">
+                <button class="cf__arrow" type="button" data-cf-prev aria-label="Projeto anterior">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg>
+                </button>
+
+                <div class="cf__stage" tabindex="0" role="group"
+                     aria-roledescription="carrossel"
+                     aria-label="Projetos — use as setas esquerda e direita"
+                     data-cf-stage>
+                <ul class="cf__track" data-cf-track>
+
+                  <li class="cf__item" data-dom="destaque seg dev" data-case="lab">
+                    <button class="cover cover--seg" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-seg"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2025 — 2026</span>
+                        <span class="cover__title">Security Log Analysis Lab</span>
+                        <span class="cover__kind">Segurança defensiva</span>
+                        <span class="cover__stack"><span>Python</span><span>pytest</span><span>Actions</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="destaque cloud seg dev" data-case="docusmart">
+                    <button class="cover cover--cloud" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-cloud"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2025</span>
+                        <span class="cover__title">DocuSmart · Hack2Hire</span>
+                        <span class="cover__kind">Cloud e IA aplicada</span>
+                        <span class="cover__stack"><span>Lambda</span><span>Textract</span><span>Bedrock</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="destaque cloud auto" data-case="monitoramento">
+                    <button class="cover cover--auto" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-auto"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2025</span>
+                        <span class="cover__title">Monitoramento de disponibilidade na AWS</span>
+                        <span class="cover__kind">Observabilidade</span>
+                        <span class="cover__stack"><span>EventBridge</span><span>CloudWatch</span><span>SNS</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="destaque seg auto" data-case="tcc">
+                    <button class="cover cover--seg" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-seg"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2024</span>
+                        <span class="cover__title">Atualização de contramedidas · TCC</span>
+                        <span class="cover__kind">Projeto acadêmico</span>
+                        <span class="cover__stack"><span>Python</span><span>MITRE</span><span>Fernet</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="screenmatch">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2024</span>
+                        <span class="cover__title">Screen Match</span>
+                        <span class="cover__kind">Java e persistência</span>
+                        <span class="cover__stack"><span>Java</span><span>Spring</span><span>JPA</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="vollmed">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2024</span>
+                        <span class="cover__title">Voll.med · API REST</span>
+                        <span class="cover__kind">Java e Spring Boot</span>
+                        <span class="cover__stack"><span>Java</span><span>Spring</span><span>REST</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="decoder">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2023</span>
+                        <span class="cover__title">Challenge Decoder</span>
+                        <span class="cover__kind">JavaScript</span>
+                        <span class="cover__stack"><span>JavaScript</span><span>DOM</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="xmen">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" alt="" hidden>
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2023</span>
+                        <span class="cover__title">Site X-Men</span>
+                        <span class="cover__kind">HTML e CSS</span>
+                        <span class="cover__stack"><span>HTML</span><span>CSS</span><span>Grid</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  </ul>
+                </div>
+
+                <button class="cf__arrow" type="button" data-cf-next aria-label="Próximo projeto">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg>
+                </button>
+              </div>
+
+              <div class="cf__nav">
+                <div class="cf__dots" role="group" aria-label="Ir para um projeto" data-cf-dots></div>
+              </div>
+
+              <label class="cf__scrub">
+                <span class="sr-only">Percorrer os projetos</span>
+                <input type="range" min="0" max="0" value="0" step="1" data-cf-range>
+              </label>
+
+              <p class="sr-only" aria-live="polite" data-cf-live></p>
+            </div>
+
+            <!-- ---------- Estudos de caso ---------- -->
+            <div class="pf-panels" data-pf-panels>
+
+              <article class="pf-case" data-case="lab">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Security Log Analysis Lab</h3>
+                  <p class="pf-case__sub">Laboratório reprodutível de investigação de eventos de autenticação do Windows, da evidência bruta ao contexto.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Python · pytest · GitHub Actions</dd></div>
+                  <div><dt>Participação</dt><dd>Autor único</dd></div>
+                  <div><dt>Evidência</dt><dd>87 testes, matriz Linux e Windows</dd></div>
+                  <div><dt>Período</dt><dd>2025 — 2026</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Log de autenticação bruto não responde à pergunta que importa no incidente: isto é ataque, erro de configuração ou comportamento legítimo? Faltava um caminho reprodutível entre o evento e a conclusão.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>Pipeline de normalização, correlação temporal e regras de detecção sobre eventos 4624 e 4625, com relatório HTML que entrega hipótese, limite e o que ainda precisa ser verificado — não apenas o alerta.</p>
+                  </div>
+                  <div>
+                    <h4>Decisões registradas</h4>
+                    <p>20 ADRs documentam o porquê de cada escolha, incluindo a mitigação de injeção de fórmula na exportação CSV. O repositório mostra o raciocínio, não só o resultado.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Duas regras implementadas, uma terceira em roadmap. Dados sintéticos: o laboratório prova método, não volume de produção.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/security-log-analysis-lab" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="docusmart">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">DocuSmart · Hack2Hire</h3>
+                  <p class="pf-case__sub">Análise automatizada de documentos de sinistro com IA generativa na AWS, construída em hackathon.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Lambda · Textract · Bedrock · S3 · DynamoDB</dd></div>
+                  <div><dt>Participação</dt><dd>31 dos 35 commits</dd></div>
+                  <div><dt>Evidência</dt><dd>Backend, frontend e arquitetura</dd></div>
+                  <div><dt>Período</dt><dd>2025</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Triagem manual de documentos de sinistro é lenta, inconsistente entre analistas e não deixa rastro de como a decisão foi tomada.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>Upload para S3, extração com Textract, classificação com Bedrock, persistência em DynamoDB e observabilidade no CloudWatch — tudo atrás de API Gateway com permissões IAM delimitadas por serviço.</p>
+                  </div>
+                  <div>
+                    <h4>Minha participação</h4>
+                    <p>Criei o repositório e assinei 31 dos 35 commits: a função Lambda, o frontend inteiro e a documentação técnica de arquitetura e observabilidade. Verificável no histórico do Git.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Projeto de hackathon. Prova de conceito funcional, sem hardening de produção, teste de carga ou gestão de custo em escala.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/Hack2Hire" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="monitoramento">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Monitoramento de disponibilidade na AWS</h3>
+                  <p class="pf-case__sub">Verificação periódica de um site com métrica, alarme e notificação — o ciclo completo de observabilidade em escala pequena.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>EventBridge · Lambda · CloudWatch · SNS · Grafana</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Fluxo agendado, alarme, painel</dd></div>
+                  <div><dt>Período</dt><dd>2025</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Saber que um serviço caiu pelo cliente é o pior canal de detecção possível. O objetivo era inverter isso com o mínimo de infraestrutura.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>EventBridge dispara a Lambda em intervalo fixo, a verificação publica métrica customizada no CloudWatch, o alarme aciona SNS e o Grafana consolida a série histórica.</p>
+                  </div>
+                  <div>
+                    <h4>Por que importa</h4>
+                    <p>É o mesmo desenho que sustenta monitoramento corporativo: coleta, métrica, limiar, notificação, visualização. Muda a escala, não o raciocínio.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Um alvo monitorado, sem alta disponibilidade da própria verificação nem política de escalonamento de alerta.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/sistema_de_monitoramento_AWS" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="tcc">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Atualização de contramedidas de segurança</h3>
+                  <p class="pf-case__sub">Trabalho de conclusão de curso: ingestão da base MITRE ATT&amp;CK e armazenamento cifrado de contramedidas.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Python · MITRE ATT&amp;CK · Fernet</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Pipeline de ingestão e cifragem</dd></div>
+                  <div><dt>Período</dt><dd>2024</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Manter uma base local de contramedidas sincronizada com uma fonte externa de conhecimento de ameaças, sem guardar o conteúdo em claro.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>Download da base MITRE ATT&amp;CK, extração das contramedidas, persistência cifrada com Fernet e monitoramento de comportamento com alerta para padrões suspeitos.</p>
+                  </div>
+                  <div>
+                    <h4>O que aprendi depois</h4>
+                    <p>A chave de cifragem ficou versionada no repositório. Hoje o projeto gera a chave em tempo de execução e o histórico foi reescrito — a lição sobre gestão de segredo veio do próprio erro.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Projeto acadêmico, 258 linhas e cobertura de teste mínima. Está aqui como registro de trajetória, não como referência de engenharia atual.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/tcc-Sistema_Detecao_de_Intrusao" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="screenmatch">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Screen Match</h3>
+                  <p class="pf-case__sub">Catálogo de séries com consumo de API externa e persistência relacional.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Java · Spring Data JPA · PostgreSQL</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Formação Alura</dd></div>
+                  <div><dt>Período</dt><dd>2024</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Desserialização de JSON, mapeamento objeto-relacional, consultas derivadas e organização em camadas de serviço.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Projeto de formação. Entra no portfólio como base de linguagem e modelagem, não como entrega profissional.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/Screen-Match" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="vollmed">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Voll.med · API REST</h3>
+                  <p class="pf-case__sub">API de gestão de consultas para uma clínica fictícia: cadastro de médicos e pacientes, agendamento e cancelamento.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Java · Spring Boot · JPA · Validation</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>CRUD e regras de agendamento</dd></div>
+                  <div><dt>Período</dt><dd>2024</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Desenho de endpoints REST, validação de entrada, regras de negócio sobre agendamento e separação entre DTO e entidade.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Projeto de formação. Relevante por tratar de domínio de saúde, que é onde atuo profissionalmente.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/VollMed_APP" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="decoder">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Challenge Decoder</h3>
+                  <p class="pf-case__sub">Codificador e decodificador de mensagens por matriz de substituição, no navegador.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>JavaScript · HTML · CSS</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Desafio Oracle ONE</dd></div>
+                  <div><dt>Período</dt><dd>2023</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Manipulação de string, estado de interface sem framework e interação com a área de transferência.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Primeiro desafio do programa Oracle Next Education. Marca o início da trajetória em desenvolvimento.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/challenge_decoder" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="xmen">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Site X-Men</h3>
+                  <p class="pf-case__sub">Tela de seleção de personagem com descrição detalhada de cada um.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>HTML · CSS</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Publicado em GitHub Pages</dd></div>
+                  <div><dt>Período</dt><dd>2023</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Layout com grid, estado visual de seleção e responsividade sem biblioteca.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Projeto de formação em front-end. Está aqui pela honestidade da linha do tempo.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/site_X-men" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+            </div>
+            <p class="pf-empty" data-pf-empty hidden>Nenhum projeto neste filtro.</p>
+          </div>
+
+          <p class="section__note">
+            Cada projeto declara participação real e limite. Um projeto de formação está
+            identificado como tal — o que separa trajetória de entrega profissional é
+            justamente essa distinção estar escrita.
+          </p>
         </div>
       </div>
+
+      <!-- Sprite de ícones das capas -->
+      <svg class="pf-sprite" aria-hidden="true" focusable="false">
+        <symbol id="gl-seg" viewBox="0 0 48 48">
+          <path d="M24 4 7 11v13c0 11 7 18.5 17 21 10-2.5 17-10 17-21V11Z"/>
+          <path d="m16 24 6 6 12-12"/>
+        </symbol>
+        <symbol id="gl-cloud" viewBox="0 0 48 48">
+          <path d="M14 37a9 9 0 0 1-.6-18A13 13 0 0 1 37 22a8 8 0 0 1-1 15Z"/>
+          <path d="M24 24v10m0 0-4-4m4 4 4-4"/>
+        </symbol>
+        <symbol id="gl-auto" viewBox="0 0 48 48">
+          <path d="M26 4 10 27h11l-3 17 20-24H26Z"/>
+        </symbol>
+        <symbol id="gl-dev" viewBox="0 0 48 48">
+          <path d="m16 15-11 9 11 9M32 15l11 9-11 9M28 10l-8 28"/>
+        </symbol>
+      </svg>
     </section>
 
     <!-- ============================================================
-         ABA 4 — COMPORTAMENTAL  (fase 5)
+         ABA 4 — COMPORTAMENTAL
          ============================================================ -->
     <section class="panel" id="painel-comportamental" role="tabpanel"
              aria-labelledby="tab-comportamental" tabindex="0" hidden>
       <div class="container">
+
+        <!-- ---------- 01 · Identidade comportamental ---------- -->
         <div class="section">
-          <div class="placeholder">
-            <p class="placeholder__note">Fase 5</p>
-            <p class="placeholder__title">Perfil comportamental</p>
-            <p>DISC, tipologia com suas limitações e traços ancorados em exemplos de trabalho.</p>
+          <div class="bprofile">
+            <p class="bprofile__kicker">Perfil comportamental profissional</p>
+            <h2 class="bprofile__name">Analítico Executor</h2>
+            <p class="bprofile__line">Pensamento crítico, precisão técnica e execução responsável.</p>
+
+            <dl class="bprofile__meta">
+              <div><dt>Perfil DISC</dt><dd>C / D</dd></div>
+              <div><dt>Tipologia registrada</dt><dd>ISTJ</dd></div>
+              <div><dt>Estilo de trabalho</dt><dd>Analítico e estruturado</dd></div>
+              <div><dt>Orientação de liderança</dt><dd>Técnica e colaborativa</dd></div>
+            </dl>
+
+            <ul class="bprofile__chips">
+              <li>Senso crítico</li>
+              <li>Visão sistêmica</li>
+              <li>Autonomia</li>
+              <li>Disciplina</li>
+              <li>Investigação</li>
+              <li>Qualidade</li>
+              <li>Melhoria contínua</li>
+            </ul>
+
+            <p class="bprofile__foot">
+              <strong>Analítico Executor</strong> é uma síntese do conjunto — avaliação
+              admissional, trajetória e feedback profissional. Não é classificação
+              psicológica oficial, e serve como linha de base para comparar avaliações
+              futuras.
+            </p>
           </div>
         </div>
+
+        <!-- ---------- 02 · Resumo ---------- -->
+        <div class="section">
+          <p class="section__label">Resumo</p>
+
+          <p class="thesis">
+            Fui formado num lugar onde errar o diagnóstico custa caro e a janela
+            para consertar é <em>fixa</em>. O resto da minha forma de trabalhar
+            vem daí.
+          </p>
+
+          <div class="arc">
+            <article class="arc__card">
+              <p class="arc__k">Origem</p>
+              <h3 class="arc__h">Sete anos onde falha tem consequência física</h3>
+              <p class="arc__p">
+                Manutenção metroferroviária. Intervenção entre uma parada e outra do
+                sistema, sem prorrogação. Dali veio a sequência que ainda uso:
+                falha, impacto, diagnóstico, prioridade, intervenção,
+                restabelecimento.
+              </p>
+            </article>
+
+            <article class="arc__card">
+              <p class="arc__k">Operação</p>
+              <h3 class="arc__h">Critério antes da decisão, registro depois dela</h3>
+              <p class="arc__p">
+                Separo fato de hipótese, procuro a causa antes da solução e escrevo
+                o critério antes de escolher. Em serviço de saúde isso não é zelo:
+                é o que mantém uma divergência técnica fora do campo contratual.
+              </p>
+            </article>
+
+            <article class="arc__card">
+              <p class="arc__k">Fronteira</p>
+              <h3 class="arc__h">Delegar, e agir sem o quadro completo</h3>
+              <p class="arc__p">
+                Lidero por competência, não por cargo — e o custo disso é
+                centralizar. O que estou corrigindo: distribuir responsabilidade,
+                decidir com informação incompleta e falar para o interlocutor, não
+                para o registro.
+              </p>
+            </article>
+          </div>
+
+          <blockquote class="creed">
+            <p>
+              A solução eficiente não é a mais complexa. É a que resolve o problema
+              correto, tem risco controlado e pode ser
+              <strong>validada, documentada e sustentada</strong> por quem vier depois.
+            </p>
+          </blockquote>
+        </div>
+
+        <!-- ---------- 03 · Método ---------- -->
+        <div class="section">
+          <p class="section__label">Método</p>
+          <h2 class="section__title">Como eu resolvo um problema, do diagnóstico à melhoria</h2>
+          <p class="prose prose--lead">
+            Esta é a parte verificável do perfil: não é a afirmação de que tenho senso
+            crítico, é a sequência que aplico — e que aparece registrada nos ADRs do
+            laboratório, nos critérios de aceite dos contratos e na documentação dos
+            projetos.
+          </p>
+
+          <ol class="method">
+            <li class="method__step">
+              <span class="method__n">01</span>
+              <h3>Compreender</h3>
+              <p>Identificar o problema real, o contexto e quem é impactado. O sintoma relatado raramente é o problema.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">02</span>
+              <h3>Investigar</h3>
+              <p>Separar fato, hipótese, sintoma e evidência. Nessa ordem, e sem misturar as quatro coisas no mesmo parágrafo.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">03</span>
+              <h3>Avaliar</h3>
+              <p>Riscos, dependências, impacto e alternativas. Inclusive a alternativa de não fazer nada.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">04</span>
+              <h3>Decidir</h3>
+              <p>Escolher a solução adequada ao contexto, não a tecnicamente mais elegante.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">05</span>
+              <h3>Executar</h3>
+              <p>Implementar de forma controlada, com ponto de retorno definido antes de começar.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">06</span>
+              <h3>Validar</h3>
+              <p>Confirmar que a intervenção resolveu o problema original — não que o alarme parou de tocar.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">07</span>
+              <h3>Documentar</h3>
+              <p>Registrar decisão, resultado e o que ficou em aberto. Decisão sem registro vira folclore em seis meses.</p>
+            </li>
+          </ol>
+        </div>
+
+        <!-- ---------- 04 · Traços ---------- -->
+        <div class="section">
+          <p class="section__label">Traços</p>
+          <h2 class="section__title">Cinco características, o que entregam e onde custam caro</h2>
+          <p class="prose prose--lead">
+            Traço comportamental só vale alguma coisa quando vem com o preço. Em cada
+            um, a pergunta que uso para saber quando parei de ajudar.
+          </p>
+
+          <ul class="traits">
+
+            <li class="trait">
+              <h3 class="trait__name">Preciso entender antes de decidir</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Investigação de causa raiz em vez de contorno. Decisão que sobrevive a
+                ser questionada seis meses depois, porque o critério está escrito. No
+                laboratório de análise de logs são 20 ADRs: cada escolha registra o
+                porquê, não só o resultado.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Análise que deixa de melhorar a decisão e passa a adiar o desconforto
+                de tomá-la. A pergunta que uso para cortar: <em>que informação nova
+                mudaria a decisão?</em> Se a resposta é nenhuma, a análise acabou.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Assumo a responsabilidade pelo resultado</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Problema que chega até mim não volta sem resposta. No Hack2Hire criei
+                o repositório e assinei 31 dos 35 commits — backend, frontend e a
+                documentação técnica que ninguém queria escrever.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                "Se ninguém faz direito, eu faço" funciona até eu virar o gargalo. O
+                ciclo é conhecido: vejo a falha, assumo, resolvo, delego menos da
+                próxima vez. Competência vira dependência, e isso é falha de escala,
+                não vitória.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Penso o serviço inteiro, não a camada</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Aplicação, servidor, rede, identidade, fornecedor e usuário são um
+                serviço só. É o que permite ligar um incidente técnico ao impacto
+                assistencial e à cláusula contratual que ele aciona — e saber qual
+                dos três resolver primeiro.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Organizações dividem responsabilidade, e tecnicamente estar certo
+                sobre a dependência não me dá mandato sobre ela. Preciso de
+                visibilidade; nem sempre preciso de participação. Confundir as duas
+                atropela fronteira de time.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Registro a decisão, não apenas o resultado</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Termo de referência, critério de aceite, evidência de entrega,
+                registro de decisão. Em contrato de serviço de saúde isso não é
+                burocracia: é o que separa divergência técnica de disputa contratual.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Documento que ninguém lê é custo disfarçado de zelo. O teste é se
+                quem herdar o sistema consegue operar sem me perguntar nada.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Confronto com evidência, não com posição</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Argumento, evidência, conclusão — nessa ordem, com fornecedor, com
+                área técnica e com cliente. Discordo de quem me paga quando tenho
+                dado para sustentar, e aceito estar errado quando o dado é do outro
+                lado.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Estar certo e ser eficaz são dois problemas diferentes. Já perdi
+                discussão tecnicamente correta pela forma, e a precisão lógica não
+                recupera o que a forma estragou.
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- ---------- 05 · Instrumentos ---------- -->
+        <div class="section">
+          <p class="section__label">Instrumentos</p>
+          <h2 class="section__title">O que as avaliações registram, e o quanto isso vale</h2>
+
+          <div class="assess">
+
+            <div class="assess__card">
+              <div class="assess__head">
+                <h3>Perfil DISC</h3>
+                <span class="assess__date">maio de 2026</span>
+              </div>
+
+              <div class="disc__top">
+                <div class="donut" aria-hidden="true">
+                  <span class="donut__core">
+                    <strong>C/D</strong>
+                    <small>DISC</small>
+                  </span>
+                </div>
+                <p class="disc__lead">
+                  <strong>Conformidade predominante com Dominância secundária.</strong>
+                  Compreender o problema, reunir informação, estabelecer critério e
+                  então agir sobre ele.
+                </p>
+              </div>
+
+              <dl class="disc">
+                <div class="disc__row">
+                  <dt>C <span>Conformidade</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--c" style="--v:34.62%"></span>
+                    <span class="disc__val">34,62%</span>
+                  </dd>
+                  <p class="disc__desc">Precisão, análise, qualidade e critério objetivo.</p>
+                </div>
+                <div class="disc__row">
+                  <dt>D <span>Dominância</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--d" style="--v:25.00%"></span>
+                    <span class="disc__val">25,00%</span>
+                  </dd>
+                  <p class="disc__desc">Decisão, iniciativa, autonomia e resolução.</p>
+                </div>
+                <div class="disc__row">
+                  <dt>S <span>Estabilidade</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--s" style="--v:20.51%"></span>
+                    <span class="disc__val">20,51%</span>
+                  </dd>
+                  <p class="disc__desc">Consistência, persistência e previsibilidade.</p>
+                </div>
+                <div class="disc__row">
+                  <dt>I <span>Influência</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--i" style="--v:19.87%"></span>
+                    <span class="disc__val">19,87%</span>
+                  </dd>
+                  <p class="disc__desc">Comunicação, interação e capacidade de influência.</p>
+                </div>
+              </dl>
+
+              <p class="assess__read">
+                <strong>Leitura:</strong> a combinação é compatível com investigação
+                técnica, segurança defensiva, análise de risco, governança e resolução
+                estruturada de problemas. Compatibilidade não é comprovação de aptidão
+                — para isso existe a aba de portfólio.
+              </p>
+            </div>
+
+            <div class="assess__card">
+              <div class="assess__head">
+                <h3>Tipologia</h3>
+                <span class="assess__date">resultado recorrente</span>
+              </div>
+
+              <p class="mbti__code">ISTJ <span>Logístico · Inspetor</span></p>
+              <p class="assess__body">
+                Perfil predominantemente prático, responsável, metódico e orientado a
+                fatos, estrutura e compromissos.
+              </p>
+
+              <dl class="mbti">
+                <div><dt>I — Introversão</dt><dd>Reflexão e concentração individual.</dd></div>
+                <div><dt>S — Sensação</dt><dd>Valorização de fatos e informação concreta.</dd></div>
+                <div><dt>T — Pensamento</dt><dd>Decisão orientada por critério lógico.</dd></div>
+                <div><dt>J — Julgamento</dt><dd>Preferência por planejamento e estrutura.</dd></div>
+              </dl>
+
+              <div class="mbti__ctx">
+                <p class="mbti__ctxtitle">Traços contextuais observados</p>
+                <p class="assess__body">
+                  <strong>ESTJ</strong> — coordenação, objetividade e execução
+                  operacional. <strong>INTJ</strong> — visão sistêmica, estratégia e
+                  questionamento de processo.
+                </p>
+                <p class="assess__body">
+                  Não são resultados simultâneos: ISTJ é o resultado registrado, os
+                  outros dois são aproximações interpretativas do comportamento em
+                  contextos específicos. Também não atribuo percentuais às dimensões,
+                  porque esse dado não existe no laudo.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="section__note">
+            <strong>Procedência e limite.</strong> O DISC foi aplicado em processo
+            admissional, como parte da rotina de avaliação funcional, e não é um
+            questionário avulso de internet. Ainda assim, DISC e tipologia são
+            instrumentos de autorrelato: descrevem estilo percebido num contexto e num
+            momento, não medem competência e têm capacidade preditiva de desempenho
+            considerada fraca pela literatura psicométrica. Estão nesta página como
+            linha de base comparável, com data e origem declaradas. O que sustenta
+            credibilidade é a evidência de trabalho, não o resultado do teste.
+          </p>
+        </div>
+
+        <!-- ---------- 06 · Perspectiva externa ---------- -->
+        <div class="section">
+          <p class="section__label">Perspectiva externa</p>
+          <h2 class="section__title">O que outras pessoas observaram, e o que é leitura minha</h2>
+          <p class="prose prose--lead">
+            A distinção importa: característica reconhecida por terceiro tem peso
+            diferente de característica que eu mesmo inferi do meu histórico. As duas
+            estão aqui, separadas.
+          </p>
+
+          <div class="fit">
+            <div class="fit__col fit__col--yes">
+              <h3 class="fit__title">Reconhecido por terceiros</h3>
+              <ul>
+                <li>Capacidade analítica</li>
+                <li>Comprometimento</li>
+                <li>Disciplina</li>
+                <li>Curiosidade técnica</li>
+                <li>Aprendizado contínuo</li>
+                <li>Dedicação</li>
+              </ul>
+              <p class="fit__src">Origem: recomendação profissional registrada no LinkedIn.</p>
+            </div>
+            <div class="fit__col fit__col--infer">
+              <h3 class="fit__title">Inferido da trajetória</h3>
+              <ul>
+                <li>Resiliência operacional</li>
+                <li>Adaptabilidade</li>
+                <li>Senso de responsabilidade</li>
+                <li>Orientação a resultado</li>
+              </ul>
+              <p class="fit__src">Origem: leitura do próprio histórico — ambiente operacional crítico, transição de carreira e diversidade de funções.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- 07 · Matriz ---------- -->
+        <div class="section">
+          <p class="section__label">Matriz comportamental</p>
+          <h2 class="section__title">Força e desenvolvimento, lado a lado</h2>
+
+          <div class="matrix" role="table" aria-label="Matriz comportamental: dimensão, característica forte e desenvolvimento contínuo">
+            <div class="matrix__head" role="row">
+              <span role="columnheader">Dimensão</span>
+              <span role="columnheader">Característica forte</span>
+              <span role="columnheader">Desenvolvimento contínuo</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Pensamento analítico</span>
+              <span role="cell" data-l="Forte">Investigação criteriosa</span>
+              <span role="cell" data-l="Desenvolvimento">Evitar excesso de análise</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Senso crítico</span>
+              <span role="cell" data-l="Forte">Questionamento de premissas</span>
+              <span role="cell" data-l="Desenvolvimento">Equilibrar crítica e pragmatismo</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Organização</span>
+              <span role="cell" data-l="Forte">Controle e rastreabilidade</span>
+              <span role="cell" data-l="Desenvolvimento">Desenvolver flexibilidade</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Qualidade</span>
+              <span role="cell" data-l="Forte">Exigência técnica</span>
+              <span role="cell" data-l="Desenvolvimento">Priorizar melhorias pelo impacto</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Persistência</span>
+              <span role="cell" data-l="Forte">Continuidade diante de obstáculos</span>
+              <span role="cell" data-l="Desenvolvimento">Reconhecer quando mudar de estratégia</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Comunicação</span>
+              <span role="cell" data-l="Forte">Clareza e objetividade</span>
+              <span role="cell" data-l="Desenvolvimento">Adaptar ao interlocutor</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Liderança</span>
+              <span role="cell" data-l="Forte">Autoridade fundamentada em competência</span>
+              <span role="cell" data-l="Desenvolvimento">Delegação e desenvolvimento da equipe</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Responsabilidade</span>
+              <span role="cell" data-l="Forte">Comprometimento com entregas</span>
+              <span role="cell" data-l="Desenvolvimento">Distribuição equilibrada</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Autonomia</span>
+              <span role="cell" data-l="Forte">Iniciativa e independência</span>
+              <span role="cell" data-l="Desenvolvimento">Fortalecer decisão colaborativa</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Tomada de decisão</span>
+              <span role="cell" data-l="Forte">Critério lógico e evidência</span>
+              <span role="cell" data-l="Desenvolvimento">Atuar com informação incompleta</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- 08 · Ambiente ---------- -->
+        <div class="section">
+          <p class="section__label">Ambiente</p>
+          <h2 class="section__title">Onde eu rendo, e onde eu atrapalho</h2>
+
+          <div class="fit">
+            <div class="fit__col fit__col--yes">
+              <h3 class="fit__title">Rendo mais quando</h3>
+              <ul>
+                <li>a responsabilidade de cada parte está definida</li>
+                <li>tenho acesso à informação que afeta o resultado pelo qual respondo</li>
+                <li>existe critério de aceite escrito, não combinado de boca</li>
+                <li>questionar o processo é permitido, e a resposta não é "sempre foi assim"</li>
+                <li>o problema é complexo e a consequência é real</li>
+              </ul>
+            </div>
+            <div class="fit__col fit__col--no">
+              <h3 class="fit__title">Rendo menos quando</h3>
+              <ul>
+                <li>a responsabilidade é ambígua e ninguém quer defini-la</li>
+                <li>informação relevante é retida por hábito ou por política</li>
+                <li>a decisão é tomada sem critério e revisada por pressão</li>
+                <li>tudo é urgente, o que equivale a não haver prioridade</li>
+                <li>o processo existe mas ninguém sabe explicar para que serve</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="section__note">
+            Avaliação de referência: maio de 2026. Resultados futuros serão registrados
+            com data, instrumento e contexto, para comparação — variação de percentual
+            entre instrumentos diferentes não significa evolução nem regressão.
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -804,5 +1723,6 @@
   <script src="js/tabs.js" defer></script>
   <script src="js/timeline.js" defer></script>
   <script src="js/skills.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
 </body>
 </html>
