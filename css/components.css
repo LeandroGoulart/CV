@@ -700,19 +700,22 @@
           mask-image: radial-gradient(74% 74% at 50% 46%, #000, transparent);
 }
 
-/* Espaço reservado para as capas reais. Enquanto hidden, o ícone domina. */
+/* Capa real. Sem ela, o ícone do domínio assume o lugar. */
 .cover__img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.62;
+  transition: opacity var(--t-base);
 }
 
-.cover__img:not([hidden]) ~ .cover__glyph {
-  opacity: 0.28;
-}
+/* A capa só ganha nitidez plena no cartão em foco; os laterais
+   permanecem recuados para o empilhamento continuar legível. */
+.cf__item[data-active] .cover__img { opacity: 1; }
+
+.cover__img:not([hidden]) ~ .cover__glyph { display: none; }
 
 .cover__glyph {
   position: relative;
