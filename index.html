@@ -2,122 +2,1897 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leandro Goulart | Desenvolvedor Full Stack & Cybersecurity</title>
-  <meta name="description" content="Portfólio profissional de Leandro Goulart.">
-  <link rel="stylesheet" href="src/style/main.css">
-  <!-- Ícones (FontAwesome CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <title>Leandro Goulart — Analista de Sistemas | IAM, Governança de TI e Cloud Security</title>
+  <meta name="description" content="Analista de Sistemas com atuação em gestão de identidades e acessos (IAM), governança de TI, implantação e sustentação de sistemas corporativos, em especialização em segurança defensiva e Cloud Security. Currículo, competências e portfólio técnico.">
+  <meta name="author" content="Leandro Vieira Goulart">
+  <link rel="canonical" href="https://leandrogoulart.github.io/CV/">
+
+  <!-- Open Graph / redes sociais.
+       TODO (fase de assets): gerar assets/img/og-cover.png em 1200x630
+       e declarar og:image. Sem imagem é melhor que imagem quebrada. -->
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://leandrogoulart.github.io/CV/">
+  <meta property="og:title" content="Leandro Goulart — Analista de Sistemas | IAM e Cloud Security">
+  <meta property="og:description" content="Currículo, competências e portfólio técnico. Da operação crítica à segurança defensiva.">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+  <meta name="theme-color" content="#070e18">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <!-- Menu fixo no topo -->
-  <header class="header-fixed">
-    <div class="container">
-      <h1 class="logo">Leandro Goulart</h1>
-      <nav>
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#formacao">Formação</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="brand" href="#identidade">
+        <span class="brand__mark" aria-hidden="true"></span>
+        Leandro Goulart
+      </a>
+
+      <nav aria-label="Seções do perfil">
+        <div class="tabs" role="tablist" data-tablist>
+          <button class="tab" role="tab" id="tab-identidade"
+                  aria-controls="painel-identidade" aria-selected="true"
+                  data-hash="identidade" type="button">Identidade</button>
+
+          <button class="tab" role="tab" id="tab-competencias"
+                  aria-controls="painel-competencias" aria-selected="false"
+                  data-hash="competencias" tabindex="-1" type="button">Competências</button>
+
+          <button class="tab" role="tab" id="tab-portfolio"
+                  aria-controls="painel-portfolio" aria-selected="false"
+                  data-hash="portfolio" tabindex="-1" type="button">Portfólio</button>
+
+          <button class="tab" role="tab" id="tab-comportamental"
+                  aria-controls="painel-comportamental" aria-selected="false"
+                  data-hash="comportamental" tabindex="-1" type="button">Comportamental</button>
+
+          <button class="tab" role="tab" id="tab-contato"
+                  aria-controls="painel-contato" aria-selected="false"
+                  data-hash="contato" tabindex="-1" type="button">Contato</button>
+        </div>
       </nav>
+
     </div>
   </header>
 
-  <!-- Hero Section com Parallax -->
-  <section class="hero-parallax">
-    <div class="overlay">
-      <img src="src/images/perfil.jpg" alt="Foto de Leandro Goulart" class="avatar">
-      <h2>Olá, sou <span>Leandro Goulart</span></h2>
-      <p>
-        Desenvolvedor Full Stack com foco em backend e Cybersecurity.<br>
-        Autodidata, apaixonado por tecnologia e por criar soluções eficientes.<br>
-        Busco sempre inovar, aprender e contribuir em projetos desafiadores.
-      </p>
-      <a href="#contato" class="btn">Fale comigo</a>
-      <div class="social-links">
-        <a href="https://github.com/LeandroGoulart" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/leandrovgoulart" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/5531992460786" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <main id="conteudo">
+
+    <!-- ============================================================
+         ABA 1 — IDENTIDADE E TRAJETÓRIA
+         ============================================================ -->
+    <section class="panel" id="painel-identidade" role="tabpanel"
+             aria-labelledby="tab-identidade" tabindex="0">
+
+      <div class="hero">
+        <div class="hero__content container">
+          <div class="hero__avatar-wrap">
+            <img class="hero__avatar"
+                 src="assets/img/perfil.webp"
+                 alt="Retrato de Leandro Goulart"
+                 width="160" height="160" fetchpriority="high">
+          </div>
+
+          <span class="hero__role">Analista de Sistemas · IAM · Governança de TI · Cloud Security</span>
+
+          <h1 class="hero__name">Leandro Goulart</h1>
+
+          <p class="hero__pitch">
+            Oito anos entre operação crítica e tecnologia da informação.
+            Hoje em implantação, sustentação e governança de sistemas,
+            com especialização em segurança defensiva e Cloud Security.
+          </p>
+
+          <div class="contact-links">
+            <a class="contact-link" href="https://www.linkedin.com/in/leandrovgoulart"
+               target="_blank" rel="noopener">LinkedIn</a>
+            <a class="contact-link" href="https://github.com/LeandroGoulart"
+               target="_blank" rel="noopener">GitHub</a>
+            <a class="contact-link" href="https://www.credly.com/users/leandro-v-goulart"
+               target="_blank" rel="noopener">Credly</a>
+            <a class="contact-link" href="mailto:leandrovgoulart@gmail.com">E-mail</a>
+            <a class="contact-link" href="https://wa.me/5531991879759"
+               target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Conteúdo principal -->
-  <main>
-    <!-- Sobre mim -->
-    <section id="sobre">
-      <h2>Sobre mim</h2>
-      <p>
-        Sou formado em Análise e Desenvolvimento de Sistemas, pós-graduado em Cybersecurity e apaixonado por tecnologia. 
-        Tenho experiência em projetos web, integração de APIs, bancos de dados e metodologias ágeis. 
-        Meu diferencial é a busca constante por aprendizado, criatividade na resolução de problemas e foco em resultados.
-      </p>
-    </section>
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Sobre</p>
+          <h2 class="section__title">Quem sou e como cheguei até aqui</h2>
 
-    <!-- Formação -->
-    <section id="formacao">
-      <h2>Formação</h2>
-      <ul>
-        <li><strong>Pós-Graduação em Cybersecurity</strong> – Faculdade Iguaçu (2024)</li>
-        <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> – Faculdade Católica Paulista (2023)</li>
-        <li><strong>Especialização: Desenvolvedor Back-end JR</strong> – Oracle/Alura (2024)</li>
-        <li><strong>Scholarship: Fintechs</strong> – University of Chicago (2023)</li>
-      </ul>
-    </section>
+          <div class="prose">
+            <p>
+              Comecei em manutenção metroferroviária. Foram sete anos num ambiente onde
+              falha tem consequência física e a intervenção acontece dentro de uma janela
+              de tempo fixa, entre uma parada e outra do sistema. Foi ali que aprendi a
+              sequência que continuo usando: <strong>falha, impacto, diagnóstico,
+              prioridade, intervenção, restabelecimento</strong>.
+            </p>
+            <p>
+              Migrei para TI em 2025, por suporte técnico e gestão de identidades e
+              acessos. Trabalhei com Active Directory, Microsoft 365 e Google Workspace,
+              e em seguida com implantação, sustentação e governança de sistemas
+              corporativos de saúde — termos de referência, ordens de serviço, critérios
+              de aceite, SLA e evidência documentada. Ambiente onde um incidente não é
+              um problema de software: é atendimento interrompido.
+            </p>
+            <p>
+              Hoje atuo como analista de suporte de campo e me especializo em segurança
+              defensiva e Cloud Security. O que trago não é profundidade isolada numa
+              única tecnologia — é a combinação de operação, infraestrutura, identidade,
+              sistemas, negócio e segurança. E o hábito de <strong>registrar a decisão,
+              não apenas o resultado</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Habilidades -->
-    <section id="habilidades">
-      <h2>Habilidades Técnicas</h2>
-      <ul class="skills-list">
-        <li>HTML, CSS, JavaScript, Python, Java</li>
-        <li>SQL (Postgres, MySQL)</li>
-        <li>Spring Boot, Git/GitHub, API REST</li>
-        <li>Metodologias Ágeis, Clean Code, AWS/OCI</li>
-        <li>Em aprendizado: Typescript, MongoDB, Angular, Vue, Docker</li>
-      </ul>
-    </section>
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Experiência</p>
+          <h2 class="section__title">Onde atuei e o que entreguei</h2>
 
-    <!-- Projetos -->
-    <section id="projetos">
-      <h2>Projetos em Destaque</h2>
-      <div class="projetos-grid">
-        <article class="projeto-card">
-          <h3>Decodificador de Mensagens</h3>
-          <p>Página interativa para criptografar e decodificar mensagens. <br><strong>Stack:</strong> JS, HTML, CSS</p>
-          <a href="https://challenge-decoder.vercel.app/" target="_blank">Ver projeto</a>
+          <div class="xp-list">
+        <article class="xp xp--current">
+          <header class="xp__head">
+            <h3 class="xp__role">Analista de Suporte de Campo / Field Service</h3>
+            <p class="xp__period">out/2026 — atual</p>
+          </header>
+          <p class="xp__org">Goulart InfoSolutions <span>· Autônomo · PJ · Minas Gerais</span></p>
+          <ul class="xp__deliveries">
+            <li>Acionado como técnico de escalonamento em chamados complexos que as equipes técnicas dos próprios clientes não conseguiram resolver.</li>
+            <li>Configuração e troubleshooting de ambientes Windows e Linux.</li>
+            <li>Manutenção de rotinas de backup e continuidade.</li>
+            <li>Montagem, upgrade e manutenção de microcomputadores e estações de trabalho.</li>
+            <li>Gestão do próprio negócio: atendimento direto, diagnóstico e controle operacional.</li>
+          </ul>
+          <p class="xp__clients">Clientes atendidos: Profarma, Positivo, Stefanini, Global Links e Camil.</p>
+          <div class="chips">
+            <span class="chip">Windows</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Backup</span>
+            <span class="chip">Hardware</span>
+            <span class="chip">Troubleshooting</span>
+            <span class="chip">Atendimento N3</span>
+          </div>
         </article>
-        <article class="projeto-card">
-          <h3>Página Web com Efeitos Sonoros</h3>
-          <p>Instrumento virtual para treinar sons de percussão MIDI. <br><strong>Stack:</strong> JS, HTML, CSS</p>
-          <a href="https://leandrogoulart.github.io/PercussionProject/" target="_blank">Ver projeto</a>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Analista de TI Pleno</h3>
+            <p class="xp__period">jul/2026 — set/2026</p>
+          </header>
+          <p class="xp__org">INTS — Instituto Nacional de Tecnologia e Saúde <span>· Tempo integral · Belo Horizonte e Região</span></p>
+          <ul class="xp__deliveries">
+            <li>Implantação e sustentação de sistemas corporativos de saúde em contratos multimunicipais.</li>
+            <li>Revisão de Termos de Referência, acompanhamento de Ordens de Serviço e verificação de critérios de aceite e SLA.</li>
+            <li>Camada de escalonamento N3 entre fornecedores de tecnologia e operação assistencial.</li>
+            <li>Documentação estruturada de evidências: relatório executivo, de visita técnica e consolidado para gestão.</li>
+            <li>Continuidade operacional mantida durante reestruturação da coordenação de TI local.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Governança de TI</span>
+            <span class="chip">Gestão de fornecedores</span>
+            <span class="chip">SLA</span>
+            <span class="chip">HIS</span>
+            <span class="chip">PEP</span>
+            <span class="chip">LIS</span>
+            <span class="chip">RIS/PACS</span>
+            <span class="chip">LGPD</span>
+          </div>
         </article>
-        <!-- Adicione mais projetos conforme desejar -->
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Assistente de Suporte Técnico Júnior · IAM · Suporte N1/N2</h3>
+            <p class="xp__period">jun/2025 — mai/2026</p>
+          </header>
+          <p class="xp__org">Metrô BH <span>· Tempo integral · Belo Horizonte e Região</span></p>
+          <ul class="xp__deliveries">
+            <li>Gestão de identidades e acessos em Active Directory, Microsoft 365 e Google Workspace: ciclo de vida de contas, permissões e licenciamento.</li>
+            <li>Tratamento inicial de incidentes de autenticação e acesso em ambiente operacional crítico.</li>
+            <li>Suporte N1/N2 com diagnóstico de incidentes de hardware, software e rede.</li>
+            <li>Gestão de chamados via GLPI em alta volumetria, com redução aproximada de 10% no SLA médio.</li>
+            <li>Gestão de ativos de TI e controle de inventário.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Active Directory</span>
+            <span class="chip">Microsoft 365</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">IAM</span>
+            <span class="chip">GLPI</span>
+            <span class="chip">Windows</span>
+            <span class="chip">Redes</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Técnico de Manutenção Metroferroviária</h3>
+            <p class="xp__period">mar/2018 — mai/2025</p>
+          </header>
+          <p class="xp__org">CBTU — Companhia Brasileira de Trens Urbanos <span>· Tempo integral · Belo Horizonte, MG</span></p>
+          <ul class="xp__deliveries">
+            <li>Manutenção preditiva, preventiva e corretiva em rede aérea, via permanente e infraestrutura metroferroviária.</li>
+            <li>Intervenções dentro de janelas operacionais rígidas, entre paradas do sistema, com diagnóstico e decisão sob pressão de tempo.</li>
+            <li>Execução conforme ordens de manutenção, sob critérios de prioridade, segurança e eficiência.</li>
+            <li>Cumprimento de NR10, NR35, APR e DDS em equipe multidisciplinar.</li>
+            <li>Ingresso por concurso público em 2018; promovido a nível Pleno em via permanente em 2023.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Operação crítica</span>
+            <span class="chip">NR10</span>
+            <span class="chip">NR35</span>
+            <span class="chip">APR</span>
+            <span class="chip">DDS</span>
+            <span class="chip">Gestão de janela</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Estagiário de Inovação e Operações Ágeis</h3>
+            <p class="xp__period">jan/2023 — abr/2023</p>
+          </header>
+          <p class="xp__org">Bamaq Consórcio <span>· Meio período · Contagem, MG</span></p>
+          <ul class="xp__deliveries">
+            <li>Apoio a operações ágeis, organização de backlog e acompanhamento de demandas com Scrum Master e Product Owner.</li>
+            <li>Consultas em MySQL para apoio à resolução de problemas e à tomada de decisão.</li>
+            <li>Acompanhamento de experiência do cliente e feedbacks em Google Play e Apple Store.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Scrum</span>
+            <span class="chip">Kanban</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">Backlog</span>
+          </div>
+        </article>
+
+        <article class="xp">
+          <header class="xp__head">
+            <h3 class="xp__role">Técnico de Suporte e Manutenção</h3>
+            <p class="xp__period">nov/2017 — fev/2019</p>
+          </header>
+          <p class="xp__org">Deskdoctor Informática <span>· Autônomo · Belo Horizonte, MG</span></p>
+          <ul class="xp__deliveries">
+            <li>Montagem, upgrade, substituição de componentes e reparo de hardware.</li>
+            <li>Instalação e configuração de sistemas operacionais.</li>
+            <li>Diagnóstico e resolução de problemas em desktops e infraestrutura básica para clientes diversos.</li>
+            <li>Organização operacional dos atendimentos e relacionamento direto com clientes.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Hardware</span>
+            <span class="chip">Windows</span>
+            <span class="chip">Redes</span>
+            <span class="chip">Atendimento ao cliente</span>
+          </div>
+        </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Trajetória</p>
+          <h2 class="section__title">Linha do tempo</h2>
+
+          <div class="filters" role="group" aria-label="Filtrar marcos da trajetória" data-timeline-filters>
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">
+              Tudo <span class="filter__count" data-count></span>
+            </button>
+            <button class="filter" type="button" data-filter="trabalho" aria-pressed="false">
+              Trabalho <span class="filter__count" data-count></span>
+            </button>
+            <button class="filter" type="button" data-filter="formacao" aria-pressed="false">
+              Formação <span class="filter__count" data-count></span>
+            </button>
+            <button class="filter" type="button" data-filter="certificacao" aria-pressed="false">
+              Certificação <span class="filter__count" data-count></span>
+            </button>
+          </div>
+
+          <p class="fb-legend">
+            <span class="is-trabalho"><i></i> Trabalho</span>
+            <span class="is-formacao"><i></i> Formação</span>
+            <span class="is-certificacao"><i></i> Certificação</span>
+          </p>
+
+          <div class="fishbone" data-timeline>
+            <div class="fishbone__viewport" data-timeline-viewport
+                 tabindex="0" role="region" aria-label="Linha do tempo da trajetória">
+              <ol class="fishbone__track" data-timeline-track>
+              <li class="fb-item fb-item--trabalho" data-type="trabalho">
+                <div class="fb-card">
+                  <span class="fb-year">2017</span>
+                  <p class="fb-org">Deskdoctor Informática</p>
+                  <p class="fb-desc">Suporte técnico autônomo</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--trabalho" data-type="trabalho">
+                <div class="fb-card">
+                  <span class="fb-year">2018</span>
+                  <p class="fb-org">CBTU</p>
+                  <p class="fb-desc">Concurso público · manutenção metroferroviária</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2021</span>
+                  <p class="fb-org">Faculdade Católica Paulista</p>
+                  <p class="fb-desc">Início do tecnólogo em ADS</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--trabalho" data-type="trabalho">
+                <div class="fb-card">
+                  <span class="fb-year">2023</span>
+                  <p class="fb-org">Bamaq Consórcio</p>
+                  <p class="fb-desc">Estágio em inovação e operações ágeis</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--trabalho" data-type="trabalho">
+                <div class="fb-card">
+                  <span class="fb-year">2023</span>
+                  <p class="fb-org">CBTU</p>
+                  <p class="fb-desc">Promoção a Pleno em via permanente</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2023</span>
+                  <p class="fb-org">Faculdade Católica Paulista</p>
+                  <p class="fb-desc">Conclusão do tecnólogo em ADS</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2023</span>
+                  <p class="fb-org">University of Chicago</p>
+                  <p class="fb-desc">Extensão em fintechs e moeda digital</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2023</span>
+                  <p class="fb-org">Oracle ONE / Alura</p>
+                  <p class="fb-desc">Início da formação back-end em Java</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2024</span>
+                  <p class="fb-org">Faculdade Iguaçu</p>
+                  <p class="fb-desc">Pós em Defesa Cibernética · 700&nbsp;h</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2024</span>
+                  <p class="fb-org">Faculdade Iguaçu</p>
+                  <p class="fb-desc">Pós em Cybersecurity: Detecção de Ameaças · 720&nbsp;h</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2024</span>
+                  <p class="fb-org">Softex, SENAI e RNP</p>
+                  <p class="fb-desc">Hackers do Bem · fundamentos</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--certificacao" data-type="certificacao">
+                <div class="fb-card">
+                  <span class="fb-year">2024</span>
+                  <p class="fb-org">Cisco</p>
+                  <p class="fb-desc">Intro to Cybersecurity e Endpoint Security</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--trabalho" data-type="trabalho">
+                <div class="fb-card">
+                  <span class="fb-year">2025</span>
+                  <p class="fb-org">Metrô BH</p>
+                  <p class="fb-desc">Entrada em TI: suporte N1/N2 e IAM</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2025</span>
+                  <p class="fb-org">Escola da Nuvem</p>
+                  <p class="fb-desc">Início do AWS re/Start</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2025</span>
+                  <p class="fb-org">Faculdade Iguaçu</p>
+                  <p class="fb-desc">Pós em Governança e Gestão de TI · 700&nbsp;h</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--certificacao" data-type="certificacao">
+                <div class="fb-card">
+                  <span class="fb-year">2026</span>
+                  <p class="fb-org">AWS</p>
+                  <p class="fb-desc">Cloud Practitioner · válida até 2029</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--formacao" data-type="formacao">
+                <div class="fb-card">
+                  <span class="fb-year">2026</span>
+                  <p class="fb-org">Escola da Nuvem</p>
+                  <p class="fb-desc">AWS re/Start concluído · 270&nbsp;h</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--trabalho" data-type="trabalho">
+                <div class="fb-card">
+                  <span class="fb-year">2026</span>
+                  <p class="fb-org">INTS</p>
+                  <p class="fb-desc">Analista de TI Pleno · governança</p>
+                </div>
+              </li>
+              <li class="fb-item fb-item--trabalho" data-type="trabalho">
+                <div class="fb-card">
+                  <span class="fb-year">2026</span>
+                  <p class="fb-org">Goulart InfoSolutions</p>
+                  <p class="fb-desc">Suporte de campo e escalonamento</p>
+                </div>
+              </li>
+              </ol>
+            </div>
+
+            <div class="fishbone__nav">
+              <button class="fishbone__btn" type="button" data-scroll="prev" aria-label="Marcos anteriores">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+              <button class="fishbone__btn" type="button" data-scroll="next" aria-label="Próximos marcos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <p class="section__note">
+            Filtre por <strong>Formação</strong> para ver o que aconteceu em paralelo ao
+            trabalho: a graduação e as três pós-graduações foram cursadas enquanto a
+            operação seguia. A transição para TI não começou em 2025 — foi quando ficou visível.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         ABA 2 — COMPETÊNCIAS TÉCNICAS  (fase 3)
+         ============================================================ -->
+    <section class="panel" id="painel-competencias" role="tabpanel"
+             aria-labelledby="tab-competencias" tabindex="0" hidden>
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Competências</p>
+          <h2 class="section__title">Organizadas por dimensão, não por lista de tecnologias</h2>
+
+          <p class="legend">
+            <span class="legend__item"><i class="dot dot--pro"></i> Profissional <em>ambiente real</em></span>
+            <span class="legend__item"><i class="dot dot--pratica"></i> Prática <em>projeto ou laboratório</em></span>
+            <span class="legend__item"><i class="dot dot--fund"></i> Fundamentos <em>conhecimento teórico</em></span>
+          </p>
+
+          <div class="filters filters--stack" role="group" aria-label="Filtrar por stack" data-stack-filters>
+            <button class="filter" type="button" data-stack="all" aria-pressed="true">Todas</button>
+            <button class="filter" type="button" data-stack="seg" aria-pressed="false">Segurança</button>
+            <button class="filter" type="button" data-stack="iam" aria-pressed="false">IAM</button>
+            <button class="filter" type="button" data-stack="cloud" aria-pressed="false">Cloud</button>
+            <button class="filter" type="button" data-stack="infra" aria-pressed="false">Infraestrutura</button>
+            <button class="filter" type="button" data-stack="gov" aria-pressed="false">Governança</button>
+            <button class="filter" type="button" data-stack="dev" aria-pressed="false">Desenvolvimento</button>
+          </div>
+
+          <div class="dims" data-dims>
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Sistemas</span>
+            <span class="dim__desc">Implantação, sustentação e integração de sistemas corporativos</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Implantação de sistemas corporativos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>Sustentação e continuidade operacional</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Análise de problemas e dependências</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra dev"><span class="sr-only">Profissional: </span>Integração entre sistemas</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Acompanhamento de fornecedores</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Entendimento de fluxos operacionais e assistenciais</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> Metrô BH · INTS</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Infraestrutura</span>
+            <span class="dim__desc">Suporte, ambientes Microsoft, redes e continuidade</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Suporte N1, N2 e escalonamento N3</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Ambientes Windows e Windows Server</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Linux</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Redes TCP/IP, DNS e VPN</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>Rotinas de backup e continuidade</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>GLPI, gestão de chamados e SLA</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra"><span class="sr-only">Profissional: </span>Hardware e estações de trabalho</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> Goulart InfoSolutions · Metrô BH</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">IAM</span>
+            <span class="dim__desc">Identidades, acessos e controle de permissões</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam seg"><span class="sr-only">Profissional: </span>Gestão de identidades e acessos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam infra"><span class="sr-only">Profissional: </span>Active Directory</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam infra"><span class="sr-only">Profissional: </span>Microsoft 365 e Google Workspace</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam"><span class="sr-only">Profissional: </span>Ciclo de vida de contas e permissões</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam seg gov"><span class="sr-only">Profissional: </span>Princípio do menor privilégio</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="iam seg"><span class="sr-only">Profissional: </span>Incidentes de autenticação e acesso</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="iam cloud seg"><span class="sr-only">Prática: </span>AWS IAM</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="iam cloud"><span class="sr-only">Fundamentos: </span>Microsoft Entra ID</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="iam gov"><span class="sr-only">Fundamentos: </span>Identity Governance</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> Metrô BH · Hack2Hire</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Governança</span>
+            <span class="dim__desc">Contratos, critérios de aceite, evidência e risco</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Análise de escopo e Termos de Referência</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Acompanhamento de Ordens de Serviço</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Critérios de aceite e SLA</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Evidências e documentação técnica</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Gestão de fornecedores e contratos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov seg"><span class="sr-only">Profissional: </span>LGPD em ambiente com dado sensível</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Análise de risco e impacto operacional</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov infra"><span class="sr-only">Profissional: </span>Procedimento e conformidade operacional</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="gov seg"><span class="sr-only">Fundamentos: </span>ISO/IEC 27001</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="gov seg"><span class="sr-only">Fundamentos: </span>NIST CSF e CIS Controls</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> INTS · CBTU</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Segurança defensiva</span>
+            <span class="dim__desc">Detecção, investigação e resposta</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>Análise de eventos de autenticação Windows</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>Engenharia de detecção e calibração de regras</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>Triagem e investigação de alertas</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg gov"><span class="sr-only">Prática: </span>Rastreabilidade de evidência</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="seg"><span class="sr-only">Prática: </span>MITRE ATT&amp;CK</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="seg"><span class="sr-only">Fundamentos: </span>Resposta a incidentes</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="seg"><span class="sr-only">Fundamentos: </span>SIEM e EDR</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="seg infra"><span class="sr-only">Fundamentos: </span>Segurança de endpoints</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> <a href="https://github.com/LeandroGoulart/security-log-analysis-lab" target="_blank" rel="noopener">Security Log Analysis Lab</a> · <a href="https://github.com/LeandroGoulart/tcc-Sistema_Detecao_de_Intrusao" target="_blank" rel="noopener">TCC — Detecção de Intrusão</a></p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Cloud</span>
+            <span class="dim__desc">AWS: infraestrutura, observabilidade e serverless</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud infra"><span class="sr-only">Prática: </span>EC2, S3, VPC e RDS</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud seg"><span class="sr-only">Prática: </span>CloudWatch e observabilidade</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud dev"><span class="sr-only">Prática: </span>CloudFormation</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud dev"><span class="sr-only">Prática: </span>Lambda, API Gateway e DynamoDB</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud"><span class="sr-only">Prática: </span>Textract e Bedrock</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="cloud dev"><span class="sr-only">Prática: </span>AWS CLI e Bash</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> <a href="https://github.com/LeandroGoulart/sistema_de_monitoramento_AWS" target="_blank" rel="noopener">Monitoramento AWS</a> · <a href="https://github.com/LeandroGoulart/Hack2Hire" target="_blank" rel="noopener">Hack2Hire</a> · AWS re/Start</p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Desenvolvimento e automação</span>
+            <span class="dim__desc">Código, versionamento e integração contínua</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="dev"><span class="sr-only">Profissional: </span>Git e GitHub</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="dev"><span class="sr-only">Profissional: </span>SQL e MySQL</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="dev seg"><span class="sr-only">Prática: </span>Python</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="dev"><span class="sr-only">Prática: </span>Testes automatizados</li>
+            <li class="cmp cmp--pratica" data-level="pratica" data-stack="dev cloud"><span class="sr-only">Prática: </span>CI/CD com GitHub Actions</li>
+            <li class="cmp cmp--fund" data-level="fund" data-stack="dev"><span class="sr-only">Fundamentos: </span>Java e Spring Boot</li>
+          </ul>
+          <p class="dim__ev"><span>Evidência</span> <a href="https://github.com/LeandroGoulart/security-log-analysis-lab" target="_blank" rel="noopener">Security Log Analysis Lab</a> · <a href="https://github.com/LeandroGoulart/" target="_blank" rel="noopener">GitHub</a></p>
+        </details>
+
+        <details class="dim" data-dim>
+          <summary class="dim__head">
+            <span class="dim__name">Análise e resolução de problemas</span>
+            <span class="dim__desc">O critério de trabalho, antes da ferramenta</span>
+            <span class="dim__count" data-dim-count></span>
+          </summary>
+          <ul class="dim__list">
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra seg"><span class="sr-only">Profissional: </span>Investigação de causa raiz</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra gov"><span class="sr-only">Profissional: </span>Identificação de dependências e impacto</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Distinção entre problema técnico, operacional e contratual</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Questionamento de premissas</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov seg"><span class="sr-only">Profissional: </span>Identificação de riscos</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="infra dev"><span class="sr-only">Profissional: </span>Preferência pela solução simples antes da complexa</li>
+            <li class="cmp cmp--pro" data-level="pro" data-stack="gov"><span class="sr-only">Profissional: </span>Documentação das decisões tomadas</li>
+          </ul>
+        </details>
+          </div>
+
+          <p class="empty-note" data-dims-empty hidden>Nenhuma competência nesta stack.</p>
+
+          <p class="section__note">
+            O nível indica <strong>onde</strong> a competência foi exercida, não
+            <strong>quão fundo</strong>. Contagem alta em Profissional não é sinônimo de
+            domínio equivalente em todos os itens.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Domínio de negócio</p>
+          <h2 class="section__title">Sistemas de saúde</h2>
+
+          <div class="prose">
+            <p>
+              Conhecimento de domínio não aparece em certificado e costuma pesar mais
+              que uma ferramenta a mais na lista. O ambiente eram contratos
+              multimunicipais de saúde, na cadeia
+              <strong>Municípios &rarr; consórcio &rarr; gestora &rarr; fornecedores</strong>.
+            </p>
+            <p>
+              Categorias de sistema: <strong>HIS</strong> (gestão hospitalar),
+              <strong>PEP</strong> (prontuário eletrônico), <strong>LIS</strong>
+              (laboratório) e <strong>RIS/PACS</strong> (diagnóstico por imagem). Em volta
+              deles, UBS, pronto-atendimento, hospitais, unidades móveis, cadastro de
+              pacientes e profissionais, e as integrações entre tudo isso.
+            </p>
+            <p>
+              O que isso muda na prática: <strong>um incidente ali não é um problema de
+              software, é atendimento interrompido</strong>. Isso altera a definição de
+              severidade, a ordem de prioridade e o que conta como evidência de
+              resolução. E coloca dado de paciente — dado sensível sob a LGPD — dentro
+              do escopo de qualquer decisão técnica.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Certificações</p>
+          <h2 class="section__title">Credenciais verificáveis</h2>
+
+          <ul class="certs">
+          <li class="cert">
+            <div>
+              <p class="cert__name">AWS Certified Cloud Practitioner</p>
+              <p class="cert__issuer">Amazon Web Services</p>
+            </div>
+            <div class="cert__meta">
+              <span>Válida até fev/2029</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">AWS re/Start Graduate</p>
+              <p class="cert__issuer">Escola da Nuvem · AWS</p>
+            </div>
+            <div class="cert__meta">
+              <span>jan/2026</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Endpoint Security</p>
+              <p class="cert__issuer">Cisco</p>
+            </div>
+            <div class="cert__meta">
+              <span>2024</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Introduction to Cybersecurity</p>
+              <p class="cert__issuer">Cisco</p>
+            </div>
+            <div class="cert__meta">
+              <span>2024</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Scrum Fundamentals Certified</p>
+              <p class="cert__issuer">SCRUMstudy</p>
+            </div>
+            <div class="cert__meta">
+              <span>out/2025</span>
+              
+            </div>
+          </li>
+          <li class="cert">
+            <div>
+              <p class="cert__name">Oracle Next Education — Back-end</p>
+              <p class="cert__issuer">Oracle · Alura</p>
+            </div>
+            <div class="cert__meta">
+              <span>2024</span>
+              <a class="cert__link" href="https://www.credly.com/users/leandro-v-goulart" target="_blank" rel="noopener">Verificar &rarr;</a>
+            </div>
+          </li>
+          </ul>
+
+          <p class="section__note">
+            As formações acadêmicas — três pós-graduações e o tecnólogo — estão na
+            <strong>linha do tempo</strong>, na aba Identidade.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato">
-      <h2>Contato</h2>
-      <form id="form-contato" autocomplete="off">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" required>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" required></textarea>
-        <button type="submit" class="btn">Enviar</button>
-      </form>
+    <!-- ============================================================
+         ABA 3 — PORTFÓLIO
+         Carrossel Cover Flow + estudos de caso.
+         Progressivo: sem JS vira faixa rolável e todos os casos abertos.
+         ============================================================ -->
+    <section class="panel" id="painel-portfolio" role="tabpanel"
+             aria-labelledby="tab-portfolio" tabindex="0" hidden>
+      <div class="container">
+        <div class="section">
+          <p class="section__label">Portfólio</p>
+          <h2 class="section__title">Projetos, e o que cada um comprova</h2>
+
+          <div class="filters filters--stack" role="group"
+               aria-label="Filtrar projetos por domínio" data-pf-filters>
+            <button class="filter" type="button" data-pf-dom="destaque" aria-pressed="true">Destaques</button>
+            <button class="filter" type="button" data-pf-dom="seg"      aria-pressed="false">Segurança</button>
+            <button class="filter" type="button" data-pf-dom="cloud"    aria-pressed="false">Cloud</button>
+            <button class="filter" type="button" data-pf-dom="auto"     aria-pressed="false">Automação</button>
+            <button class="filter" type="button" data-pf-dom="dev"      aria-pressed="false">Desenvolvimento</button>
+            <button class="filter" type="button" data-pf-dom="antigo"   aria-pressed="false">Anteriores</button>
+          </div>
+
+          <div class="pf" data-pf-root>
+
+            <!-- ---------- Palco ---------- -->
+            <div class="cf" data-cf>
+              <div class="cf__glow" data-cf-glow aria-hidden="true"></div>
+
+              <div class="cf__row">
+                <button class="cf__arrow" type="button" data-cf-prev aria-label="Projeto anterior">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg>
+                </button>
+
+                <div class="cf__stage" tabindex="0" role="group"
+                     aria-roledescription="carrossel"
+                     aria-label="Projetos — use as setas esquerda e direita"
+                     data-cf-stage>
+                <ul class="cf__track" data-cf-track>
+
+                  <li class="cf__item" data-dom="destaque seg dev" data-case="lab">
+                    <button class="cover cover--seg" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/lab.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Capa do Security Log Analysis Lab">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-seg"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">mar — set 2026</span>
+                        <span class="cover__title">Security Log Analysis Lab</span>
+                        <span class="cover__kind">Segurança defensiva</span>
+                        <span class="cover__stack"><span>Python</span><span>pytest</span><span>Actions</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="destaque cloud seg dev" data-case="docusmart">
+                    <button class="cover cover--cloud" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/docusmart.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Diagrama de arquitetura AWS do DocuSmart">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-cloud"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">jun 2026</span>
+                        <span class="cover__title">DocuSmart · Hack2Hire</span>
+                        <span class="cover__kind">Cloud e IA aplicada</span>
+                        <span class="cover__stack"><span>Lambda</span><span>Textract</span><span>Bedrock</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="destaque cloud auto" data-case="monitoramento">
+                    <button class="cover cover--auto" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/monitoramento.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Fluxo de monitoramento de disponibilidade na AWS">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-auto"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">dez 2025 — fev 2026</span>
+                        <span class="cover__title">Monitoramento de disponibilidade na AWS</span>
+                        <span class="cover__kind">Observabilidade</span>
+                        <span class="cover__stack"><span>EventBridge</span><span>CloudWatch</span><span>SNS</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="destaque seg auto" data-case="tcc">
+                    <button class="cover cover--seg" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/tcc.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Certificado da pós-graduação em Cybersecurity, relacionada ao TCC">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-seg"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2024</span>
+                        <span class="cover__title">Atualização de contramedidas · TCC</span>
+                        <span class="cover__kind">Projeto acadêmico</span>
+                        <span class="cover__stack"><span>Python</span><span>MITRE</span><span>Fernet</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="screenmatch">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/screenmatch.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Tela do Screen Match">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2024</span>
+                        <span class="cover__title">Screen Match</span>
+                        <span class="cover__kind">Java e persistência</span>
+                        <span class="cover__stack"><span>Java</span><span>Spring</span><span>JPA</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="vollmed">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/vollmed.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Telas da API Voll.med">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2024</span>
+                        <span class="cover__title">Voll.med · API REST</span>
+                        <span class="cover__kind">Java e Spring Boot</span>
+                        <span class="cover__stack"><span>Java</span><span>Spring</span><span>REST</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="decoder">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/decoder.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Tela do Challenge Decoder">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2023</span>
+                        <span class="cover__title">Challenge Decoder</span>
+                        <span class="cover__kind">JavaScript</span>
+                        <span class="cover__stack"><span>JavaScript</span><span>DOM</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li class="cf__item" data-dom="antigo dev" data-case="xmen">
+                    <button class="cover cover--dev" type="button">
+                      <span class="cover__art">
+                        <img class="cover__img" src="assets/img/portfolio/xmen.webp"
+                             width="800" height="500" loading="lazy" decoding="async"
+                             alt="Tela de seleção de personagem do site X-Men">
+                        <svg class="cover__glyph" aria-hidden="true"><use href="#gl-dev"></use></svg>
+                      </span>
+                      <span class="cover__body">
+                        <span class="cover__year">2023</span>
+                        <span class="cover__title">Site X-Men</span>
+                        <span class="cover__kind">HTML e CSS</span>
+                        <span class="cover__stack"><span>HTML</span><span>CSS</span><span>Grid</span></span>
+                      </span>
+                    </button>
+                  </li>
+
+                  </ul>
+                </div>
+
+                <button class="cf__arrow" type="button" data-cf-next aria-label="Próximo projeto">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg>
+                </button>
+              </div>
+
+              <div class="cf__nav">
+                <div class="cf__dots" role="group" aria-label="Ir para um projeto" data-cf-dots></div>
+              </div>
+
+              <label class="cf__scrub">
+                <span class="sr-only">Percorrer os projetos</span>
+                <input type="range" min="0" max="0" value="0" step="1" data-cf-range>
+              </label>
+
+              <p class="sr-only" aria-live="polite" data-cf-live></p>
+            </div>
+
+            <!-- ---------- Estudos de caso ---------- -->
+            <div class="pf-panels" data-pf-panels>
+
+              <article class="pf-case" data-case="lab">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Security Log Analysis Lab</h3>
+                  <p class="pf-case__sub">Laboratório reprodutível de investigação de eventos de autenticação do Windows, da evidência bruta ao contexto.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Python · pytest · GitHub Actions</dd></div>
+                  <div><dt>Participação</dt><dd>Autor único</dd></div>
+                  <div><dt>Evidência</dt><dd>87 testes, matriz Linux e Windows</dd></div>
+                  <div><dt>Período</dt><dd>mar — set 2026</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Log de autenticação bruto não responde à pergunta que importa no incidente: isto é ataque, erro de configuração ou comportamento legítimo? Faltava um caminho reprodutível entre o evento e a conclusão.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>Pipeline de normalização, correlação temporal e regras de detecção sobre eventos 4624 e 4625, com relatório HTML que entrega hipótese, limite e o que ainda precisa ser verificado — não apenas o alerta.</p>
+                  </div>
+                  <div>
+                    <h4>Decisões registradas</h4>
+                    <p>20 ADRs documentam o porquê de cada escolha, incluindo a mitigação de injeção de fórmula na exportação CSV. O repositório mostra o raciocínio, não só o resultado.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Duas regras implementadas, uma terceira em roadmap. Dados sintéticos: o laboratório prova método, não volume de produção.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/security-log-analysis-lab" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="docusmart">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">DocuSmart · Hack2Hire</h3>
+                  <p class="pf-case__sub">Análise automatizada de documentos de sinistro com IA generativa na AWS, construída em hackathon.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Lambda · Textract · Bedrock · S3 · DynamoDB</dd></div>
+                  <div><dt>Participação</dt><dd>31 dos 35 commits</dd></div>
+                  <div><dt>Evidência</dt><dd>Backend, frontend e arquitetura</dd></div>
+                  <div><dt>Período</dt><dd>jun 2026</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Triagem manual de documentos de sinistro é lenta, inconsistente entre analistas e não deixa rastro de como a decisão foi tomada.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>Upload para S3, extração com Textract, classificação com Bedrock, persistência em DynamoDB e observabilidade no CloudWatch — tudo atrás de API Gateway com permissões IAM delimitadas por serviço.</p>
+                  </div>
+                  <div>
+                    <h4>Minha participação</h4>
+                    <p>Criei o repositório e assinei 31 dos 35 commits: a função Lambda, o frontend inteiro e a documentação técnica de arquitetura e observabilidade. Verificável no histórico do Git.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Projeto de hackathon. Prova de conceito funcional, sem hardening de produção, teste de carga ou gestão de custo em escala.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/Hack2Hire" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="monitoramento">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Monitoramento de disponibilidade na AWS</h3>
+                  <p class="pf-case__sub">Verificação periódica de um site com métrica, alarme e notificação — o ciclo completo de observabilidade em escala pequena.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>EventBridge · Lambda · CloudWatch · SNS · Grafana</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Fluxo agendado, alarme, painel</dd></div>
+                  <div><dt>Período</dt><dd>dez 2025 — fev 2026</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Saber que um serviço caiu pelo cliente é o pior canal de detecção possível. O objetivo era inverter isso com o mínimo de infraestrutura.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>EventBridge dispara a Lambda em intervalo fixo, a verificação publica métrica customizada no CloudWatch, o alarme aciona SNS e o Grafana consolida a série histórica.</p>
+                  </div>
+                  <div>
+                    <h4>Por que importa</h4>
+                    <p>É o mesmo desenho que sustenta monitoramento corporativo: coleta, métrica, limiar, notificação, visualização. Muda a escala, não o raciocínio.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Um alvo monitorado, sem alta disponibilidade da própria verificação nem política de escalonamento de alerta.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/sistema_de_monitoramento_AWS" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="tcc">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Atualização de contramedidas de segurança</h3>
+                  <p class="pf-case__sub">Trabalho de conclusão de curso: ingestão da base MITRE ATT&amp;CK e armazenamento cifrado de contramedidas.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Python · MITRE ATT&amp;CK · Fernet</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Pipeline de ingestão e cifragem</dd></div>
+                  <div><dt>Período</dt><dd>2024</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>Problema</h4>
+                    <p>Manter uma base local de contramedidas sincronizada com uma fonte externa de conhecimento de ameaças, sem guardar o conteúdo em claro.</p>
+                  </div>
+                  <div>
+                    <h4>Solução</h4>
+                    <p>Download da base MITRE ATT&amp;CK, extração das contramedidas, persistência cifrada com Fernet e monitoramento de comportamento com alerta para padrões suspeitos.</p>
+                  </div>
+                  <div>
+                    <h4>O que aprendi depois</h4>
+                    <p>A chave de cifragem ficou versionada no repositório. Hoje o projeto gera a chave em tempo de execução e o histórico foi reescrito — a lição sobre gestão de segredo veio do próprio erro.</p>
+                  </div>
+                  <div>
+                    <h4>Limites</h4>
+                    <p>Projeto acadêmico, 258 linhas e cobertura de teste mínima. Está aqui como registro de trajetória, não como referência de engenharia atual.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/tcc-Sistema_Detecao_de_Intrusao" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="screenmatch">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Screen Match</h3>
+                  <p class="pf-case__sub">Catálogo de séries com consumo de API externa e persistência relacional.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Java · Spring Data JPA · PostgreSQL</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Formação Alura</dd></div>
+                  <div><dt>Período</dt><dd>2024</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Desserialização de JSON, mapeamento objeto-relacional, consultas derivadas e organização em camadas de serviço.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Projeto de formação. Entra no portfólio como base de linguagem e modelagem, não como entrega profissional.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/Screen-Match" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="vollmed">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Voll.med · API REST</h3>
+                  <p class="pf-case__sub">API de gestão de consultas para uma clínica fictícia: cadastro de médicos e pacientes, agendamento e cancelamento.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>Java · Spring Boot · JPA · Validation</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>CRUD e regras de agendamento</dd></div>
+                  <div><dt>Período</dt><dd>2024</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Desenho de endpoints REST, validação de entrada, regras de negócio sobre agendamento e separação entre DTO e entidade.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Projeto de formação. Relevante por tratar de domínio de saúde, que é onde atuo profissionalmente.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/VollMed_APP" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="decoder">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Challenge Decoder</h3>
+                  <p class="pf-case__sub">Codificador e decodificador de mensagens por matriz de substituição, no navegador.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>JavaScript · HTML · CSS</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Desafio Oracle ONE</dd></div>
+                  <div><dt>Período</dt><dd>2023</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Manipulação de string, estado de interface sem framework e interação com a área de transferência.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Primeiro desafio do programa Oracle Next Education. Marca o início da trajetória em desenvolvimento.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/challenge_decoder" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+              <article class="pf-case" data-case="xmen">
+                <header class="pf-case__head">
+                  <h3 class="pf-case__title">Site X-Men</h3>
+                  <p class="pf-case__sub">Tela de seleção de personagem com descrição detalhada de cada um.</p>
+                </header>
+                <dl class="pf-specs">
+                  <div><dt>Stack</dt><dd>HTML · CSS</dd></div>
+                  <div><dt>Participação</dt><dd>Autor</dd></div>
+                  <div><dt>Evidência</dt><dd>Publicado em GitHub Pages</dd></div>
+                  <div><dt>Período</dt><dd>2023</dd></div>
+                </dl>
+                <div class="pf-case__grid">
+                  <div>
+                    <h4>O que exercitou</h4>
+                    <p>Layout com grid, estado visual de seleção e responsividade sem biblioteca.</p>
+                  </div>
+                  <div>
+                    <h4>Contexto</h4>
+                    <p>Projeto de formação em front-end. Está aqui pela honestidade da linha do tempo.</p>
+                  </div>
+                </div>
+                <p class="pf-case__links">
+                  <a class="pf-link" href="https://github.com/LeandroGoulart/site_X-men" target="_blank" rel="noopener">Repositório</a>
+                </p>
+              </article>
+
+            </div>
+            <p class="pf-empty" data-pf-empty hidden>Nenhum projeto neste filtro.</p>
+          </div>
+
+          <p class="section__note">
+            Cada projeto declara participação real e limite. Um projeto de formação está
+            identificado como tal — o que separa trajetória de entrega profissional é
+            justamente essa distinção estar escrita.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sprite de ícones das capas -->
+      <svg class="pf-sprite" aria-hidden="true" focusable="false">
+        <symbol id="gl-seg" viewBox="0 0 48 48">
+          <path d="M24 4 7 11v13c0 11 7 18.5 17 21 10-2.5 17-10 17-21V11Z"/>
+          <path d="m16 24 6 6 12-12"/>
+        </symbol>
+        <symbol id="gl-cloud" viewBox="0 0 48 48">
+          <path d="M14 37a9 9 0 0 1-.6-18A13 13 0 0 1 37 22a8 8 0 0 1-1 15Z"/>
+          <path d="M24 24v10m0 0-4-4m4 4 4-4"/>
+        </symbol>
+        <symbol id="gl-auto" viewBox="0 0 48 48">
+          <path d="M26 4 10 27h11l-3 17 20-24H26Z"/>
+        </symbol>
+        <symbol id="gl-dev" viewBox="0 0 48 48">
+          <path d="m16 15-11 9 11 9M32 15l11 9-11 9M28 10l-8 28"/>
+        </symbol>
+      </svg>
     </section>
+
+    <!-- ============================================================
+         ABA 4 — COMPORTAMENTAL
+         ============================================================ -->
+    <section class="panel" id="painel-comportamental" role="tabpanel"
+             aria-labelledby="tab-comportamental" tabindex="0" hidden>
+      <div class="container">
+
+        <!-- ---------- 01 · Identidade comportamental ---------- -->
+        <div class="section">
+          <div class="bprofile">
+            <p class="bprofile__kicker">Perfil comportamental profissional</p>
+            <h2 class="bprofile__name">Analítico Executor</h2>
+            <p class="bprofile__line">Pensamento crítico, precisão técnica e execução responsável.</p>
+
+            <dl class="bprofile__meta">
+              <div><dt>Perfil DISC</dt><dd>C / D</dd></div>
+              <div><dt>Tipologia registrada</dt><dd>ISTJ</dd></div>
+              <div><dt>Estilo de trabalho</dt><dd>Analítico e estruturado</dd></div>
+              <div><dt>Orientação de liderança</dt><dd>Técnica e colaborativa</dd></div>
+            </dl>
+
+            <ul class="bprofile__chips">
+              <li>Senso crítico</li>
+              <li>Visão sistêmica</li>
+              <li>Autonomia</li>
+              <li>Disciplina</li>
+              <li>Investigação</li>
+              <li>Qualidade</li>
+              <li>Melhoria contínua</li>
+            </ul>
+
+            <p class="bprofile__foot">
+              <strong>Analítico Executor</strong> é uma síntese do conjunto — avaliação
+              admissional, trajetória e feedback profissional. Não é classificação
+              psicológica oficial, e serve como linha de base para comparar avaliações
+              futuras.
+            </p>
+          </div>
+        </div>
+
+        <!-- ---------- 02 · Resumo ---------- -->
+        <div class="section">
+          <p class="section__label">Resumo</p>
+
+          <p class="thesis">
+            Fui formado num lugar onde errar o diagnóstico custa caro e a janela
+            para consertar é <em>fixa</em>. O resto da minha forma de trabalhar
+            vem daí.
+          </p>
+
+          <div class="arc">
+            <article class="arc__card">
+              <p class="arc__k">Origem</p>
+              <h3 class="arc__h">Sete anos onde falha tem consequência física</h3>
+              <p class="arc__p">
+                Manutenção metroferroviária. Intervenção entre uma parada e outra do
+                sistema, sem prorrogação. Dali veio a sequência que ainda uso:
+                falha, impacto, diagnóstico, prioridade, intervenção,
+                restabelecimento.
+              </p>
+            </article>
+
+            <article class="arc__card">
+              <p class="arc__k">Operação</p>
+              <h3 class="arc__h">Critério antes da decisão, registro depois dela</h3>
+              <p class="arc__p">
+                Separo fato de hipótese, procuro a causa antes da solução e escrevo
+                o critério antes de escolher. Em serviço de saúde isso não é zelo:
+                é o que mantém uma divergência técnica fora do campo contratual.
+              </p>
+            </article>
+
+            <article class="arc__card">
+              <p class="arc__k">Fronteira</p>
+              <h3 class="arc__h">Delegar, e agir sem o quadro completo</h3>
+              <p class="arc__p">
+                Lidero por competência, não por cargo — e o custo disso é
+                centralizar. O que estou corrigindo: distribuir responsabilidade,
+                decidir com informação incompleta e falar para o interlocutor, não
+                para o registro.
+              </p>
+            </article>
+          </div>
+
+          <blockquote class="creed">
+            <p>
+              A solução eficiente não é a mais complexa. É a que resolve o problema
+              correto, tem risco controlado e pode ser
+              <strong>validada, documentada e sustentada</strong> por quem vier depois.
+            </p>
+          </blockquote>
+        </div>
+
+        <!-- ---------- 03 · Método ---------- -->
+        <div class="section">
+          <p class="section__label">Método</p>
+          <h2 class="section__title">Como eu resolvo um problema, do diagnóstico à melhoria</h2>
+          <p class="prose prose--lead">
+            Esta é a parte verificável do perfil: não é a afirmação de que tenho senso
+            crítico, é a sequência que aplico — e que aparece registrada nos ADRs do
+            laboratório, nos critérios de aceite dos contratos e na documentação dos
+            projetos.
+          </p>
+
+          <ol class="method">
+            <li class="method__step">
+              <span class="method__n">01</span>
+              <h3>Compreender</h3>
+              <p>Identificar o problema real, o contexto e quem é impactado. O sintoma relatado raramente é o problema.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">02</span>
+              <h3>Investigar</h3>
+              <p>Separar fato, hipótese, sintoma e evidência. Nessa ordem, e sem misturar as quatro coisas no mesmo parágrafo.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">03</span>
+              <h3>Avaliar</h3>
+              <p>Riscos, dependências, impacto e alternativas. Inclusive a alternativa de não fazer nada.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">04</span>
+              <h3>Decidir</h3>
+              <p>Escolher a solução adequada ao contexto, não a tecnicamente mais elegante.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">05</span>
+              <h3>Executar</h3>
+              <p>Implementar de forma controlada, com ponto de retorno definido antes de começar.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">06</span>
+              <h3>Validar</h3>
+              <p>Confirmar que a intervenção resolveu o problema original — não que o alarme parou de tocar.</p>
+            </li>
+            <li class="method__step">
+              <span class="method__n">07</span>
+              <h3>Documentar</h3>
+              <p>Registrar decisão, resultado e o que ficou em aberto. Decisão sem registro vira folclore em seis meses.</p>
+            </li>
+          </ol>
+        </div>
+
+        <!-- ---------- 04 · Traços ---------- -->
+        <div class="section">
+          <p class="section__label">Traços</p>
+          <h2 class="section__title">Cinco características, o que entregam e onde custam caro</h2>
+          <p class="prose prose--lead">
+            Traço comportamental só vale alguma coisa quando vem com o preço. Em cada
+            um, a pergunta que uso para saber quando parei de ajudar.
+          </p>
+
+          <ul class="traits">
+
+            <li class="trait">
+              <h3 class="trait__name">Preciso entender antes de decidir</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Investigação de causa raiz em vez de contorno. Decisão que sobrevive a
+                ser questionada seis meses depois, porque o critério está escrito. No
+                laboratório de análise de logs são 20 ADRs: cada escolha registra o
+                porquê, não só o resultado.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Análise que deixa de melhorar a decisão e passa a adiar o desconforto
+                de tomá-la. A pergunta que uso para cortar: <em>que informação nova
+                mudaria a decisão?</em> Se a resposta é nenhuma, a análise acabou.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Assumo a responsabilidade pelo resultado</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Problema que chega até mim não volta sem resposta. No Hack2Hire criei
+                o repositório e assinei 31 dos 35 commits — backend, frontend e a
+                documentação técnica que ninguém queria escrever.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                "Se ninguém faz direito, eu faço" funciona até eu virar o gargalo. O
+                ciclo é conhecido: vejo a falha, assumo, resolvo, delego menos da
+                próxima vez. Competência vira dependência, e isso é falha de escala,
+                não vitória.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Penso o serviço inteiro, não a camada</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Aplicação, servidor, rede, identidade, fornecedor e usuário são um
+                serviço só. É o que permite ligar um incidente técnico ao impacto
+                assistencial e à cláusula contratual que ele aciona — e saber qual
+                dos três resolver primeiro.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Organizações dividem responsabilidade, e tecnicamente estar certo
+                sobre a dependência não me dá mandato sobre ela. Preciso de
+                visibilidade; nem sempre preciso de participação. Confundir as duas
+                atropela fronteira de time.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Registro a decisão, não apenas o resultado</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Termo de referência, critério de aceite, evidência de entrega,
+                registro de decisão. Em contrato de serviço de saúde isso não é
+                burocracia: é o que separa divergência técnica de disputa contratual.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Documento que ninguém lê é custo disfarçado de zelo. O teste é se
+                quem herdar o sistema consegue operar sem me perguntar nada.
+              </p>
+            </li>
+
+            <li class="trait">
+              <h3 class="trait__name">Confronto com evidência, não com posição</h3>
+              <p class="trait__gives">
+                <span class="trait__tag trait__tag--up">Entrega</span>
+                Argumento, evidência, conclusão — nessa ordem, com fornecedor, com
+                área técnica e com cliente. Discordo de quem me paga quando tenho
+                dado para sustentar, e aceito estar errado quando o dado é do outro
+                lado.
+              </p>
+              <p class="trait__costs">
+                <span class="trait__tag trait__tag--down">Custo</span>
+                Estar certo e ser eficaz são dois problemas diferentes. Já perdi
+                discussão tecnicamente correta pela forma, e a precisão lógica não
+                recupera o que a forma estragou.
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- ---------- 05 · Instrumentos ---------- -->
+        <div class="section">
+          <p class="section__label">Instrumentos</p>
+          <h2 class="section__title">O que as avaliações registram, e o quanto isso vale</h2>
+
+          <div class="assess">
+
+            <div class="assess__card">
+              <div class="assess__head">
+                <h3>Perfil DISC</h3>
+                <span class="assess__date">maio de 2026 · processo admissional</span>
+              </div>
+
+              <div class="disc__top">
+                <div class="donut" aria-hidden="true">
+                  <span class="donut__core">
+                    <strong>C/D</strong>
+                    <small>DISC</small>
+                  </span>
+                </div>
+                <p class="disc__lead">
+                  <strong>Conformidade predominante com Dominância secundária.</strong>
+                  Compreender o problema, reunir informação, estabelecer critério e
+                  então agir sobre ele.
+                </p>
+              </div>
+
+              <dl class="disc">
+                <div class="disc__row">
+                  <dt>C <span>Conformidade</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--c" style="--v:34.62%"></span>
+                    <span class="disc__val">34,62%</span>
+                  </dd>
+                  <p class="disc__desc">Precisão, análise, qualidade e critério objetivo.</p>
+                </div>
+                <div class="disc__row">
+                  <dt>D <span>Dominância</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--d" style="--v:25.00%"></span>
+                    <span class="disc__val">25,00%</span>
+                  </dd>
+                  <p class="disc__desc">Decisão, iniciativa, autonomia e resolução.</p>
+                </div>
+                <div class="disc__row">
+                  <dt>S <span>Estabilidade</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--s" style="--v:20.51%"></span>
+                    <span class="disc__val">20,51%</span>
+                  </dd>
+                  <p class="disc__desc">Consistência, persistência e previsibilidade.</p>
+                </div>
+                <div class="disc__row">
+                  <dt>I <span>Influência</span></dt>
+                  <dd>
+                    <span class="disc__bar disc__bar--i" style="--v:19.87%"></span>
+                    <span class="disc__val">19,87%</span>
+                  </dd>
+                  <p class="disc__desc">Comunicação, interação e capacidade de influência.</p>
+                </div>
+              </dl>
+
+              <p class="assess__read">
+                <strong>Leitura:</strong> a combinação é compatível com investigação
+                técnica, segurança defensiva, análise de risco, governança e resolução
+                estruturada de problemas. Compatibilidade não é comprovação de aptidão
+                — para isso existe a aba de portfólio.
+              </p>
+            </div>
+
+            <div class="assess__card">
+              <div class="assess__head">
+                <h3>Tipologia</h3>
+                <span class="assess__date">resultado recorrente</span>
+              </div>
+
+              <p class="mbti__code">ISTJ <span>Logístico · Inspetor</span></p>
+              <p class="assess__body">
+                Perfil predominantemente prático, responsável, metódico e orientado a
+                fatos, estrutura e compromissos.
+              </p>
+
+              <dl class="mbti">
+                <div><dt>I — Introversão</dt><dd>Reflexão e concentração individual.</dd></div>
+                <div><dt>S — Sensação</dt><dd>Valorização de fatos e informação concreta.</dd></div>
+                <div><dt>T — Pensamento</dt><dd>Decisão orientada por critério lógico.</dd></div>
+                <div><dt>J — Julgamento</dt><dd>Preferência por planejamento e estrutura.</dd></div>
+              </dl>
+
+              <div class="mbti__ctx">
+                <p class="mbti__ctxtitle">Traços contextuais observados</p>
+                <p class="assess__body">
+                  <strong>ESTJ</strong> — coordenação, objetividade e execução
+                  operacional. <strong>INTJ</strong> — visão sistêmica, estratégia e
+                  questionamento de processo.
+                </p>
+                <p class="assess__body">
+                  Não são resultados simultâneos: ISTJ é o resultado registrado, os
+                  outros dois são aproximações interpretativas do comportamento em
+                  contextos específicos. Também não atribuo percentuais às dimensões,
+                  porque esse dado não existe no laudo.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Faixa de ressalva, de ponta a ponta -->
+      <aside class="caveat">
+        <p>
+          <strong>Sobre o valor destes instrumentos.</strong> DISC e MBTI são
+          questionários de autorrelato: medem como a pessoa percebe o próprio estilo
+          num momento e num contexto. Não medem competência e não preveem desempenho.
+        </p>
+      </aside>
+
+      <div class="container">
+
+        <!-- ---------- 06 · Perspectiva externa ---------- -->
+        <div class="section">
+          <p class="section__label">Perspectiva externa</p>
+          <h2 class="section__title">O que outras pessoas observaram, e o que é leitura minha</h2>
+          <p class="prose prose--lead">
+            A distinção importa: característica reconhecida por terceiro tem peso
+            diferente de característica que eu mesmo inferi do meu histórico. As duas
+            estão aqui, separadas.
+          </p>
+
+          <div class="fit">
+            <div class="fit__col fit__col--yes">
+              <h3 class="fit__title">Reconhecido por terceiros</h3>
+              <ul>
+                <li>Capacidade analítica</li>
+                <li>Comprometimento</li>
+                <li>Disciplina</li>
+                <li>Curiosidade técnica</li>
+                <li>Aprendizado contínuo</li>
+                <li>Dedicação</li>
+              </ul>
+              <p class="fit__src">Origem: recomendação profissional registrada no LinkedIn.</p>
+            </div>
+            <div class="fit__col fit__col--infer">
+              <h3 class="fit__title">Inferido da trajetória</h3>
+              <ul>
+                <li>Resiliência operacional</li>
+                <li>Adaptabilidade</li>
+                <li>Senso de responsabilidade</li>
+                <li>Orientação a resultado</li>
+              </ul>
+              <p class="fit__src">Origem: leitura do próprio histórico — ambiente operacional crítico, transição de carreira e diversidade de funções.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- 07 · Matriz ---------- -->
+        <div class="section">
+          <p class="section__label">Matriz comportamental</p>
+          <h2 class="section__title">Força e desenvolvimento, lado a lado</h2>
+
+          <div class="matrix" role="table" aria-label="Matriz comportamental: dimensão, característica forte e desenvolvimento contínuo">
+            <div class="matrix__head" role="row">
+              <span role="columnheader">Dimensão</span>
+              <span role="columnheader">Característica forte</span>
+              <span role="columnheader">Desenvolvimento contínuo</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Pensamento analítico</span>
+              <span role="cell" data-l="Forte">Investigação criteriosa</span>
+              <span role="cell" data-l="Desenvolvimento">Evitar excesso de análise</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Senso crítico</span>
+              <span role="cell" data-l="Forte">Questionamento de premissas</span>
+              <span role="cell" data-l="Desenvolvimento">Equilibrar crítica e pragmatismo</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Organização</span>
+              <span role="cell" data-l="Forte">Controle e rastreabilidade</span>
+              <span role="cell" data-l="Desenvolvimento">Desenvolver flexibilidade</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Qualidade</span>
+              <span role="cell" data-l="Forte">Exigência técnica</span>
+              <span role="cell" data-l="Desenvolvimento">Priorizar melhorias pelo impacto</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Persistência</span>
+              <span role="cell" data-l="Forte">Continuidade diante de obstáculos</span>
+              <span role="cell" data-l="Desenvolvimento">Reconhecer quando mudar de estratégia</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Comunicação</span>
+              <span role="cell" data-l="Forte">Clareza e objetividade</span>
+              <span role="cell" data-l="Desenvolvimento">Adaptar ao interlocutor</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Liderança</span>
+              <span role="cell" data-l="Forte">Autoridade fundamentada em competência</span>
+              <span role="cell" data-l="Desenvolvimento">Delegação e desenvolvimento da equipe</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Responsabilidade</span>
+              <span role="cell" data-l="Forte">Comprometimento com entregas</span>
+              <span role="cell" data-l="Desenvolvimento">Distribuição equilibrada</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Autonomia</span>
+              <span role="cell" data-l="Forte">Iniciativa e independência</span>
+              <span role="cell" data-l="Desenvolvimento">Fortalecer decisão colaborativa</span>
+            </div>
+            <div class="matrix__row" role="row">
+              <span role="cell" data-l="Dimensão">Tomada de decisão</span>
+              <span role="cell" data-l="Forte">Critério lógico e evidência</span>
+              <span role="cell" data-l="Desenvolvimento">Atuar com informação incompleta</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- 08 · Ambiente ---------- -->
+        <div class="section">
+          <p class="section__label">Ambiente</p>
+          <h2 class="section__title">Onde eu rendo, e onde eu atrapalho</h2>
+
+          <div class="fit">
+            <div class="fit__col fit__col--yes">
+              <h3 class="fit__title">Rendo mais quando</h3>
+              <ul>
+                <li>a responsabilidade de cada parte está definida</li>
+                <li>tenho acesso à informação que afeta o resultado pelo qual respondo</li>
+                <li>existe critério de aceite escrito, não combinado de boca</li>
+                <li>questionar o processo é permitido, e a resposta não é "sempre foi assim"</li>
+                <li>o problema é complexo e a consequência é real</li>
+              </ul>
+            </div>
+            <div class="fit__col fit__col--no">
+              <h3 class="fit__title">Rendo menos quando</h3>
+              <ul>
+                <li>a responsabilidade é ambígua e ninguém quer defini-la</li>
+                <li>informação relevante é retida por hábito ou por política</li>
+                <li>a decisão é tomada sem critério e revisada por pressão</li>
+                <li>tudo é urgente, o que equivale a não haver prioridade</li>
+                <li>o processo existe mas ninguém sabe explicar para que serve</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="section__note">
+            Avaliação de referência: maio de 2026. Resultados futuros serão registrados
+            com data, instrumento e contexto, para comparação — variação de percentual
+            entre instrumentos diferentes não significa evolução nem regressão.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABA 5 — CONTATO
+         ============================================================ -->
+    <section class="panel" id="painel-contato" role="tabpanel"
+             aria-labelledby="tab-contato" tabindex="0" hidden>
+
+      <div class="thanks">
+        <div class="container thanks__inner">
+          <img class="thanks__avatar" src="assets/img/avatar.webp" width="420" height="420"
+               alt="Avatar ilustrado de Leandro Goulart" loading="lazy" decoding="async">
+          <div class="thanks__text">
+            <p class="thanks__kicker">Fim da linha</p>
+            <h2 class="thanks__title">Obrigado por ter chegado até aqui</h2>
+            <p class="thanks__body">
+              Cinco abas é mais do que a maioria das páginas de currículo consegue
+              segurar. Se você leu até esta, o mínimo que eu devo é resposta rápida —
+              qualquer canal abaixo funciona, e o formulário no fim cai direto no meu
+              e-mail.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <div class="section">
+          <p class="section__label">Canais</p>
+          <h2 class="section__title">Onde me encontrar</h2>
+
+          <ul class="hub">
+            <li>
+              <a class="hub__card hub__card--in" href="https://www.linkedin.com/in/leandrovgoulart"
+                 target="_blank" rel="noopener">
+                <svg class="hub__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.6 4.76 5.98V21h-4v-5.5c0-1.31-.02-3-1.86-3-1.86 0-2.14 1.42-2.14 2.9V21h-4z"/>
+                </svg>
+                <span class="hub__name">LinkedIn</span>
+                <span class="hub__handle">/in/leandrovgoulart</span>
+                <span class="hub__note">Trajetória, publicações e recomendações</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hub__card hub__card--gh" href="https://github.com/LeandroGoulart"
+                 target="_blank" rel="noopener">
+                <svg class="hub__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49v-1.9c-2.84.62-3.44-1.2-3.44-1.2-.47-1.19-1.14-1.5-1.14-1.5-.93-.64.07-.63.07-.63 1.03.08 1.57 1.06 1.57 1.06.92 1.57 2.4 1.12 2.99.86.09-.67.36-1.12.65-1.38-2.27-.26-4.65-1.14-4.65-5.06 0-1.12.4-2.03 1.05-2.75-.1-.26-.46-1.3.1-2.71 0 0 .86-.28 2.8 1.05a9.7 9.7 0 0 1 5.1 0c1.94-1.33 2.8-1.05 2.8-1.05.56 1.41.21 2.45.1 2.71.66.72 1.05 1.63 1.05 2.75 0 3.93-2.38 4.8-4.66 5.05.37.32.69.94.69 1.9v2.81c0 .27.19.6.71.49A10.2 10.2 0 0 0 12 1.8Z"/>
+                </svg>
+                <span class="hub__name">GitHub</span>
+                <span class="hub__handle">@LeandroGoulart</span>
+                <span class="hub__note">Laboratórios, projetos e documentação técnica</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hub__card hub__card--cr" href="https://www.credly.com/users/leandro-v-goulart"
+                 target="_blank" rel="noopener">
+                <svg class="hub__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="9" r="6"/>
+                  <path d="m8.5 14.2-1.6 7 5.1-2.6 5.1 2.6-1.6-7"/>
+                </svg>
+                <span class="hub__name">Credly</span>
+                <span class="hub__handle">/users/leandro-v-goulart</span>
+                <span class="hub__note">Certificações verificáveis na origem</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hub__card hub__card--al" href="https://cursos.alura.com.br/emprega-one/profile/leandrovgoulart"
+                 target="_blank" rel="noopener">
+                <svg class="hub__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3.4 22 8l-10 4.6L2 8Z"/>
+                  <path d="M6 10.2V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.8"/>
+                  <path d="M20.5 9.2v4.6"/>
+                </svg>
+                <span class="hub__name">Alura</span>
+                <span class="hub__handle">/profile/leandrovgoulart</span>
+                <span class="hub__note">Formação, cursos concluídos e projetos de trilha</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hub__card hub__card--wa" href="https://wa.me/5531991879759"
+                 target="_blank" rel="noopener">
+                <svg class="hub__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 21l1.4-4.9A8.6 8.6 0 1 1 7.8 19.4Z"/>
+                  <path d="M8.9 8c.3 0 .5.2.6.4l.7 1.5c.1.3 0 .5-.2.7l-.5.5c-.1.2-.2.4 0 .7a7 7 0 0 0 2.7 2.4c.3.1.5 0 .7-.2l.5-.6c.2-.2.4-.3.7-.2l1.6.7c.3.1.4.4.3.7-.2.9-1 1.5-2 1.5-3.1 0-6.5-3.5-6.5-6.5 0-1 .6-1.8 1.4-1.6Z"/>
+                </svg>
+                <span class="hub__name">WhatsApp</span>
+                <span class="hub__handle">+55 31 99187-9759</span>
+                <span class="hub__note">Canal comercial, em horário comercial</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="hub__card hub__card--ml" href="mailto:leandrovgoulart@gmail.com">
+                <svg class="hub__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="2.5" y="4.5" width="19" height="15" rx="2"/>
+                  <path d="m3 6 9 6.5L21 6"/>
+                </svg>
+                <span class="hub__name">E-mail</span>
+                <span class="hub__handle">leandrovgoulart@gmail.com</span>
+                <span class="hub__note">Canal preferido para proposta e documento</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <p class="section__label">Mensagem</p>
+          <h2 class="section__title">Ou escreva por aqui</h2>
+
+          <form class="cform" id="form-contato"
+                action="https://formspree.io/f/mkgvqndz" method="POST" data-cform>
+            <div class="cform__grid">
+              <p class="cform__field">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" autocomplete="name" required>
+              </p>
+              <p class="cform__field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </p>
+            </div>
+
+            <p class="cform__field">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="message" rows="6" required></textarea>
+            </p>
+
+            <!-- armadilha de spam reconhecida pela Formspree -->
+            <p class="cform__trap" aria-hidden="true">
+              <label for="_gotcha">Deixe este campo em branco</label>
+              <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+            </p>
+            <input type="hidden" name="_subject" value="Contato pelo site — Career OS">
+
+            <div class="cform__foot">
+              <button class="cform__send" type="submit">Enviar mensagem</button>
+              <p class="cform__status" role="status" aria-live="polite" data-cform-status></p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2025 - Leandro Goulart</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Leandro Vieira Goulart · Belo Horizonte, MG</p>
+    </div>
   </footer>
 
-  <script src="src/js/main.js"></script>
+  <script src="js/tabs.js" defer></script>
+  <script src="js/timeline.js" defer></script>
+  <script src="js/skills.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
+  <script src="js/contato.js" defer></script>
 </body>
 </html>
