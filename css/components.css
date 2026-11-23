@@ -2116,3 +2116,8 @@
   .hub__card { padding: var(--sp-4); column-gap: var(--sp-3); }
   .hub__icon { width: 26px; height: 26px; }
 }
+
+/* ---------- Download do currículo ---------- */
+/* Só o generalista é linkado. Os outros dois ficam no repositório
+   para envio direto, sem entrar na navegação do site. */
+.hub__card--cv { --hc: var(--c-accent-bright); --hs: var(--c-accent-soft); }

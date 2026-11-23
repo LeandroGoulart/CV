@@ -329,3 +329,26 @@
   .hero__name { font-size: var(--fs-2xl); }
   .section { padding-block: var(--sp-12); }
 }
+
+/* Currículo em PDF: único item de ação do hero, destacado dos demais. */
+.contact-link--cv {
+  color: var(--c-bg);
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  font-weight: 600;
+}
+
+.contact-link--cv svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-link--cv:hover,
+.contact-link--cv:focus-visible {
+  color: var(--c-bg);
+  background: var(--c-accent-bright);
+  border-color: var(--c-accent-bright);
+}
