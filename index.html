@@ -1901,11 +1901,31 @@
 
   </main>
 
+  <!-- Assinatura da Goulart InfoSolutions: este site também é entrega da
+       empresa. Mesma estrutura, mesmas cores e mesma marcação do rodapé de
+       goulartinfosolutions.github.io — fundo --marinho, filete --vinho,
+       logo horizontal à esquerda e perfis à direita. -->
   <footer class="site-footer">
-    <div class="container">
-      <p>Leandro Vieira Goulart · Belo Horizonte, MG</p>
+    <div class="container site-footer__inner">
+      <a class="site-footer__brand" href="https://leandrogoulart.github.io/GoulartInfoSolutions/"
+         rel="noopener" aria-label="Goulart InfoSolutions">
+        <img src="assets/icons/logo-goulart-horizontal.svg" alt="Goulart InfoSolutions"
+             width="184" height="42" loading="lazy" decoding="async">
+      </a>
+      <p>&copy; <span data-ano>2026</span> Goulart InfoSolutions</p>
+      <nav aria-label="Perfis">
+        <a href="https://github.com/LeandroGoulart" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/leandrovgoulart/" rel="noopener">LinkedIn</a>
+      </nav>
     </div>
   </footer>
+
+  <script>
+    /* Ano sempre corrente: rodapé com ano travado envelhece sozinho. */
+    document.querySelectorAll('[data-ano]').forEach(function (e) {
+      e.textContent = new Date().getFullYear();
+    });
+  </script>
 
   <script src="js/tabs.js" defer></script>
   <script src="js/timeline.js" defer></script>

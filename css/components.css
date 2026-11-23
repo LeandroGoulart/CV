@@ -257,7 +257,7 @@
 
 .xp--current {
   border-left: 3px solid var(--c-alert);
-  box-shadow: inset 1px 0 0 rgba(255, 77, 94, 0.25);
+  box-shadow: inset 1px 0 0 rgba(255, 59, 78, 0.25);
 }
 
 .xp--current .xp__period { color: var(--c-alert); }
@@ -1837,8 +1837,8 @@
   padding: var(--sp-16) 0;
   overflow: hidden;
   background:
-    radial-gradient(44rem 24rem at 20% 10%, rgba(53, 200, 232, 0.14), transparent 65%),
-    radial-gradient(34rem 22rem at 88% 92%, rgba(255, 77, 94, 0.12), transparent 68%),
+    radial-gradient(44rem 24rem at 20% 10%, rgba(0, 160, 236, 0.14), transparent 65%),
+    radial-gradient(34rem 22rem at 88% 92%, rgba(255, 59, 78, 0.12), transparent 68%),
     var(--c-bg);
   border-bottom: 1px solid var(--c-border);
 }
@@ -1868,8 +1868,8 @@
   object-fit: cover;
   border: 1px solid var(--c-accent-strong);
   box-shadow:
-    0 0 0 6px rgba(53, 200, 232, 0.07),
-    0 0 42px rgba(53, 200, 232, 0.22),
+    0 0 0 6px rgba(0, 160, 236, 0.07),
+    0 0 42px rgba(0, 160, 236, 0.22),
     0 18px 44px rgba(0, 0, 0, 0.5);
 }
 
