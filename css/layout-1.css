@@ -14,10 +14,11 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  /* Opaco, e não translúcido com blur: o conteúdo que passava por trás
-     mudava a cor do topo a cada rolagem, o que é o oposto de identidade
-     fixa. Opaco também elimina o custo de compor o blur a cada frame. */
+  /* Mesmo tratamento do .top do site da empresa: fundo base a 94% com
+     blur e um filete --linha. Quem separa o topo da página é a borda,
+     não o contraste de fundo — por isso ela ficou mais clara. */
   background: var(--c-header);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -108,16 +109,14 @@
   padding-block: var(--sp-16);
   text-align: center;
   overflow: hidden;
-  /* Três focos de luz em posições e matizes diferentes competiam entre si
-     e o mais forte nascia colado no cabeçalho — com o topo translúcido isso
-     passava, com o topo opaco virou mancha. Agora: uma banda da cor do
-     cabeçalho continua para dentro do hero (sem costura visível), uma única
-     fonte de luz fica atrás do avatar (onde o olho deve ir) e o vermelho
-     sobra só no rodapé, onde a arte já é quente. */
+  /* Três focos de luz em matizes diferentes competiam entre si e o mais
+     forte nascia colado no cabeçalho. Agora: uma única fonte, no azul da
+     marca, atrás do avatar — que é para onde o olho deve ir — e o vermelho
+     só no rodapé, onde a arte já é quente. Com o topo voltando a ser a cor
+     do fundo, não é preciso banda de transição nenhuma. */
   background:
-    linear-gradient(180deg, var(--c-header) 0, rgba(6, 15, 30, 0) 26%),
-    radial-gradient(70rem 46rem at 50% 34%, rgba(53, 200, 232, 0.10), transparent 68%),
-    radial-gradient(52rem 30rem at 86% 94%, rgba(255, 77, 94, 0.07), transparent 66%),
+    radial-gradient(70rem 46rem at 50% 34%, rgba(0, 160, 236, 0.11), transparent 68%),
+    radial-gradient(52rem 30rem at 86% 94%, rgba(255, 59, 78, 0.07), transparent 66%),
     var(--c-bg);
 }
 
@@ -129,8 +128,8 @@
   inset: -1px;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(53, 200, 232, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(53, 200, 232, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(43, 70, 102, 0.30) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 70, 102, 0.30) 1px, transparent 1px);
   background-size: 64px 64px;
   /* A máscara acompanha a fonte de luz: malha e brilho no mesmo centro,
      senão a grade aparece onde o fundo já voltou a ser liso. */
@@ -188,10 +187,10 @@
   border-radius: 50%;
   background: conic-gradient(
     from 210deg,
-    rgba(53, 200, 232, 0.45),
+    rgba(0, 160, 236, 0.50),
     transparent 28%,
     transparent 62%,
-    rgba(255, 77, 94, 0.40)
+    rgba(255, 59, 78, 0.40)
   );
   filter: blur(14px);
   z-index: -1;
@@ -309,12 +308,12 @@
 }
 
 /* ---------- Rodapé: assinatura da Goulart InfoSolutions ----------
-   Mesma estrutura e mesma linguagem institucional do rodapé de
-   goulartinfosolutions: fundo fosco, filete vinho, logo horizontal à
-   esquerda e perfis à direita. O filete vinho é o único lugar do site
-   onde essa cor aparece — é o que marca a faixa como assinatura. */
+   Transcrição do .foot do site da empresa, nas mesmas medidas:
+   fundo --marinho, filete --vinho de 1px, logo de 2.4rem à esquerda,
+   perfis empurrados para a direita por margin-left:auto. O vinho é a
+   única ocorrência dessa cor no site — é o que marca a faixa como
+   assinatura institucional e não como mais um bloco. */
 .site-footer {
-  margin-top: var(--sp-12);
   padding-block: var(--sp-8) var(--sp-12);
   background: var(--c-marinho);
   border-top: 1px solid var(--c-vinho);
@@ -328,6 +327,8 @@
   align-items: center;
   gap: var(--sp-4) var(--sp-12);
 }
+
+.site-footer p { margin: 0; }
 
 .site-footer__brand {
   display: inline-flex;
@@ -344,29 +345,22 @@
   width: auto;
 }
 
-.site-footer__meta {
-  margin: 0;
-  line-height: 1.5;
-}
-
-.site-footer__meta span { color: var(--c-prata-dim); }
-
-/* margin-left: auto empurra os perfis para a direita sem precisar de
-   coluna vazia; se o rodapé quebrar em duas linhas, o auto deixa de
-   valer e o bloco simplesmente desce, sem buraco no meio. */
-.site-footer__links {
+/* margin-left:auto empurra os perfis para a direita sem coluna vazia;
+   se a faixa quebrar em duas linhas, o auto deixa de valer e o bloco
+   desce inteiro, sem buraco no meio. */
+.site-footer nav {
   margin-left: auto;
   display: flex;
   gap: var(--sp-6);
 }
 
-.site-footer__links a {
+.site-footer a {
   color: var(--c-prata);
-  text-decoration: none;
+  text-underline-offset: 0.2em;
   transition: color var(--t-fast);
 }
 
-.site-footer__links a:hover { color: var(--c-accent-bright); }
+.site-footer a:hover { color: var(--c-text); }
 
 @media (max-width: 680px) {
   .site-footer__inner {
@@ -374,7 +368,7 @@
     align-items: flex-start;
     gap: var(--sp-4);
   }
-  .site-footer__links { margin-left: 0; }
+  .site-footer nav { margin-left: 0; }
 }
 
 /* ---------- Responsivo ---------- */
