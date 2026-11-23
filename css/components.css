@@ -1387,10 +1387,12 @@
   border: 1px solid var(--c-accent-strong);
 }
 
-.trait__tag--down {
-  color: var(--c-alert);
-  background: var(--c-alert-soft);
-  border: 1px solid var(--c-alert-deep);
+/* O selo do mecanismo de regulação não é alarme: vermelho ali fazia
+   cinco bandeiras vermelhas na mesma tela, antes de qualquer conversa. */
+.trait__tag--reg {
+  color: var(--c-info);
+  background: var(--c-info-soft);
+  border: 1px solid var(--c-info);
 }
 
 /* ---------- 05 · Instrumentos ---------- */

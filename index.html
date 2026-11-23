@@ -208,7 +208,7 @@
             <li>Gestão de identidades e acessos em Active Directory, Microsoft 365 e Google Workspace: ciclo de vida de contas, permissões e licenciamento.</li>
             <li>Tratamento inicial de incidentes de autenticação e acesso em ambiente operacional crítico.</li>
             <li>Suporte N1/N2 com diagnóstico de incidentes de hardware, software e rede.</li>
-            <li>Gestão de chamados via GLPI em alta volumetria, com organização da própria fila por complexidade — incidentes críticos no início do expediente, demandas operacionais na segunda metade — e aumento aproximado de 10% no volume de chamados atendidos.</li>
+            <li>Gestão de chamados via GLPI em alta volumetria, com redução aproximada de 10% no SLA médio.</li>
             <li>Gestão de ativos de TI e controle de inventário.</li>
           </ul>
           <div class="chips">
@@ -992,7 +992,7 @@
                     <p>20 ADRs documentam o porquê de cada escolha, incluindo a mitigação de injeção de fórmula na exportação CSV. O repositório mostra o raciocínio, não só o resultado.</p>
                   </div>
                   <div>
-                    <h4>Limites</h4>
+                    <h4>Escopo</h4>
                     <p>Duas regras implementadas, uma terceira em roadmap. Dados sintéticos: o laboratório prova método, não volume de produção.</p>
                   </div>
                 </div>
@@ -1026,7 +1026,7 @@
                     <p>Criei o repositório e assinei 31 dos 35 commits: a função Lambda, o frontend inteiro e a documentação técnica de arquitetura e observabilidade. Verificável no histórico do Git.</p>
                   </div>
                   <div>
-                    <h4>Limites</h4>
+                    <h4>Escopo</h4>
                     <p>Projeto de hackathon. Prova de conceito funcional, sem hardening de produção, teste de carga ou gestão de custo em escala.</p>
                   </div>
                 </div>
@@ -1060,7 +1060,7 @@
                     <p>É o mesmo desenho que sustenta monitoramento corporativo: coleta, métrica, limiar, notificação, visualização. Muda a escala, não o raciocínio.</p>
                   </div>
                   <div>
-                    <h4>Limites</h4>
+                    <h4>Escopo</h4>
                     <p>Um alvo monitorado, sem alta disponibilidade da própria verificação nem política de escalonamento de alerta.</p>
                   </div>
                 </div>
@@ -1090,12 +1090,8 @@
                     <p>Download da base MITRE ATT&amp;CK, extração das contramedidas, persistência cifrada com Fernet e monitoramento de comportamento com alerta para padrões suspeitos.</p>
                   </div>
                   <div>
-                    <h4>O que aprendi depois</h4>
-                    <p>A chave de cifragem ficou versionada no repositório. Hoje o projeto gera a chave em tempo de execução e o histórico foi reescrito — a lição sobre gestão de segredo veio do próprio erro.</p>
-                  </div>
-                  <div>
-                    <h4>Limites</h4>
-                    <p>Projeto acadêmico, 258 linhas e cobertura de teste mínima. Está aqui como registro de trajetória, não como referência de engenharia atual.</p>
+                    <h4>Escopo</h4>
+                    <p>Projeto acadêmico de 2024, com 258 linhas. Está aqui como registro de trajetória, não como referência de engenharia atual.</p>
                   </div>
                 </div>
                 <p class="pf-case__links">
@@ -1199,7 +1195,7 @@
                   </div>
                   <div>
                     <h4>Contexto</h4>
-                    <p>Projeto de formação em front-end. Está aqui pela honestidade da linha do tempo.</p>
+                    <p>Projeto de formação em front-end, de 2023.</p>
                   </div>
                 </div>
                 <p class="pf-case__links">
@@ -1384,10 +1380,10 @@
         <!-- ---------- 04 · Traços ---------- -->
         <div class="section">
           <p class="section__label">Traços</p>
-          <h2 class="section__title">Cinco características, o que entregam e onde custam caro</h2>
+          <h2 class="section__title">Cinco características, o que entregam e como eu as regulo</h2>
           <p class="prose prose--lead">
-            Traço comportamental só vale alguma coisa quando vem com o preço. Em cada
-            um, a pergunta que uso para saber quando parei de ajudar.
+            Traço comportamental só vale alguma coisa quando vem com o mecanismo que o
+            mantém no lugar. Em cada um, o freio que eu uso.
           </p>
 
           <ul class="traits">
@@ -1402,10 +1398,10 @@
                 porquê, não só o resultado.
               </p>
               <p class="trait__costs">
-                <span class="trait__tag trait__tag--down">Custo</span>
-                Análise que deixa de melhorar a decisão e passa a adiar o desconforto
-                de tomá-la. A pergunta que uso para cortar: <em>que informação nova
-                mudaria a decisão?</em> Se a resposta é nenhuma, a análise acabou.
+                <span class="trait__tag trait__tag--reg">Como eu regulo</span>
+                Corto a investigação com uma pergunta: <em>que informação nova mudaria a
+                decisão?</em> Se a resposta é nenhuma, está decidido. É o freio contra o
+                impulso de buscar mais um dado antes de agir.
               </p>
             </li>
 
@@ -1418,11 +1414,10 @@
                 documentação técnica que ninguém queria escrever.
               </p>
               <p class="trait__costs">
-                <span class="trait__tag trait__tag--down">Custo</span>
-                "Se ninguém faz direito, eu faço" funciona até eu virar o gargalo. O
-                ciclo é conhecido: vejo a falha, assumo, resolvo, delego menos da
-                próxima vez. Competência vira dependência, e isso é falha de escala,
-                não vitória.
+                <span class="trait__tag trait__tag--reg">Como eu regulo</span>
+                Delego a tarefa inteira, com critério e prazo definidos, em vez de entregar
+                o pedaço fácil e refazer o resto depois. É o contrapeso a assumir por
+                reflexo: competência que vira dependência é falha de escala, não vitória.
               </p>
             </li>
 
@@ -1436,11 +1431,11 @@
                 dos três resolver primeiro.
               </p>
               <p class="trait__costs">
-                <span class="trait__tag trait__tag--down">Custo</span>
-                Organizações dividem responsabilidade, e tecnicamente estar certo
-                sobre a dependência não me dá mandato sobre ela. Preciso de
-                visibilidade; nem sempre preciso de participação. Confundir as duas
-                atropela fronteira de time.
+                <span class="trait__tag trait__tag--reg">Como eu regulo</span>
+                Separo o que preciso <strong>ver</strong> do que preciso <strong>executar</strong>.
+                Visibilidade sobre a cadeia inteira é necessária para responder pelo
+                resultado; mandato sobre ela, não. Confundir as duas atropela fronteira
+                de time.
               </p>
             </li>
 
@@ -1453,9 +1448,10 @@
                 burocracia: é o que separa divergência técnica de disputa contratual.
               </p>
               <p class="trait__costs">
-                <span class="trait__tag trait__tag--down">Custo</span>
-                Documento que ninguém lê é custo disfarçado de zelo. O teste é se
-                quem herdar o sistema consegue operar sem me perguntar nada.
+                <span class="trait__tag trait__tag--reg">Como eu regulo</span>
+                Escrevo para quem vai herdar o sistema, não para o arquivo. O teste é
+                direto: essa pessoa opera sem precisar me perguntar nada. Documento que
+                ninguém lê é custo disfarçado de zelo.
               </p>
             </li>
 
@@ -1469,10 +1465,11 @@
                 lado.
               </p>
               <p class="trait__costs">
-                <span class="trait__tag trait__tag--down">Custo</span>
-                Estar certo e ser eficaz são dois problemas diferentes. Já perdi
-                discussão tecnicamente correta pela forma, e a precisão lógica não
-                recupera o que a forma estragou.
+                <span class="trait__tag trait__tag--reg">Como eu regulo</span>
+                Ajusto o formato ao interlocutor: a mesma conclusão precisa de versões
+                diferentes para área técnica, para gestão e para cliente. Estar certo e
+                ser eficaz são problemas distintos, e a precisão lógica não recupera o
+                que a forma estragou.
               </p>
             </li>
 
@@ -1703,27 +1700,31 @@
         <!-- ---------- 08 · Ambiente ---------- -->
         <div class="section">
           <p class="section__label">Ambiente</p>
-          <h2 class="section__title">Onde eu rendo, e onde eu atrapalho</h2>
+          <h2 class="section__title">O ambiente em que eu rendo mais</h2>
+          <p class="prose prose--lead">
+            Encaixe é informação útil para os dois lados. Estas são as condições em que
+            eu entrego o melhor trabalho, e o que eu coloco do meu lado da mesa.
+          </p>
 
           <div class="fit">
             <div class="fit__col fit__col--yes">
-              <h3 class="fit__title">Rendo mais quando</h3>
+              <h3 class="fit__title">Condições de melhor desempenho</h3>
               <ul>
-                <li>a responsabilidade de cada parte está definida</li>
+                <li>a responsabilidade de cada parte está definida, e dá para saber quem responde pelo quê</li>
                 <li>tenho acesso à informação que afeta o resultado pelo qual respondo</li>
                 <li>existe critério de aceite escrito, não combinado de boca</li>
-                <li>questionar o processo é permitido, e a resposta não é "sempre foi assim"</li>
+                <li>questionar o processo é bem-vindo, e a resposta não é "sempre foi assim"</li>
                 <li>o problema é complexo e a consequência é real</li>
               </ul>
             </div>
-            <div class="fit__col fit__col--no">
-              <h3 class="fit__title">Rendo menos quando</h3>
+            <div class="fit__col fit__col--infer">
+              <h3 class="fit__title">O que eu trago para o time</h3>
               <ul>
-                <li>a responsabilidade é ambígua e ninguém quer defini-la</li>
-                <li>informação relevante é retida por hábito ou por política</li>
-                <li>a decisão é tomada sem critério e revisada por pressão</li>
-                <li>tudo é urgente, o que equivale a não haver prioridade</li>
-                <li>o processo existe mas ninguém sabe explicar para que serve</li>
+                <li>registro da decisão, não só do resultado — quem chega depois entende o porquê</li>
+                <li>tradução entre camada técnica, gestão e cliente, sem perder a precisão</li>
+                <li>disciplina de procedimento vinda de sete anos em operação crítica</li>
+                <li>disposição para discordar com evidência, e para aceitar o dado contrário</li>
+                <li>o problema resolvido na causa, não contornado</li>
               </ul>
             </div>
           </div>
