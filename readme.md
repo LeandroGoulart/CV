@@ -1,247 +1,236 @@
 # Career OS — Leandro Goulart
 
-Site único que reúne currículo, portfólio e identidade profissional.
+Site único que reúne currículo, portfólio e as decisões por trás de cada um.
 
-Publicado em <https://leandrogoulart.github.io/CV/>
+**No ar:** <https://leandrogoulart.github.io/CV/>
 
-> Este repositório é, ele próprio, parte do portfólio: a forma como o projeto é
-> estruturado, decidido e documentado é a evidência de organização que o site
-> afirma ter. Por isso as decisões ficam registradas, não apenas o resultado.
+> Este repositório é, ele próprio, parte do portfólio. A forma como o projeto
+> foi pensado, decidido e documentado é a evidência de organização que o site
+> afirma ter. Por isso o que está registrado aqui não é o resultado — é o
+> raciocínio.
 
-## Arquitetura de informação
+---
 
-Quatro abas, nesta ordem, seguindo a leitura natural de um recrutador —
-*quem é* → *o que sabe fazer* → *prove* → *quem é por dentro*:
+## Por que isto existe
 
-| # | Aba | O que prova |
-| --- | --- | --- |
-| 1 | **Identidade e trajetória** | De onde veio e como a transição faz sentido |
-| 2 | **Competências técnicas** | O que sabe fazer, e em que nível de maturidade |
-| 3 | **Portfólio** | A prova prática, com participação real declarada |
-| 4 | **Comportamental** | Como pensa, decide e trabalha |
+Em processo seletivo sempre perguntam **o que** eu sei fazer. Quase nunca
+perguntam **como** eu decido. E é a segunda pergunta que separa quem executa
+tarefa de quem resolve problema.
 
-O perfil comportamental fica por último de propósito: DISC e tipologias têm
-validade psicométrica contestada e funcionam melhor como aprofundamento de
-quem já se interessou do que como cartão de visita.
+Currículo em PDF responde à primeira em duas páginas e para por aí. Perfil de
+rede social responde mal às duas. Eu precisava de um lugar onde a resposta
+inteira coubesse — e onde quem quisesse verificar pudesse abrir o código e
+conferir.
 
-## Estrutura de pastas
+Daí a regra que governa o projeto inteiro:
 
-```estrutura
-.
-├── index.html            Documento único; cada aba é um <section role="tabpanel">
-├── assets/
-│   ├── img/              Imagens do site (webp real, não renomeado)
-│   └── icons/            Marca e favicon em SVG
-├── css/
-│   ├── tokens.css        Design tokens — única fonte de valores
-│   ├── base.css          Reset, tipografia e acessibilidade
-│   ├── layout.css        Cabeçalho, abas, painéis, hero e rodapé
-│   └── components.css    Espinha de peixe, cards de experiência e chips
-└── js/
-    ├── tabs.js           Navegação por abas (padrão ARIA + rota por hash)
-    ├── skills.js          Filtro de competências por nível de maturidade
-    └── timeline.js       Filtro, alternância e rolagem da linha do tempo
+> **Toda afirmação do site precisa ser sustentável em cinco minutos de pergunta
+> técnica.** Se não for, sai.
+
+É a mesma regra que aplico em entrevista. Escrever um site que a respeita é
+mais difícil do que escrever um que impressiona, e é exatamente por isso que
+ele vale alguma coisa.
+
+---
+
+## O método por trás
+
+O site não é um exercício de front-end. É a aplicação de um método que eu uso
+em qualquer coisa que construo, registrado no meu PDI:
+
+```
+Conhecimento → Laboratório → Evidência → Aplicação → Documentação → Maturidade
 ```
 
-### Convenções
+Curso concluído não entra como competência — entra como conhecimento. Vira
+competência quando produz evidência. É o motivo de o site declarar, em cada
+item, **onde** aquilo foi exercido, e de o portfólio declarar qual foi minha
+participação real em cada projeto.
 
-- **Nenhum valor de cor, espaçamento ou tipografia fora de `tokens.css`.**
-  Se precisou de um valor novo, ele vira token antes de ser usado.
-- Classes em **BEM** simplificado: `.bloco__elemento`, `.bloco--variante`.
-- JavaScript **defensivo**: se a marcação esperada não existir, o script sai
-  em silêncio em vez de derrubar a página.
-- Toda aba é endereçável por URL: `#identidade`, `#competencias`,
-  `#portfolio`, `#comportamental`.
+Três coisas nascem antes da primeira linha de código, em qualquer projeto meu:
 
-### Ordem da aba Identidade
+1. **O problema.** Não a solução, não a ferramenta. Que pergunta isto responde?
+2. **O critério de aceite.** Como eu saberei que está pronto, antes de começar.
+3. **O registro da decisão.** Por que este caminho e não o outro — enquanto a
+   alternativa ainda está fresca, não meses depois, quando virou mito.
 
-`Hero` → `Sobre` → `Experiência` → `Linha do tempo`.
+Dá trabalho. É também a única coisa que impede um projeto de virar aquilo que
+ninguém mais consegue manter, nem quem escreveu.
 
-A linha do tempo vem **depois** das experiências de propósito: ela é contexto
-de apoio, não a entrada. Quem chega quer o cargo atual e as entregas primeiro.
+---
 
-### Linha do tempo em espinha de peixe
+## Arquitetura da informação
 
-Formato horizontal, com os marcos alternando acima e abaixo de uma espinha
-central. A versão vertical anterior ocupava cerca de 1.800&nbsp;px de altura
-para 19 marcos — um muro que o leitor abandona antes do fim. A espinha de peixe
-resolve os mesmos 19 marcos em ~400&nbsp;px, com rolagem horizontal.
+Cinco abas, na ordem em que um recrutador lê:
+*quem é* → *o que sabe fazer* → *prove* → *quem é por dentro* → *como falar comigo*.
 
-Os marcos ficam em ordem **crescente** — a trajetória se lê como percurso.
-As experiências detalhadas ficam em ordem **decrescente**, como manda a
-convenção de currículo. A diferença é intencional.
-
-A alternância acima/abaixo é recalculada pelo JavaScript a cada filtro. Fazer
-isso com `nth-child` em CSS quebraria: itens ocultos continuam contando para o
-seletor, e um filtro poderia jogar todos os cartões para o mesmo lado.
-
-As contagens dos filtros são calculadas a partir do próprio HTML em tempo de
-execução. Não existe número escrito à mão que possa divergir do conteúdo.
-
-### Competências: dimensão, não lista de tecnologias
-
-Oito dimensões colapsáveis, fechadas por padrão. O estado inicial é uma tabela
-de conteúdo de oito linhas, não um muro de cinquenta itens — cada cabeçalho traz
-o nome, um descritivo de uma linha e a contagem, então a versão fechada já é
-informativa.
-
-Uma versão anterior usava um selo de 144&nbsp;px por competência. Ficou poluída:
-densidade não é rigor. O nível virou um ponto de 9&nbsp;px com legenda no topo.
-
-| Nível | Marcador | Significado |
+| # | Aba | O que ela precisa provar |
 | --- | --- | --- |
-| **Profissional** | ponto preenchido, ciano | Ambiente real, com responsabilidade sobre o resultado |
-| **Prática** | ponto vazado, azul | Projeto ou laboratório executado |
-| **Fundamentos** | ponto vazado menor, cinza | Conhecimento teórico, sem aplicação demonstrável |
+| 1 | **Identidade e trajetória** | De onde vim e por que a transição faz sentido |
+| 2 | **Competências** | O que sei fazer, e em que nível de maturidade |
+| 3 | **Portfólio** | A prova prática, com participação declarada |
+| 4 | **Comportamental** | Como penso, decido e trabalho |
+| 5 | **Contato** | Perfis, currículo e um formulário que funciona |
 
-O marcador distingue por **cor e preenchimento**, e Fundamentos também por
-**tamanho** — cor sozinha não separaria dele de Prática, e violaria a WCAG 1.4.1.
-Cada item ainda carrega o nível em texto para leitor de tela.
+A ordem não é estética, é hipótese de leitura: ninguém avalia competência antes
+de entender quem é a pessoa, e ninguém se interessa por perfil comportamental
+antes de ter se interessado pelo resto.
 
-A evidência deixou de ser um expansor por competência e virou **uma linha por
-dimensão**: onde foi exercida, com link quando há repositório. Oito linhas em vez
-de cinquenta expansores.
+**O comportamental fica por último de propósito.** DISC e tipologias têm
+validade psicométrica contestada. Funcionam como aprofundamento de quem já se
+interessou — não como cartão de visita. Colocá-los na frente seria vender o
+que menos se sustenta.
 
-### Filtro por stack
+---
 
-Um eixo só: Segurança, IAM, Cloud, Infraestrutura, Governança, Desenvolvimento.
-Uma competência pertence a mais de uma stack — Active Directory é IAM e
-Infraestrutura; Python é Desenvolvimento e Segurança.
+## Decisões que valeram a pena registrar
 
-Ao filtrar, as dimensões com itens relevantes **abrem sozinhas** e as vazias são
-ocultadas. O recrutador não abre oito blocos para achar o que interessa.
-Limpar o filtro devolve tudo ao estado fechado.
+### A linha do tempo virou espinha de peixe
 
-**Ressalva mantida:** o nível diz *onde* a competência foi exercida, não *quão
-fundo*.
+A primeira versão era vertical: 19 marcos, cerca de 1.800 px de altura. Um muro
+que o leitor abandona no meio. O mesmo conteúdo em formato horizontal, com os
+marcos alternando acima e abaixo de uma espinha central, resolve em ~400 px.
 
-### Acessibilidade
+Detalhe que só aparece quando se usa: a alternância acima/abaixo é recalculada
+a cada filtro. Resolver isso em CSS puro quebraria — itens ocultos continuam
+contando para o seletor, e um filtro jogaria todos os cartões para o mesmo lado.
 
-- Padrão ARIA Tabs completo, com navegação por setas, Home e End
-- Link para pular a navegação
-- Foco visível apenas para navegação por teclado (`:focus-visible`)
-- `prefers-reduced-motion` respeitado
-- Imagens com texto alternativo descritivo
-- Filtros como `aria-pressed`, com o total de itens visíveis anunciado via `aria-label`
-- Linha do tempo é uma `region` focável, navegável por teclado e por botões
+As contagens dos filtros são lidas do próprio conteúdo em tempo de execução.
+Nenhum número escrito à mão que possa, um dia, divergir do que está na tela.
+Número que mente é pior que número ausente.
 
-## Identidade visual
+### Competência é dimensão, não lista de tecnologia
 
-A paleta foi derivada da identidade pessoal já em uso no GitHub e no LinkedIn:
-neon ciano e vermelho sobre azul-noite profundo. Os valores foram extraídos da
-própria arte, não escolhidos por aproximação.
+Lista de cinquenta tecnologias não diz nada: ninguém sabe cinquenta coisas no
+mesmo nível, e todo mundo finge que sabe. Então as competências ficam agrupadas
+em oito dimensões, fechadas por padrão — o estado inicial é um índice de oito
+linhas, não um muro.
 
-| Token | Valor | Uso |
-| --- | --- | --- |
-| `--c-bg` | `#070e18` | Fundo |
-| `--c-surface` | `#0f1a28` | Cartões e cabeçalho |
-| `--c-accent` | `#35c8e8` | Neon primário: marca, links, estado ativo |
-| `--c-alert` | `#ff4d5e` | Neon secundário: atenção |
-| `--c-info` | `#8ab4ff` | Apoio: formação |
-| `--c-text` | `#eaf4ff` | Texto |
+E cada item carrega o nível declarado:
 
-### Marca
+- **Profissional** — ambiente real, com responsabilidade sobre o resultado
+- **Prática** — projeto ou laboratório executado
+- **Fundamentos** — conhecimento teórico, sem aplicação demonstrável
 
-O símbolo é o da **Goulart InfoSolutions** — hexágono com monograma GI. O
-arquivo original era raster; foi vetorizado a partir da arte fornecida e
-normalizado para um `viewBox` de 869×1000.
+Declarar "Fundamentos" custa caro. É também o que torna "Profissional"
+confiável. Se tudo fosse Profissional, nada seria.
 
-`assets/icons/logo-gi.svg` usa `fill="currentColor"` e é aplicado no cabeçalho
-como `mask-image` sobre `background-color: currentColor`. Assim o símbolo
-herda o token de cor: se a paleta mudar, o logotipo acompanha sem reexportar
-arquivo.
+Uma versão anterior usava um selo grande por competência. Ficou poluída e eu
+derrubei: **densidade não é rigor.**
 
-O azul original da marca é `#00a0ec`. No site ele é renderizado no ciano do
-sistema (`--c-accent` `#35c8e8`) para não conviverem dois azuis próximos na
-mesma tela — a diferença entre os dois seria lida como erro, não como
-intenção. Para materiais impressos ou fora do site, vale usar o `#00a0ec`.
+### Participação real, escrita
 
-> Esta vetorização é uma reconstrução a partir de imagem. Se existir o arquivo
-> vetorial original (SVG, AI ou PDF), ele deve substituir este — traçado
-> derivado de raster nunca é idêntico ao original.
+Cada caso do portfólio diz se fui autor único, qual foi minha parte e qual é o
+escopo. O laboratório de análise de logs usa dados sintéticos e isso está
+escrito nele — prova método, não volume de produção.
 
-### Semântica da cor
+É a ressalva que mais dói escrever e a que mais sustenta o resto. Portfólio que
+não delimita escopo convida a pergunta que derruba a entrevista.
 
-A arte da identidade já carrega um significado que o site herda:
+### O site funciona sem JavaScript
 
-- **Ciano** — verificação, defesa, o que está validado
-- **Vermelho** — atenção, ameaça, o que exige olhar
+O carrossel do portfólio, sem script, vira uma faixa rolável com todos os casos
+visíveis. Nenhuma informação depende do JavaScript — ele melhora a experiência,
+não a viabiliza.
 
-Vermelho é caro de propósito. Hoje aparece em três lugares: o marcador de
-certificação na linha do tempo, a borda e o período do cargo atual, e o ponto
-do favicon. **Se usar em tudo, deixa de significar algo.**
+Mesma lógica nos scripts: se a marcação esperada não existir, o script sai em
+silêncio em vez de derrubar a página.
 
-### Contraste
+### Acessibilidade não é item de checklist
 
-Todos os tokens de texto e de interface foram verificados contra `--c-surface`:
+Navegação por abas no padrão ARIA completo, com setas, Home e End. Link para
+pular a navegação. Foco visível para quem navega por teclado. Animação
+respeitando `prefers-reduced-motion`. Contraste verificado, não estimado.
 
-| Cor | Razão de contraste | WCAG |
-| --- | --- | --- |
-| `--c-accent` `#35c8e8` | 8,8:1 | AAA |
-| `--c-alert` `#ff4d5e` | 5,4:1 | AA |
-| `--c-info` `#8ab4ff` | 8,4:1 | AAA |
-| `--c-text-muted` `#b9d4e8` | 11,4:1 | AAA |
-| `--c-text-dim` `#7d93a8` | 5,5:1 | AA |
+Nenhuma informação é transmitida só por cor — onde há marcador colorido, há
+também diferença de forma e o nível em texto para leitor de tela.
 
-### Fundo do hero
+Isso não está aqui para parecer bonito num README. Está porque acessibilidade é
+o teste mais honesto de se a interface foi pensada ou improvisada.
 
-Três camadas, de trás para frente:
+### Sem build, sem framework
 
-1. **Gradientes radiais** em ciano e vermelho, gerados em CSS
-2. **Malha técnica** mascarada no topo, para não concorrer com os traçados
-   de circuito da arte
-3. **Arte da identidade** como faixa de horizonte no rodapé
+HTML, CSS e JavaScript direto. Nada a compilar significa nada a quebrar quando
+uma dependência deixa de ser mantida. Um site que precisa existir por anos não
+deveria depender de uma cadeia de ferramentas que muda a cada seis meses.
 
-A arte original é um banner de **3,8:1**. Usada em tela cheia com `cover`,
-quase tudo seria cortado — o escudo e a skyline se perderiam. Como faixa
-inferior com máscara de gradiente, a skyline e a silhueta funcionam como linha
-de chão e o escudo fica atrás do conteúdo, que é a composição que a arte foi
-desenhada para ter.
-
-### Peso das imagens
-
-| Arquivo | Uso | Peso |
-| --- | --- | --- |
-| `bg.webp` | 1920&nbsp;px, desktop | 95&nbsp;KB |
-| `bg-sm.webp` | 1280&nbsp;px, até 860&nbsp;px de viewport | 49&nbsp;KB |
-| `perfil.webp` | Avatar | 99&nbsp;KB |
-
-O original entregue era um **PNG de 1,46&nbsp;MB renomeado para `.webp`** — a
-extensão mentia sobre o formato. Convertido para WebP real em qualidade 86, que
-preserva as linhas finas de circuito sem artefato: **redução de 93%**.
-
-Trocar a extensão não converte o arquivo. O navegador até renderiza, porque
-detecta o formato pelo conteúdo, mas o peso continua o do PNG.
-
-## Fases do projeto
-
-| Fase | Entrega | Estado |
-| --- | --- | --- |
-| 1 | Estrutura de pastas, tokens, navegação por abas e aba de Identidade | **Concluída** |
-| 2 | Linha do tempo interativa e experiências na aba 1 | **Concluída** |
-| 3 | Aba de Competências | **Concluída** |
-| 4 | Aba de Portfólio, com carrossel e filtros | A fazer |
-| 5 | Aba Comportamental | A fazer |
-| 6 | Otimização de assets, Open Graph e troca dos PDFs | A fazer |
-| 7 | Virada: Pages aponta para `career-os`, que vira `main` | A fazer |
-
-## Branches
-
-| Branch | Papel |
-| --- | --- |
-| `main` | Versão antiga, desatualizada. Será substituída na fase 7 |
-| `carrossel` | O que o GitHub Pages publica hoje. Mantida até a virada |
-| `career-os` | Desenvolvimento |
-
-## Rodando localmente
-
-Não há build. Qualquer servidor estático serve:
+Para rodar local, qualquer servidor estático:
 
 ```bash
 python -m http.server 8000
 ```
 
-Depois abra `http://localhost:8000`.
+### Currículos
 
-Abrir o `index.html` direto pelo sistema de arquivos também funciona, mas
-servir por HTTP evita diferenças de comportamento em caminhos relativos.
+Três recortes — generalista, suporte e segurança — gerados da mesma fonte de
+dados. Coluna única, títulos literais, nada de informação dentro de imagem.
+Habilidades e certificações vêm **antes** da experiência, porque a triagem
+procura palavra-chave nos primeiros segundos e o que transborda de página
+precisa ser a seção menos crítica.
+
+Só o generalista tem link no site. Os outros dois existem no repositório.
+
+---
+
+## Identidade visual
+
+O site é entrega da **Goulart InfoSolutions** e segue o manual de marca da
+empresa, não uma paleta escolhida para esta página. Os valores vivem em um
+único arquivo de tokens — se precisou de um valor novo, ele vira token antes de
+ser usado.
+
+Uma versão anterior tinha um azul próprio, diferente do azul da marca, com o
+argumento de que dois azuis próximos na mesma tela seriam lidos como erro. O
+argumento estava certo; a conclusão estava invertida. **Quem cede é o site, não
+a marca.**
+
+O rodapé é a assinatura institucional da empresa, idêntica à do site
+[goulartinfosolutions.github.io](https://leandrogoulart.github.io/GoulartInfoSolutions/).
+
+---
+
+## Estrutura
+
+```
+.
+├── index.html            Documento único; cada aba é um <section role="tabpanel">
+├── assets/
+│   ├── cv/               Três currículos em PDF
+│   ├── img/              Imagens, capas dos casos e credenciais
+│   └── icons/            Marca e favicon
+├── css/
+│   ├── tokens.css        Única fonte de valores
+│   ├── base.css          Reset, tipografia e acessibilidade
+│   ├── layout.css        Cabeçalho, abas, painéis, hero e rodapé
+│   └── components.css    Espinha de peixe, cards, chips e carrossel
+└── js/
+    ├── tabs.js           Navegação por abas (ARIA + rota por hash)
+    ├── timeline.js       Filtro, alternância e rolagem da linha do tempo
+    ├── skills.js         Filtro de competências
+    ├── portfolio.js      Carrossel e sincronia com o caso aberto
+    └── contato.js        Envio do formulário sem recarregar a página
+```
+
+Toda aba é endereçável por URL: `#identidade`, `#competencias`, `#portfolio`,
+`#comportamental`, `#contato`. Link compartilhado abre onde deveria abrir.
+
+Branch única: `main`, que é o que o GitHub Pages publica.
+
+---
+
+## O que ainda falta
+
+- **`og:image`.** Link compartilhado em rede social abre sem cartão de prévia.
+  É a pendência de maior impacto, porque afeta justamente o canal que traz
+  gente para cá.
+
+Pendência registrada é pendência que existe. A que não está escrita vira
+surpresa.
+
+---
+
+## Licença
+
+O conteúdo — texto, trajetória, currículos e imagens — é pessoal e não é
+reaproveitável. O código, se te for útil como referência de estrutura ou de
+acessibilidade, fica à vontade.
