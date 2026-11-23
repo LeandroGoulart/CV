@@ -1,0 +1,424 @@
+/* =============================================================
+   Layout — cabeçalho, navegação por abas, painéis e rodapé
+   ============================================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+/* ---------- Cabeçalho ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  /* Opaco, e não translúcido com blur: o conteúdo que passava por trás
+     mudava a cor do topo a cada rolagem, o que é o oposto de identidade
+     fixa. Opaco também elimina o custo de compor o blur a cada frame. */
+  background: var(--c-header);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--c-accent);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.brand:hover { color: var(--c-accent); }
+
+/* Marca da Goulart InfoSolutions.
+   Aplicada como máscara para herdar a cor do token — se a paleta mudar,
+   o logotipo acompanha sem precisar reexportar arquivo. */
+.brand__mark {
+  width: 26px;
+  height: 30px;
+  flex: none;
+  background-color: currentColor;
+  -webkit-mask: url('../assets/icons/logo-gi.svg') center / contain no-repeat;
+  mask: url('../assets/icons/logo-gi.svg') center / contain no-repeat;
+}
+
+/* ---------- Navegação por abas ---------- */
+.tabs {
+  display: flex;
+  gap: var(--sp-1);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex: none;
+  padding: var(--sp-2) var(--sp-4);
+  font-family: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-dim);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--t-fast), background var(--t-fast);
+}
+
+.tab:hover { color: var(--c-text-muted); }
+
+.tab[aria-selected='true'] {
+  color: var(--c-bg);
+  background: var(--c-accent);
+  font-weight: 600;
+}
+
+/* ---------- Painéis ---------- */
+.panel {
+  animation: panel-in var(--t-base) both;
+}
+
+.panel[hidden] { display: none; }
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - var(--header-h));
+  padding-block: var(--sp-16);
+  text-align: center;
+  overflow: hidden;
+  /* Três focos de luz em posições e matizes diferentes competiam entre si
+     e o mais forte nascia colado no cabeçalho — com o topo translúcido isso
+     passava, com o topo opaco virou mancha. Agora: uma banda da cor do
+     cabeçalho continua para dentro do hero (sem costura visível), uma única
+     fonte de luz fica atrás do avatar (onde o olho deve ir) e o vermelho
+     sobra só no rodapé, onde a arte já é quente. */
+  background:
+    linear-gradient(180deg, var(--c-header) 0, rgba(6, 15, 30, 0) 26%),
+    radial-gradient(70rem 46rem at 50% 34%, rgba(53, 200, 232, 0.10), transparent 68%),
+    radial-gradient(52rem 30rem at 86% 94%, rgba(255, 77, 94, 0.07), transparent 66%),
+    var(--c-bg);
+}
+
+/* Malha técnica discreta, restrita ao topo para não concorrer
+   com os traçados de circuito da arte do rodapé. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(53, 200, 232, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 200, 232, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  /* A máscara acompanha a fonte de luz: malha e brilho no mesmo centro,
+     senão a grade aparece onde o fundo já voltou a ser liso. */
+  -webkit-mask-image: radial-gradient(58% 42% at 50% 36%, #000 14%, transparent 78%);
+  mask-image: radial-gradient(58% 42% at 50% 36%, #000 14%, transparent 78%);
+  pointer-events: none;
+}
+
+/* Arte da identidade como linha de horizonte.
+   A imagem é um banner de 3,8:1 — usada em tela cheia seria quase toda
+   cortada. Como faixa inferior, a skyline e a silhueta funcionam como
+   chão, e o escudo fica atrás do conteúdo. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 0;
+  height: clamp(200px, 40vh, 430px);
+  background: url('../assets/img/bg.webp') center bottom / cover no-repeat;
+  opacity: 0.62;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 58%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 58%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 62ch;
+}
+
+.hero__avatar {
+  width: 160px;
+  height: 160px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+  border-radius: 50%;
+  border: 2px solid var(--c-accent);
+  object-fit: cover;
+  box-shadow: var(--glow-accent);
+}
+
+/* Halo duplo: ciano e vermelho, assinatura da identidade */
+.hero__avatar-wrap {
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.hero__avatar-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 210deg,
+    rgba(53, 200, 232, 0.45),
+    transparent 28%,
+    transparent 62%,
+    rgba(255, 77, 94, 0.40)
+  );
+  filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero__name {
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--sp-3);
+}
+
+.hero__role {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: var(--sp-4);
+  max-width: 46ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+.hero__pitch {
+  font-size: var(--fs-md);
+  color: var(--c-text-muted);
+  margin-bottom: var(--sp-8);
+}
+
+/* ---------- Links de contato ---------- */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  text-decoration: none;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-pill);
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+
+.contact-link:hover {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+  background: var(--c-accent-soft);
+}
+
+/* ---------- Seções de conteúdo ---------- */
+.section {
+  padding-block: var(--sp-16);
+  border-top: 1px solid var(--c-border);
+}
+
+.section__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: var(--sp-3);
+}
+
+.section__title {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-6);
+}
+
+.prose {
+  max-width: 68ch;
+  color: var(--c-text-muted);
+  font-size: var(--fs-md);
+}
+
+.prose p + p { margin-top: var(--sp-4); }
+
+.prose strong { color: var(--c-text); font-weight: 600; }
+
+/* ---------- Placeholder das abas ainda vazias ---------- */
+.placeholder {
+  display: grid;
+  place-items: center;
+  gap: var(--sp-3);
+  min-height: 50vh;
+  padding: var(--sp-12) var(--sp-6);
+  text-align: center;
+  color: var(--c-text-dim);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+}
+
+.placeholder__title {
+  font-size: var(--fs-lg);
+  color: var(--c-text-muted);
+}
+
+.placeholder__note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+/* ---------- Rodapé: assinatura da Goulart InfoSolutions ----------
+   Mesma estrutura e mesma linguagem institucional do rodapé de
+   goulartinfosolutions: fundo fosco, filete vinho, logo horizontal à
+   esquerda e perfis à direita. O filete vinho é o único lugar do site
+   onde essa cor aparece — é o que marca a faixa como assinatura. */
+.site-footer {
+  margin-top: var(--sp-12);
+  padding-block: var(--sp-8) var(--sp-12);
+  background: var(--c-marinho);
+  border-top: 1px solid var(--c-vinho);
+  font-size: var(--fs-sm);
+  color: var(--c-prata);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-4) var(--sp-12);
+}
+
+.site-footer__brand {
+  display: inline-flex;
+  flex: none;
+  opacity: 0.92;
+  transition: opacity var(--t-fast);
+}
+
+.site-footer__brand:hover { opacity: 1; }
+
+.site-footer__brand img {
+  display: block;
+  height: 2.4rem;
+  width: auto;
+}
+
+.site-footer__meta {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.site-footer__meta span { color: var(--c-prata-dim); }
+
+/* margin-left: auto empurra os perfis para a direita sem precisar de
+   coluna vazia; se o rodapé quebrar em duas linhas, o auto deixa de
+   valer e o bloco simplesmente desce, sem buraco no meio. */
+.site-footer__links {
+  margin-left: auto;
+  display: flex;
+  gap: var(--sp-6);
+}
+
+.site-footer__links a {
+  color: var(--c-prata);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+.site-footer__links a:hover { color: var(--c-accent-bright); }
+
+@media (max-width: 680px) {
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+  .site-footer__links { margin-left: 0; }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-3);
+    padding-block: var(--sp-3);
+  }
+  .tabs { justify-content: flex-start; }
+}
+
+@media (max-width: 860px) {
+  .hero::after { background-image: url('../assets/img/bg-sm.webp'); }
+}
+
+@media (max-width: 600px) {
+  .container { padding-inline: var(--sp-4); }
+  .hero::after { height: clamp(160px, 32vh, 260px); opacity: 0.5; }
+  .hero__avatar { width: 112px; height: 112px; }
+  .hero__name { font-size: var(--fs-2xl); }
+  .section { padding-block: var(--sp-12); }
+}
+
+/* Currículo em PDF: único item de ação do hero, destacado dos demais. */
+.contact-link--cv {
+  color: var(--c-bg);
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  font-weight: 600;
+}
+
+.contact-link--cv svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-link--cv:hover,
+.contact-link--cv:focus-visible {
+  color: var(--c-bg);
+  background: var(--c-accent-bright);
+  border-color: var(--c-accent-bright);
+}
