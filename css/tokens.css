@@ -19,6 +19,17 @@
   --c-border:      #1c2b3d;
   --c-border-soft: #142232;
 
+  /* ---- Navy da Goulart InfoSolutions ----
+     Medido na própria arte de identidade (assets/img/bg.webp e o
+     avatar), não escolhido no olho: o cluster dominante fica em
+     rgb(8,24,48). Serve de fundo da foto de perfil e do cabeçalho,
+     para que foto e topo pertençam visivelmente à mesma marca.
+     --c-header é o mesmo matiz com ~55% da luminosidade: continua
+     lendo como navy, mas fica mais escuro que o conteúdo, que é o
+     que separa a barra fixa da página enquanto se rola. */
+  --c-brand-navy:  #081830;
+  --c-header:      #060f1e;
+
   /* ---- Neon primário: ciano (defesa / verificado) ---- */
   --c-accent:        #35c8e8;
   --c-accent-bright: #80e8f8;
